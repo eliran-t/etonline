@@ -1,0 +1,47 @@
+/* Global styles */
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation bar styles */
+.navbar {
+    margin-bottom: 20px;
+}
+
+/* Container styles */
+.container {
+    padding: 20px;
+}
+
+/* Form styles */
+#contact {
+    max-width: 500px; /* Set a max-width to control the width of the form and its container */
+    margin: auto; /* Center the form container on the page */
+    padding: 20px;
+}
+
+#contact form {
+    width: 100%; /* The form will fill the width of its parent (#contact), which is already constrained by max-width */
+}
+
+/* Form field styles */
+#contact .form-control {
+    margin-bottom: 15px; /* Adds some space between form fields */
+}
+
+/* Submit button styles */
+#contact button[type="submit"] {
+    padding: 10px 20px; /* Add some padding for a larger click area */
+    margin-top: 10px; /* Add some space above the submit button */
+}
+
+/* Adjustments to improve overall spacing and alignment */
+.row {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%; /* Images will scale down if they exceed the width of their container */
+    height: auto; /* Maintain the aspect ratio of images */
+}
