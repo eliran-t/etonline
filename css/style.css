@@ -6,12 +6,12 @@ body {
   background-color: #f5f5f5; /* A light gray background color */
 }
 
-/* Add a semi-transparent background to content sections */
 .section {
-  background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+  background-color: rgba(128, 128, 128, 0.5); /* This sets a gray background with 50% opacity */
   padding: 20px;
-  border-radius: 5px; /* Optional: rounded corners */
+  border-radius: 5px;
 }
+
 
 /* Navigation bar styles */
 .navbar {
@@ -100,6 +100,13 @@ img.img-fluid {
   max-width: 100%; /* Images will scale down if they exceed the width of their container */
   height: auto; /* Maintain the aspect ratio of images */
 }
+
+.welcome-section {
+  font-size: 24px; /* Or any size that suits your design */
+  padding: 40px; /* Or any padding that suits your design */
+  background-color: rgba(128, 128, 128, 0.5); /* Optional: if you want this section to have the same semi-transparent background */
+}
+
 
 @media (max-width: 768px) {
   /* Adjust image sizes for smaller screens */
