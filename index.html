@@ -3,70 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAI - EfficientTech</title>
+    <title>eTechLeap - Empowering Progress</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Link to your custom styles -->
+        <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#home">Automation & AI IT Solutions</a>
+    <div class="navbar-header">
+        <img src=images/logo.jpg alt="Logo" style="max-height: 50px;"> 
+        <a class="navbar-brand" href="#home">eTechLeap</a>
+    </div>
     <div class="navbar-nav">
         <a class="nav-item nav-link" href="#home">Home</a>
         <a class="nav-item nav-link" href="#services">Services</a>
-        <a class="nav-item nav-link" href="#about">About</a>
-        <a class="nav-item nav-link" href="#contact">Contact</a>
+        <a class="nav-item nav-link" href="#about">Vision</a>
+        <a class="nav-item nav-link" href="#contact">Connect</a>
     </div>
 </nav>
 
 <div id="home" class="container text-center">
-    <h1>Welcome to AAI Solutions</h1>
-    <p>Pioneering Advanced AI to Drive Business Forward</p>
+    <h1>Welcome to eTechLeap</h1>
+    <p>Where Innovation Meets Practicality</p>
 </div>
 
 <div id="services" class="container">
-    <h2>Our Services</h2>
+    <h2>Our Tailored Tech Services</h2>
     <div class="row">
         <div class="col-md-4 text-center">
             <img src="images/c1.jpeg" alt="Service 1" class="img-fluid">
-            <h3>Consultation</h3>
-            <p>Expert advice to guide your AI integration journey.</p>
+            <h3>Consult</h3>
+            <p>Forge your path in the tech landscape with expert guidance.</p>
         </div>
         <div class="col-md-4 text-center">
-            <img src="images/c2.jpeg" alt="Service 2" class="img-fluid">
-            <h3>Coaching</h3>
-            <p>Personalized coaching to empower your team with AI skills.</p>
+            <img src="images/c2.png" alt="Service 2" class="img-fluid">
+            <h3>Coach</h3>
+            <p>Unlock technological prowess with personal mentorship.</p>
         </div>
         <div class="col-md-4 text-center">
-            <img src="images/c3.jpeg" alt="Service 3" class="img-fluid">
-            <h3>Development</h3>
-            <p>Custom AI solution development tailored to your business needs.</p>
+            <img src="images/c3.png" alt="Service 3" class="img-fluid">
+            <h3>Create</h3>
+            <p>Bespoke solutions crafted at the nexus of creativity and tech.</p>
         </div>
     </div>
 </div>
 
 <div id="about" class="container">
-    <h2>About Us</h2>
-    <p>AAI IT Solutions is dedicated to integrating AI technologies to enhance business processes.</p>
+    <h2>Our Mission</h2>
+    <p>At eTechLeap, we're propelling businesses into the future with technology that's accessible, efficient, and human-centric.</p>
 </div>
 
 <div id="contact" class="container">
-    <h2>Contact Me</h2>
-    <form action="https://script.google.com/macros/s/ph_dyn_deployment_id/exec" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+    <h2>Get in Touch</h2>
+    <p>Ready for a tech leap? Reach out and let's innovate together.</p>
+    <form action="https://script.google.com/macros/s/AKfycbzQPBNCP79Amk2GfMoiTBssJlZ4A7uIS1B7Xg9Sp-UZXy7AY9y0RWhOsgNRJEyufo1I/exec" method="post">
+        <div class="row">
+            <!-- Contact details in one column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <!-- Message and submit button in another column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

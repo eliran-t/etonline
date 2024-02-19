@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ph_pageTitle}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Link to your custom styles -->
+        <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#home">{{ph_navBrand}}</a>
+    <div class="navbar-header">
+        <img src={{ph_logo}} alt="Logo" style="max-height: 50px;"> 
+        <a class="navbar-brand" href="#home">{{ph_navBrand}}</a>
+    </div>
     <div class="navbar-nav">
         <a class="nav-item nav-link" href="#home">{{ph_navHome}}</a>
         <a class="nav-item nav-link" href="#services">{{ph_navServices}}</a>
@@ -51,22 +56,33 @@
 
 <div id="contact" class="container">
     <h2>{{ph_contactHeading}}</h2>
+    <p>{{ph_contactContent}}</p>
     <form action="{{ph_formActionURL}}" method="post">
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+        <div class="row">
+            <!-- Contact details in one column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">{{ph_labelName}}</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">{{ph_labelEmail}}</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <!-- Message and submit button in another column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="message">{{ph_labelMessage}}</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

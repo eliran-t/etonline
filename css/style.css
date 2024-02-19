@@ -1,47 +1,114 @@
 /* Global styles */
 body {
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: Arial, sans-serif;
+
+
+    background-color: #f5f5f5; /* A light gray, or any color that matches your brand */
+    background-image: url('/images/background.png');
+    background-repeat: repeat;
+    opacity: 0.1; /* Adjust the opacity to your preference */
+
 }
 
 /* Navigation bar styles */
 .navbar {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* Container styles */
 .container {
-    padding: 20px;
+  padding: 20px;
+}
+
+/* Navigation logo styles */
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  margin-right: 10px; /* Space between logo and brand name */
+  margin-bottom: 10px; /* Add gap between logo and nav */
+  max-height: 50px; /* Or whatever size you prefer */
 }
 
 /* Form styles */
 #contact {
-    max-width: 500px; /* Set a max-width to control the width of the form and its container */
-    margin: auto; /* Center the form container on the page */
-    padding: 20px;
+  padding: 20px;
+}
+
+#contact .form-group {
+  margin-bottom: 15px; /* Space between form fields */
 }
 
 #contact form {
-    width: 100%; /* The form will fill the width of its parent (#contact), which is already constrained by max-width */
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 5px;
 }
 
 /* Form field styles */
-#contact .form-control {
-    margin-bottom: 15px; /* Adds some space between form fields */
+#contact form .form-control {
+  width: 100%;
+}
+
+/* Adjust the button to be full width and centered */
+#contact form button {
+  display: block;
+  width: 100%;
+  margin-top: 20px; /* Space above the submit button */
 }
 
 /* Submit button styles */
 #contact button[type="submit"] {
-    padding: 10px 20px; /* Add some padding for a larger click area */
-    margin-top: 10px; /* Add some space above the submit button */
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
 /* Adjustments to improve overall spacing and alignment */
 .row {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-img {
-    max-width: 100%; /* Images will scale down if they exceed the width of their container */
-    height: auto; /* Maintain the aspect ratio of images */
+.row .col-md-4 {
+  margin-bottom: 20px; /* Space between service columns */
+}
+
+img.img-fluid {
+  max-width: 100%; /* Images will scale down if they exceed the width of their container */
+  height: auto; /* Maintain the aspect ratio of images */
+}
+
+@media (max-width: 768px) {
+  /* Adjust image sizes for smaller screens */
+  #services img {
+    max-width: 50%; /* Reduce the size of the images on mobile */
+    margin: 0 auto; /* Center the image */
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    font-size: smaller;
+  }
+
+  /* Adjust navbar branding and logo for smaller screens */
+  .navbar-brand {
+    font-size: 1.2em; /* Slightly larger text for brand name */
+  }
+
+  .navbar-logo {
+    max-height: 30px; /* Smaller logo on mobile */
+  }
+
+  /* Make sure form fields are not too wide on mobile */
+  #contact form .form-control {
+    max-width: none;
+  }
 }
