@@ -22,8 +22,11 @@
     "ph_aboutContent": "At eTechLeap, we're propelling businesses into the future with technology that's accessible, efficient, and human-centric.",
     "ph_contactHeading": "Get in Touch",
     "ph_contactContent": "Ready for a tech leap? Reach out and let's innovate together.",
-    "ph_formActionURL": "https://script.google.com/macros/s/AKfycbzQPBNCP79Amk2GfMoiTBssJlZ4A7uIS1B7Xg9Sp-UZXy7AY9y0RWhOsgNRJEyufo1I/exec",
+    "ph_formActionURL": "https://script.google.com/macros/s/AKfycbyBcQaFWd9tnuZVWOwitoWLU-dRuwM_2i5LPoxL9PRESc7tgtbDQ_MIzxcHy2TdHNEPBQ/exec",
     "ph_labelName": "Name",
     "ph_labelEmail": "Email",
-    "ph_labelMessage": "Message"
+    "ph_labelMessage": "Message",
+    "ph_name": "Name",
+    "ph_email": "Email",
+    "ph_message": "Message"
 }
