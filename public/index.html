@@ -64,11 +64,8 @@
     <div id="contact" class="container">
         <h2>Get in Touch</h2>
         <p>Ready for a tech leap? Reach out and let's innovate together.</p>
-        <form
-            action="https://script.google.com/macros/s/AKfycbyBcQaFWd9tnuZVWOwitoWLU-dRuwM_2i5LPoxL9PRESc7tgtbDQ_MIzxcHy2TdHNEPBQ/exec"
-            method="post">
+        <form id="contact-form"  method="post">
             <div class="row">
-                <form id="contact-form"></form>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -79,7 +76,6 @@
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                 </div>
-                <!-- Message and submit button in another column -->
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="message">Message</label>
@@ -87,42 +83,60 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+            </div>
         </form>
     </div>
-
-
+    
     </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();  // Prevent the default form submission
-        
-            var formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-        
-            var requestOptions = {
+        document.addEventListener('DOMContentLoaded', function() {
+          let form = document.getElementById('contact-form');
+          if (form) {
+            form.addEventListener('submit', function(event) {
+              event.preventDefault();
+      
+              let formData = new FormData(form);
+              let object = {};
+              formData.forEach((value, key) => object[key] = value);
+              let json = JSON.stringify(object);
+      
+              fetch('https://script.google.com/macros/s/AKfycbzkk3o-DNwEX_rYEM4NrLa3lyxIyPDJQEDfuOJfcpOemr3qKGfTWAwEyRver6_o9W0b/exec', {
                 method: 'POST',
-                contentType: 'application/json',
-                payload: JSON.stringify(formData)
-            };
-        
-            google.script.run.withSuccessHandler(function(response) {
-                console.log(response);
-                // You can add more code here to handle the successful submission
-            }).withFailureHandler(function(error) {
-                console.error(error);
-                // You can add more code here to handle the submission error
-            }).submitForm(formData);
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: json
+              })
+              .then(response => {
+                if (response.ok) {
+                  return response.json();
+                } else {
+                  throw new Error('Network response was not ok.');
+                }
+              })
+              .then(data => {
+                console.log('Success:', data);
+                alert('Thank you for your message! We will get back to you soon.');
+                // Clear the form
+                form.reset();
+                // Handle success: Update the UI with a success message, etc.
+              })
+              .catch((error) => {
+                console.error('Error:', error);
+                alert('Something went wrong, please try again later.');
+                // Handle error: Update the UI with an error message, etc.
+              });
+            });
+          }
         });
-        </script>
+      </script>
+      
+        
 </body>
 
 </html>

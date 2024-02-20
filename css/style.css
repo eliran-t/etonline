@@ -43,7 +43,7 @@ body::before {
 }
 
 .navbar-logo {
-  margin-right: 10px; /* Space between logo and brand name */
+  margin-right: 25px; /* Space between logo and brand name */
   margin-bottom: 10px; /* Add gap between logo and nav */
   max-height: 50px; /* Or whatever size you prefer */
 }
