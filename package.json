@@ -1,0 +1,19 @@
+{
+  "name": "etechleap",
+  "version": "1.0.0",
+  "description": "launchhhhh",
+  "main": "build.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliran-t/etonline.git"
+  },
+  "author": "ET",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eliran-t/etonline/issues"
+  },
+  "homepage": "https://github.com/eliran-t/etonline#readme"
+}
