@@ -1,89 +1,125 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/10.8.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eTechLeap - Empowering Progress</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to your custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-header">
+            <img src=..images/logo.jpeg alt="Logo" style="max-height: 50px;">
+            <a class="navbar-brand" href="#home">eTechLeap</a>
+        </div>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#home">Home</a>
+            <a class="nav-item nav-link" href="#services">Services</a>
+            <a class="nav-item nav-link" href="#about">Vision</a>
+            <a class="nav-item nav-link" href="#contact">Connect</a>
+        </div>
+    </nav>
+
+    <div id="welcome-section" class="container text-center">
+        <h1>Welcome to eTechLeap</h1>
+        <p>Where Innovation Meets Practicality</p>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+
+    <div id="services" class="container">
+        <h2>The "3-Cs" Servic</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="./images/c1.jpeg" alt="Service 1" class="img-fluid">
+                <h3>Consult</h3>
+                <p>Forge your path in the tech landscape with expert guidance.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="./images/c2.png" alt="Service 2" class="img-fluid">
+                <h3>Coach</h3>
+                <p>Unlock technological prowess with personal mentorship.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img src="./images/c3.png" alt="Service 3" class="img-fluid">
+                <h3>Create</h3>
+                <p>Bespoke solutions crafted at the nexus of creativity and tech.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="container">
+        <h2>The Mission</h2>
+        <p>eTechLeap, is my path of spreadin rhe automation and AI, crafting solutions that bring simplicity and efficiency to the forefront of every small business and non-techie's workspace. This endeavor isn't just about deploying cutting-edge technology; it's a reflection of my dedication to infuse every innovation with empathy, understanding, and a human touch. I champion the cause of transforming operations, not by overshadowing the human element, but by enhancing it, ensuring that behind every automated solution lies a foundation of genuine care and connectivity. My mission is to illuminate the potential within each workflow, celebrating the seamless integration of technology with the warmth of human spirit..</p>
+    </div>
+
+    <div id="contact" class="container">
+        <h2>Get in Touch</h2>
+        <p>Ready for a tech leap? Reach out and let's innovate together.</p>
+        <form
+            action="https://script.google.com/macros/s/AKfycbyBcQaFWd9tnuZVWOwitoWLU-dRuwM_2i5LPoxL9PRESc7tgtbDQ_MIzxcHy2TdHNEPBQ/exec"
+            method="post">
+            <div class="row">
+                <form id="contact-form"></form>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+                <!-- Message and submit button in another column -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+        </form>
+    </div>
+
+
+    </form>
+    </div>
+
+
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();  // Prevent the default form submission
+        
+            var formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+        
+            var requestOptions = {
+                method: 'POST',
+                contentType: 'application/json',
+                payload: JSON.stringify(formData)
+            };
+        
+            google.script.run.withSuccessHandler(function(response) {
+                console.log(response);
+                // You can add more code here to handle the successful submission
+            }).withFailureHandler(function(error) {
+                console.error(error);
+                // You can add more code here to handle the submission error
+            }).submitForm(formData);
+        });
+        </script>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 </html>
