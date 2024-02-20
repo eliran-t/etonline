@@ -3,11 +3,10 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5; /* A light gray background color */
 }
 
 .section {
-  background-color: rgba(128, 128, 128, 0.5); /* This sets a gray background with 50% opacity */
+  background-color: rgba(128, 128, 128, 0.3); /* This sets a gray background with 50% opacity */
   padding: 20px;
   border-radius: 5px;
 }
