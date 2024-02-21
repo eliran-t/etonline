@@ -1,69 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>eTechLeap - Empowering Progress</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <!-- Link to your custom styles, adjusted path -->
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="navbar-header">
-            <!-- Adjusted path for the logo -->
-            <img src="images/logo.jpeg" alt="Logo" style="max-height: 50px;">
-            <a class="navbar-brand" href="#home">eTechLeap</a>
-        </div>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#home">Home</a>
-            <a class="nav-item nav-link" href="#services">Services</a>
-            <a class="nav-item nav-link" href="#about">Vision</a>
-            <a class="nav-item nav-link" href="#contact">Connect</a>
-        </div>
+      <div class="navbar-header">
+        <!-- Adjusted path for the logo -->
+        <img src="images/logo.jpeg" alt="Logo" style="max-height: 50px" />
+        <a class="navbar-brand" href="#home">eTechLeap</a>
+      </div>
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="#home">Home</a>
+        <a class="nav-item nav-link" href="#services">Services</a>
+        <a class="nav-item nav-link" href="#about">Vision</a>
+        <a class="nav-item nav-link" href="#contact">Connect</a>
+      </div>
     </nav>
 
-    <section id="home" class="welcome-section container-fluid"> 
+    <section id="home" class="welcome-section container-fluid">
       <div class="container text-center">
-          <h1>Tech A Leap: Bringing the Future Your Way</h1>
-          <p class="subheading">Making Next-Generation Innovation Accessible Today</p>
+        <h1>Tech A Leap: Bringing the Future Your Way</h1>
+        <p class="subheading">Making Next-Generation Innovation Accessible Today</p>
       </div>
-     </section>
+    </section>
 
     <div id="services" class="container">
-        <h2>Our Tailored Tech Services</h2>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <!-- Adjusted path for the image -->
-                <img src="images/c1.jpeg" alt="Consulation" class="img-fluid">
-                <h3>Essential - Consulation</h3>
-                <p>Forge your path in the tech landscape with expert guidance.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <!-- Adjusted path for the image -->
-                <img src="images/c2.png" alt="Coaching" class="img-fluid">
-                <h3>Enhanced - Coaching</h3>
-                <p>Unlock technological prowess with personal mentorship.</p>
-            </div>
-            <div class="col-md-4 text-center">
-                <!-- Adjusted path for the image -->
-                <img src="images/c3.png" alt="Creation" class="img-fluid">
-                <h3>Elite - Creation</h3>
-                <p>Bespoke solutions crafted at the nexus of creativity and tech.</p>
-            </div>
+      <h2>Our Tailored Tech Services</h2>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="images/c1.jpeg" alt="Consultation Service" />
+          <div class="card-body">
+            <h5 class="card-title">Essential - Consultation</h5>
+            <p class="card-text">Forge your path in the tech landscape with expert guidance.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#serviceModal1">Learn More</button>
+          </div>
         </div>
+        <div class="card">
+          <img class="card-img-top" src="images/c2.png" alt="Coaching Service" />
+          <div class="card-body">
+            <h5 class="card-title">Enhanced - Coaching</h5>
+            <p class="card-text">Unlock technological prowess with personal mentorship.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#serviceModal2">Learn More</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="images/c3.png" alt="Creation Service" />
+          <div class="card-body">
+            <h5 class="card-title">Elite - Creation</h5>
+            <p class="card-text">Bespoke solutions crafted at the nexus of creativity and tech.</p>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#serviceModal3">Learn More</button>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- Service Modals -->
+    <div
+      class="modal fade"
+      id="serviceModal1"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="serviceModalLabel1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="serviceModalLabel1">Essential - Consultation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Detailed information about Essential Consultation service...</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="serviceModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="serviceModalLabel2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="serviceModalLabel2">Enhanced - Coaching</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Detailed information about Enhanced Coaching service...</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="serviceModal3"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="serviceModalLabel3"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="serviceModalLabel3">Elite - Creation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">Detailed information about Elite Creation service...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Make sure to include Bootstrap JS and its dependencies in your index.html for the modal functionality -->
 
     <div id="about" class="container">
-        <h2>The Mission</h2>
-        <p>eTechLeap, is my path of spreadin rhe automation and AI, crafting solutions that bring simplicity and efficiency to the forefront of every small business and non-techie's workspace. This endeavor isn't just about deploying cutting-edge technology; it's a reflection of my dedication to infuse every innovation with empathy, understanding, and a human touch. I champion the cause of transforming operations, not by overshadowing the human element, but by enhancing it, ensuring that behind every automated solution lies a foundation of genuine care and connectivity. My mission is to illuminate the potential within each workflow, celebrating the seamless integration of technology with the warmth of human spirit..</p>
+      <h2>The Mission</h2>
+      <div id="mission-section"></div>
     </div>
 
-    <div id="contact" class="container">
+    <div id="about-me" class="container">
+      <h2>About Me</h2>
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="about-me-section"></div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#mission-section").load("/public/mission.html");
+        $("#about-me-section").load("/public/about-me.html");
+      });
+    </script>
+
+    <!--
+      
+        <div id="contact" class="container">
         <h2>Get in Touch</h2>
         <p>Ready for a tech leap? Reach out and let's innovate together.</p>
         <form id="contact-form"  method="post">
@@ -87,28 +180,15 @@
               </div>
           </div>
       </form>
-
-
     </div>    
     </form>
-    </div>
-
-    <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+    </div><script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script> 
     
-    <!-- Firebase Initialization -->
+    <-- Firebase Initialization 
     <script src="/scripts/firebase-config.js"></script>
 
-    <!-- Your App's JavaScript -->
-    <script src="/scripts/app.js"></script>
-    
-      
-        
-</body>
-
+    <-- Your App's JavaScript 
+    <script src="/scripts/app.js"></script> -->
+  </body>
 </html>
