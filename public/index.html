@@ -77,69 +77,7 @@
       </div>
     </div>
 
-    <!-- Service Modals -->
-    <div
-      class="modal fade"
-      id="serviceModal1"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="serviceModalLabel1"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="serviceModalLabel1">Essential - Consultation</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">Detailed information about Essential Consultation service...</div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="serviceModal2"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="serviceModalLabel2"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="serviceModalLabel2">Enhanced - Coaching</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">Detailed information about Enhanced Coaching service...</div>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="modal fade"
-      id="serviceModal3"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="serviceModalLabel3"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="serviceModalLabel3">Elite - Creation</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">Detailed information about Elite Creation service...</div>
-        </div>
-      </div>
-    </div>
+    <div id="load-service-modals"></div>
 
     <div id="mission" class="container section">
       <div id="mission-section"></div>
@@ -161,8 +99,10 @@
 
     <script>
       $(document).ready(function () {
+        $("#load-service-modals").load("/public/service-modals.html");
         $("#mission-section").load("/public/mission.html");
         $("#about-me-section").load("/public/about-me.html");
+        
       });
     </script>
   </body>
