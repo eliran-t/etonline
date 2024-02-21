@@ -1,7 +1,9 @@
 /* Import Google Font - choose a font that matches your brand */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Global styles */
+/* ----------------------------- Global styles ------------------------------- */
+
+/*  */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -9,25 +11,40 @@ body {
   background: #f4f4f4; /* Light grey background for overall body for contrast */
 }
 
+/* ------------------------------- Layout Styles --------------------------------- */
+.container {
+  position: relative;
+}
+
 .section {
-  background-color: #ffffff; /* Solid white backgrounds for sections for readability */
   padding: 40px;
   border-radius: 10px; /* Increased border-radius for modern look */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
   margin-bottom: 30px; /* Added bottom margin for spacing between sections */
 }
 
-.welcome-section {
-  background-color: #e8f4fc; /* Light blue background */
-  text-shadow: none; /* Remove text shadow if it's not needed with the new background */
-  color: #000; /* Ensure text color is dark enough for contrast */
+/* ========================== Component Styles ==================================== */
+
+/* ----------------------- Navigation bar styles ------------------------------------ */
+/* Navigation Bar */
+.navbar {
+  margin-bottom: 20px;
+  background-color: #007bff; /* Primary brand color */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Adjust the navbar logo and brand styles */
+.navbar-brand {
+  font-size: 1.5em; /* Larger text for brand name */
+  color: #ffffff; /* White color for brand text */
+}
 
-.welcome-section h1 {
-  font-weight: 700; /* Makes the heading bolder */
-  color: #000; /* Change to a color that stands out on your background */
-  margin-bottom: 0.5em; /* Adjust space below the heading */
+.navbar-brand:hover {
+  color: #cce5ff; /* Lighter shade for hover effect */
+}
+
+.gap {
+  height: 1px; /* Adjust the height as needed */
 }
 
 .welcome-section .subheading {
@@ -35,17 +52,51 @@ body {
   color: #000; /* Change to a color that stands out on your background */
 }
 
-/* Navigation bar styles */
-.navbar {
-  margin-bottom: 20px;
-  background-color: #007bff; /* Your primary brand color */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for navbar */
+.welcome-section {
+  position: relative; /* Changed from absolute */
+  /* Removed top, left, and transform properties */
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  padding: 20px; /* Add padding to create some space around the text */
+  border-radius: 15px; /* Optional: Rounded corners for the background */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+  color: #000; /* Dark text for contrast */
+  max-width: 80%; /* Prevents the section from becoming too wide */
+  text-align: center; /* Center the text within the section */
+  z-index: 1; /* Added z-index property with a higher value than the top image section */
+  margin-top: 150px; /* Increased margin-top */
+  background-attachment: scroll; /* Added background-attachment property */
 }
 
-/* Full-page background image style adjustments */
+.top-highlights {
+  position: absolute;
+  top: 70%; /* Increased top */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  padding: 20px; /* Add padding to create some space around the text */
+  border-radius: 15px; /* Optional: Rounded corners for the background */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+  color: #000; /* Dark text for contrast */
+  max-width: 80%; /* Prevents the section from becoming too wide */
+  text-align: center; /* Center the text within the section */
+  background-attachment: scroll; /* Added background-attachment property */
+}
+
+.top-highlights h2 {
+  color: inherit; /* Inherits the color from .top-highlights for consistency */
+  text-shadow: none; /* Clear any text shadow, may not be necessary with the background */
+}
+
+.top-highlights ul.highlights-points {
+  padding-left: 0; /* Remove default padding */
+  list-style-position: inside; /* Position bullets inside the content flow */
+}
+
+
+/* Background Styles */
 body::before {
   opacity: 0.3; /* Increased opacity for better visibility */
-  background-attachment: fixed; /* Fixed background image */
+  background-attachment: fixed;
 }
 
 /* Enhanced button styles */
@@ -71,15 +122,14 @@ body::before {
   box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Stronger shadow on hover */
 }
 
-/* Adjust the navbar logo and brand styles */
-.navbar-brand {
-  font-size: 1.5em; /* Larger text for brand name */
-  color: #ffffff; /* White color for brand text */
+/* Mission and About Me Section Background */
+#mission, #about-me {
+  background-color: #e8f4fc; /* Light blue, adjust this to match your brand */
+  padding: 40px 20px;
 }
 
-.navbar-brand:hover {
-  color: #cce5ff; /* Lighter shade for hover effect */
-}
+/* ------------------------------ Background ---------------------------------- */
+
 
 /* Parallax Effect for the Top Image */
 .top-image-section {
@@ -88,41 +138,10 @@ body::before {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 50vh; /* Adjust the height as needed */
+  height: 60vh; /* Adjust the height as needed */
 }
 
-/* Semi-transparent background for text overlay */
-.top-highlights {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
-  padding: 20px; /* Add padding to create some space around the text */
-  border-radius: 15px; /* Optional: Rounded corners for the background */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
-  color: #000; /* Dark text for contrast */
-  max-width: 80%; /* Prevents the section from becoming too wide */
-  text-align: center; /* Center the text within the section */
-}
-
-.top-highlights h2 {
-  color: inherit; /* Inherits the color from .top-highlights for consistency */
-  text-shadow: none; /* Clear any text shadow, may not be necessary with the background */
-}
-
-.top-highlights ul.highlights-points {
-  padding-left: 0; /* Remove default padding */
-  list-style-position: inside; /* Position bullets inside the content flow */
-}
-
-
-/* Mission and About Me Section Background */
-#mission, #about-me {
-  background-color: #e8f4fc; /* Light blue, adjust this to match your brand */
-  padding: 40px 20px;
-}
-
+/* ------------------------------- Media Queries  -------------------------------- */
 
 /* Responsiveness */
 @media (max-width: 768px) {
@@ -139,10 +158,5 @@ body::before {
   /* Adjust navbar logo size on smaller screens */
   .navbar-logo {
     max-height: 30px; /* Smaller logo */
-  }
-
-  /* Full-width buttons on smaller screens */
-  #contact form button {
-    width: auto;
   }
 }
