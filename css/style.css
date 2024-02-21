@@ -1,156 +1,148 @@
+/* Import Google Font - choose a font that matches your brand */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Global styles */
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif; /* Updated font family */
+  background: #f4f4f4; /* Light grey background for overall body for contrast */
 }
 
 .section {
-  background-color: rgba(128, 128, 128, 0.3); /* This sets a gray background with 50% opacity */
-  padding: 20px;
-  border-radius: 5px;
+  background-color: #ffffff; /* Solid white backgrounds for sections for readability */
+  padding: 40px;
+  border-radius: 10px; /* Increased border-radius for modern look */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  margin-bottom: 30px; /* Added bottom margin for spacing between sections */
+}
+
+.welcome-section {
+  background-color: #e8f4fc; /* Light blue background */
+  text-shadow: none; /* Remove text shadow if it's not needed with the new background */
+  color: #000; /* Ensure text color is dark enough for contrast */
+}
+
+
+.welcome-section h1 {
+  font-weight: 700; /* Makes the heading bolder */
+  color: #000; /* Change to a color that stands out on your background */
+  margin-bottom: 0.5em; /* Adjust space below the heading */
+}
+
+.welcome-section .subheading {
+  font-weight: 500; /* Slightly bolder than normal text */
+  color: #000; /* Change to a color that stands out on your background */
 }
 
 /* Navigation bar styles */
 .navbar {
   margin-bottom: 20px;
-  background: transparent; /* Make the navbar background transparent */
+  background-color: #007bff; /* Your primary brand color */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for navbar */
 }
 
-.container {
-  position: relative;
-}
-
-/* This pseudo-element will create a full-page background */
+/* Full-page background image style adjustments */
 body::before {
-  content: "";
-  position: fixed; /* Fixed position to cover the whole page */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/public/images/background.png');
-  background-size: cover; /* Cover the entire page */
-  opacity: 0.1; /* Adjust the opacity to your preference */
-  z-index: -1; /* Ensure it stays behind the content */
+  opacity: 0.3; /* Increased opacity for better visibility */
+  background-attachment: fixed; /* Fixed background image */
 }
 
-/* Navigation logo styles */
-.navbar-header {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo {
-  margin-right: 25px; /* Space between logo and brand name */
-  margin-bottom: 10px; /* Add gap between logo and nav */
-  max-height: 50px; /* Or whatever size you prefer */
-}
-
-/* Form styles */
-#contact {
-  padding: 20px;
-  background: rgba(249, 249, 249, 0.9); /* Semi-transparent background */
-}
-
-#contact .form-group {
-  margin-bottom: 15px; /* Space between form fields */
-}
-
-#contact form {
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 5px;
-}
-
-/* Form field styles */
-#contact form .form-control {
-  width: 100%;
-}
-
-/* Adjust the button to be full width and centered */
-#contact form button {
-  display: block;
-  width: 100%;
-  margin-top: 20px; /* Space above the submit button */
-}
-
-/* Submit button styles */
-#contact button[type="submit"] {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
+/* Enhanced button styles */
+.btn-primary {
+  background-color: #0056b3; /* Darker shade of primary color for buttons */
   border: none;
-  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Adjustments to improve overall spacing and alignment */
-.row {
-  margin-top: 20px;
+.btn-primary:hover {
+  background-color: #003d82; /* Even darker shade on hover */
 }
 
-.row .col-md-4 {
-  margin-bottom: 20px; /* Space between service columns */
-}
-
-img.img-fluid {
-  max-width: 100%; /* Images will scale down if they exceed the width of their container */
-  height: auto; /* Maintain the aspect ratio of images */
-}
-
-.welcome-section {
-  font-size: 24px; /* Or any size that suits your design */
-  padding: 40px; /* Or any padding that suits your design */
-  background-color: rgba(128, 128, 128, 0.5); /* Optional: if you want this section to have the same semi-transparent background */
-}
-
+/* Improved card styles */
 .card {
-  margin: 0 auto; /* Center cards */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds depth with shadow */
-  transition: 0.3s; /* Smooth transition for hover effects */
+  background-color: rgba(255, 255, 255, 0.5); /* Adjust transparency as needed */
+  border: none; /* Remove default border */
+  transition: 0.3s; /* Keep the smooth transition */
 }
 
 .card:hover {
   transform: translateY(-5px); /* Lift card up slightly on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Stronger shadow on hover */
 }
 
-.card-body {
-  padding: 15px; /* Reduce padding to decrease card size */
+/* Adjust the navbar logo and brand styles */
+.navbar-brand {
+  font-size: 1.5em; /* Larger text for brand name */
+  color: #ffffff; /* White color for brand text */
 }
 
-.card-deck .card {
-  flex: 1; /* Make sure all cards take equal space */
-  max-width: 30%; /* Maximum width of each card */
+.navbar-brand:hover {
+  color: #cce5ff; /* Lighter shade for hover effect */
+}
+
+/* Parallax Effect for the Top Image */
+.top-image-section {
+  background: url('/public/images/leap.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 50vh; /* Adjust the height as needed */
+}
+
+/* Semi-transparent background for text overlay */
+.top-highlights {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  padding: 20px; /* Add padding to create some space around the text */
+  border-radius: 15px; /* Optional: Rounded corners for the background */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional: subtle shadow for depth */
+  color: #000; /* Dark text for contrast */
+  max-width: 80%; /* Prevents the section from becoming too wide */
+  text-align: center; /* Center the text within the section */
+}
+
+.top-highlights h2 {
+  color: inherit; /* Inherits the color from .top-highlights for consistency */
+  text-shadow: none; /* Clear any text shadow, may not be necessary with the background */
+}
+
+.top-highlights ul.highlights-points {
+  padding-left: 0; /* Remove default padding */
+  list-style-position: inside; /* Position bullets inside the content flow */
 }
 
 
+/* Mission and About Me Section Background */
+#mission, #about-me {
+  background-color: #e8f4fc; /* Light blue, adjust this to match your brand */
+  padding: 40px 20px;
+}
+
+
+/* Responsiveness */
 @media (max-width: 768px) {
-  /* Adjust image sizes for smaller screens */
-  #services img {
-    max-width: 50%; /* Reduce the size of the images on mobile */
-    margin: 0 auto; /* Center the image */
-  }
-  h1,
-  h2,
-  h3,
-  p {
-    font-size: smaller;
+  /* Adjust font sizes for smaller screens */
+  h1, h2, h3, p {
+    font-size: 16px;
   }
 
-  /* Adjust navbar branding and logo for smaller screens */
-  .navbar-brand {
-    font-size: 1.2em; /* Slightly larger text for brand name */
+  /* Center content in cards on smaller screens */
+  .card-body {
+    text-align: center;
   }
 
+  /* Adjust navbar logo size on smaller screens */
   .navbar-logo {
-    max-height: 30px; /* Smaller logo on mobile */
+    max-height: 30px; /* Smaller logo */
   }
 
-  /* Make sure form fields are not too wide on mobile */
-  #contact form .form-control {
-    max-width: none;
+  /* Full-width buttons on smaller screens */
+  #contact form button {
+    width: auto;
   }
 }
-
