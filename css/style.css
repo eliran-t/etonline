@@ -11,7 +11,6 @@ body {
   border-radius: 5px;
 }
 
-
 /* Navigation bar styles */
 .navbar {
   margin-bottom: 20px;
@@ -104,6 +103,26 @@ img.img-fluid {
   font-size: 24px; /* Or any size that suits your design */
   padding: 40px; /* Or any padding that suits your design */
   background-color: rgba(128, 128, 128, 0.5); /* Optional: if you want this section to have the same semi-transparent background */
+}
+
+.card {
+  margin: 0 auto; /* Center cards */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds depth with shadow */
+  transition: 0.3s; /* Smooth transition for hover effects */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift card up slightly on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.card-body {
+  padding: 15px; /* Reduce padding to decrease card size */
+}
+
+.card-deck .card {
+  flex: 1; /* Make sure all cards take equal space */
+  max-width: 30%; /* Maximum width of each card */
 }
 
 
