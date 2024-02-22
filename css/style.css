@@ -1,170 +1,76 @@
-/* Import Google Font - choose a font that matches your brand */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* ----------------------------- Global styles ------------------------------- */
-
-/*  */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-family: 'Roboto', sans-serif; /* Updated font family */
-  background: #f4f4f4; /* Light grey background for overall body for contrast */
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
 }
 
-/* ------------------------------- Layout Styles --------------------------------- */
-.container {
-  position: relative;
-}
-
-.section {
-  padding: 40px;
-  border-radius: 10px; /* Increased border-radius for modern look */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-  margin-bottom: 30px; /* Added bottom margin for spacing between sections */
-}
-
-/* ========================== Component Styles ==================================== */
-
-/* ----------------------- Navigation bar styles ------------------------------------ */
-/* Navigation Bar */
 .navbar {
-  margin-bottom: 20px;
-  background-color: #007bff; /* Primary brand color */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #007bff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    position: fixed;
+    width: 100%; 
+    top: 0;     
 }
 
-/* Adjust the navbar logo and brand styles */
-.navbar-brand {
-  font-size: 1.5em; /* Larger text for brand name */
-  color: #ffffff; /* White color for brand text */
+/* Fix for overlapping content by navbar */
+body {
+    padding-top: 70px; /* Adjust based on your navbar's actual height */
 }
 
-.navbar-brand:hover {
-  color: #cce5ff; /* Lighter shade for hover effect */
+/* Parallax section with overlay */
+.parallax-section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay color */
+    z-index: -1; /* Ensure the overlay is behind the text */
 }
 
-.gap {
-  height: 1px; /* Adjust the height as needed */
-}
-
-.welcome-section .subheading {
-  font-weight: 500; /* Slightly bolder than normal text */
-  color: #000; /* Change to a color that stands out on your background */
-}
-
-/* Welcome Section */
-.welcome-section {
-  /* Removed positioning attributes */
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  color: #000;
-  max-width: 80%;
-  text-align: center;
-  margin: 0 auto 20px; /* Auto margins for horizontal centering and 20px margin at the bottom */
-  z-index: 2;
-}
-
-.welcome-section h1 {
-  font-weight: 900; /* This is the maximum boldness available for most fonts */
-}
-
-/* Top-Highlights Section */
-.top-highlights {
-  /* Removed positioning attributes */
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  color: #000;
-  max-width: 80%;
-  text-align: center;
-  margin: 20px auto 0; /* 20px margin at the top and auto margins for horizontal centering */
-  z-index: 2;
-}
-
-
-.top-highlights h2 {
-  color: inherit; /* Inherits the color from .top-highlights for consistency */
-  text-shadow: none; /* Clear any text shadow, may not be necessary with the background */
-}
-
-.top-highlights ul.highlights-points {
-  padding-left: 0; /* Remove default padding */
-  list-style-position: inside; /* Position bullets inside the content flow */
-}
-
-
-/* Background Styles */
-body::before {
-  opacity: 0.3; /* Increased opacity for better visibility */
-  background-attachment: fixed;
-}
-
-/* Enhanced button styles */
-.btn-primary {
-  background-color: #0056b3; /* Darker shade of primary color for buttons */
-  border: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.btn-primary:hover {
-  background-color: #003d82; /* Even darker shade on hover */
-}
-
-/* Improved card styles */
-.card {
-  background-color: rgba(255, 255, 255, 0.5); /* Adjust transparency as needed */
-  border: none; /* Remove default border */
-  transition: 0.3s; /* Keep the smooth transition */
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Lift card up slightly on hover */
-  box-shadow: 0 12px 24px rgba(0,0,0,0.2); /* Stronger shadow on hover */
-}
-
-/* Mission and About Me Section Background */
-#mission, #about-me {
-  background-color: #e8f4fc; /* Light blue, adjust this to match your brand */
-  padding: 40px 20px;
-}
-
-/* ------------------------------ Background ---------------------------------- */
-
-
-/* Parallax Effect for the Top Image */
-.top-image-section {
-  position: relative; /* This allows absolute positioning relative to this section */
-  background: url('/public/images/leap.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 60vh; /* Full height of the viewport */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ------------------------------- Media Queries  -------------------------------- */
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  /* Adjust font sizes for smaller screens */
-  h1, h2, h3, p {
-    font-size: 16px;
-  }
-
-  /* Center content in cards on smaller screens */
-  .card-body {
+/* Parallax sections */
+.parallax-section {
+    position: relative; /* Needed to position the overlay correctly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Fixed height */
+    color: white;
     text-align: center;
-  }
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-  /* Adjust navbar logo size on smaller screens */
-  .navbar-logo {
-    max-height: 30px; /* Smaller logo */
-  }
+/* Text Styles for Readability */
+.parallax-section h1,
+.parallax-section h2,
+.parallax-section p {
+    color: #fff; /* Or any other color that suits your design */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+}
+
+
+#welcome {
+    background-image: url('images/leap.png');
+}
+
+#notsonews {
+    background-image: url('images/oldNews.png');
+}
+
+@media (max-width: 768px) {
+    .parallax-section {
+        height: 300px; /* Smaller fixed height for mobile */
+        background-attachment: scroll;
+    }
 }
