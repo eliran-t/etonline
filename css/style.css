@@ -27,7 +27,6 @@ body {
     padding-top: 70px; /* Adjust based on your navbar's actual height */
 }
 
-
 /* Parallax sections */
 .parallax-section {
     position: relative; /* Needed to position the overlay correctly */
@@ -214,13 +213,16 @@ body {
 }
 
 @media (max-width: 768px) {
+    .parallax-section {
+        background-attachment: scroll; /* Change from fixed to scroll */
+    }
    #welcome .container h1, #welcome .container h2 {
-        font-size: 1em; /* Make the text smaller on mobile devices */
+        font-size: 2em; /* Adjust the font size as needed */
     }
 
     #welcome {
-        background-size: auto; /* Adjust the background image size on mobile devices */
-        background-position: center; /* Center the background image */
+        background-size: contain; /* Adjust the background image size on mobile devices */
+
     }
 
     #oldnews .container h2, #oldnews .container ul li {
