@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px; /* Fixed height */
+    height: 450px; /* Fixed height */
     color: white;
     text-align: center;
     background-attachment: fixed;
@@ -51,13 +51,38 @@ body {
     font-weight: 700; /* 700 is bold, higher numbers are bolder */
 }
 
-
 #welcome {
-    background-image: url('images/leap.png');
+    background-size: cover; /* Adjust as needed */
 }
 
-#notsonews {
-    background-image: url('images/oldNews.png');
+#welcome h1 {
+    font-size: 4em;
+    font-weight: 900;
+    color: #fff; /* Change the text color to white */
+    -webkit-text-stroke: 2px #000; /* Add a black border to the text */
+    text-shadow: -3px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; /* Add a black shadow around the text */
+    font-family: 'Arial Black', sans-serif; /* Change the font to Arial Black */
+}
+
+#welcome h2 {
+    font-size: 2em;
+    font-weight: 500;
+    color: #fff; /* Change the text color to white */
+    -webkit-text-stroke: 1px #000; /* Add a black border to the text */
+    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; /* Add a black shadow around the text */
+    font-family: 'Arial Black', sans-serif; /* Change the font to Arial Black */
+}
+
+
+/* CSS for larger screens */
+#oldnews .container h2, #oldnews .container ul li {
+    text-align: left; /* Align the text to the left */
+    color: #000; /* Change the text color to black */
+    -webkit-text-stroke: 1px #fff; /* Add a white border to the text */
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; /* Add a white shadow around the text */
+    font-size: 3em; /* Make the text 3 times bigger */
+    font-weight: 1000; /* Make the text even thicker */
+    font-family: 'Times New Roman', serif; /* Change the font to Times New Roman */
 }
 
 /* Mission Section Specific Style */
@@ -97,6 +122,22 @@ body {
 .mission-section .mission-image {
     max-width: 50%;
     max-height: 500px; /* Adjust based on your preference */
+}
+
+.mission-content .paragraph-pair p {
+    margin-bottom: 0; /* No gap after each paragraph by default */
+}
+
+.mission-content .paragraph-pair p:last-child {
+    margin-bottom: 10px; /* Gap after the last paragraph in each pair */
+}
+
+.mission-content .paragraph-pair:last-child p:last-child {
+    margin-bottom: 0; /* No gap after the last paragraph in the last pair */
+}
+
+.mission-content .emphasis, .mission-content .highlight {
+    font-weight: bold; /* Make the text bold */
 }
 
 #choose .title-line {
@@ -173,6 +214,23 @@ body {
 }
 
 @media (max-width: 768px) {
+   #welcome .container h1, #welcome .container h2 {
+        font-size: 1em; /* Make the text smaller on mobile devices */
+    }
+
+    #welcome {
+        background-size: auto; /* Adjust the background image size on mobile devices */
+        background-position: center; /* Center the background image */
+    }
+
+    #oldnews .container h2, #oldnews .container ul li {
+        font-size: 1em; /* Make the text significantly smaller on mobile devices */
+    }
+
+    #oldnews {
+        background-size: auto; /* Adjust the background image size on mobile devices */
+        background-position: center; /* Center the background image */
+    }
     #choose .parallax__layer {
         flex: 1 0 100%; /* Make the images take up the full row on small screens */
         padding-bottom: 100%; /* Maintain aspect ratio */
