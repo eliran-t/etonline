@@ -23,18 +23,6 @@ body {
     padding-top: 70px; /* Adjust based on your navbar's actual height */
 }
 
-/* Parallax section with overlay */
-.parallax-section::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5); /* Overlay color */
-    z-index: -1; /* Ensure the overlay is behind the text */
-}
 
 /* Parallax sections */
 .parallax-section {
@@ -55,8 +43,8 @@ body {
 .parallax-section h1,
 .parallax-section h2,
 .parallax-section p {
-    color: #fff; /* Or any other color that suits your design */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    /* Increase font weight to make the text bolder */
+    font-weight: 700; /* 700 is bold, higher numbers are bolder */
 }
 
 
@@ -68,9 +56,60 @@ body {
     background-image: url('images/oldNews.png');
 }
 
+/* Mission Section Specific Style */
+.mission-section {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Space between text and image */
+    padding: 50px; /* Padding inside the section */
+    background: none; /* No background set here */
+    height: auto; /* Height adjusts to content */
+}
+
+/* Mission Header Style */
+.mission-section h2 {
+    grid-column: 1 / -1; /* Header spans all columns */
+    justify-self: center; /* Center the header horizontally */
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 10px; /* Adjust as necessary */
+    padding: 5px 0; /* Adjust as necessary */
+}
+
+/* Mission Content Style */
+.mission-section .mission-content {
+    flex: 1; /* Allows the text container to grow */
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-right: 20px; /* Space between text and image */
+}
+
+/* Mission Image Style */
+.mission-section .mission-image {
+    max-width: 50%;
+    max-height: 500px; /* Adjust based on your preference */
+}
+
+/* Style for responsiveness */
 @media (max-width: 768px) {
-    .parallax-section {
-        height: 300px; /* Smaller fixed height for mobile */
-        background-attachment: scroll;
+    .mission-section {
+        flex-direction: column;
+    }
+
+    .mission-section .mission-content,
+    .mission-section .mission-image {
+        max-width: 100%;
+        margin-right: 0;
+    }
+
+    .mission-section h2 {
+        position: static; /* Keep the header in the normal document flow */
     }
 }
+    
+

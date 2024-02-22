@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elleaptech - Empowering Progress</title>
+    <title>Elleaptech - Tech-A-Leap</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css" />
 </head>
@@ -20,7 +20,7 @@
                     <a class="nav-link" href="#welcome">Welcome</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#notsonews">NotSoNews | OldNews | Yesterday’s News</a>
+                    <a class="nav-link" href="#notsonews">OldNews</a>
                 </li>
                 <!-- Add additional nav items here -->
             </ul>
@@ -35,10 +35,10 @@
         </div>
     </section>
 
-    <!-- Section 2: NotSoNews | OldNews | Yesterday’s News -->
+    <!-- Section 2: OldNews  -->
     <section id="notsonews" class="parallax-section" style="background-image: url('images/oldNews.png');">
         <div class="container text-center">
-            <h2>NotSoNews | OldNews | Yesterday’s News</h2>
+            <h2>OldNews</h2>
             <ul class="list-unstyled">
                 <!-- Replace with actual bullet points -->
                 <li>Create custom ChatGPTs</li>
@@ -48,11 +48,32 @@
             </ul>
         </div>
     </section>
-    
+
+    <!-- Section 3: Mission -->
+    <section id="mission" class="mission-section">
+        <!-- Mission Header -->
+        <h2>Elleaptech’s Mission</h2>
+        <!-- Mission Content -->
+        <div class="mission-content">
+            <!-- Text content will be loaded from mission.html -->
+        </div>
+        <!-- Mission Image -->
+        <img src="images/logo.png" alt="Mission Image" class="mission-image">
+    </section>
+
+
     <!-- Scripts and additional sections go here -->
-    
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+        //   $("#load-service-modals").load("/public/service-modals.html");
+        $(".mission-content").load("/public/mission.html");        
+            //   $("#about-me-section").load("/public/about-me.html");
+        });
+      </script>
 </body>
 </html>
