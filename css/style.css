@@ -1,284 +1,300 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap'); /* Import a cool font */
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+/* ==========================================================================
+   General Styles
+   ========================================================================== */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"); /* Import a cool font */
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 
-body, html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: #f4f4f4;
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: #f4f4f4;
 }
 
+/* ==========================================================================
+   Navbar Styles
+   ========================================================================== */
+
 .navbar {
-    background-color: #007bff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    z-index: 1000;
-    position: fixed;
-    width: 100%; 
-    top: 0;     
+  background-color: #007bff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 /* Fix for overlapping content by navbar */
 body {
-    padding-top: 70px; /* Adjust based on your navbar's actual height */
+  padding-top: 70px; /* Adjust based on your navbar's actual height */
 }
+
+/* ==========================================================================
+   Parallax Section Styles
+   ========================================================================== */
 
 /* Parallax sections */
 .parallax-section {
-    position: relative; /* Needed to position the overlay correctly */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 450px; /* Fixed height */
-    color: white;
-    text-align: center;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  position: relative; /* Needed to position the overlay correctly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px; /* Fixed height */
+  color: white;
+  text-align: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Text Styles for Readability */
 .parallax-section h1,
 .parallax-section h2,
 .parallax-section p {
-    /* Increase font weight to make the text bolder */
-    font-weight: 700; /* 700 is bold, higher numbers are bolder */
+  /* Increase font weight to make the text bolder */
+  font-weight: 700; /* 700 is bold, higher numbers are bolder */
 }
 
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* ==========================================================================
+       General Styles
+       ========================================================================== */
+
+  /* ==========================================================================
+       Navbar Styles
+       ========================================================================== */
+
+  /* ==========================================================================
+       Parallax Section Styles
+       ========================================================================== */
+  .parallax-section {
+    height: 500px; /* Adjust height for mobile devices */
+    background-attachment: scroll; /* Change background attachment for mobile compatibility */
+  }
+
+  /* ==========================================================================
+       Welcome Section Styles
+       ========================================================================== */
+
+  #welcome .container h1,
+  #welcome .container h2 {
+    font-size: 2em; /* Adjust the font size as needed */
+  }
+
+  #welcome {
+    background-size: contain; /* Adjust the background image size on mobile devices */
+  }
+
+  /* ==========================================================================
+       Old News Section Styles
+       ========================================================================== */
+
+  #oldnews .container h2,
+  #oldnews .container ul li {
+    font-size: 1em; /* Make the text significantly smaller on mobile devices */
+  }
+
+  #oldnews {
+    background-size: auto; /* Adjust the background image size on mobile devices */
+    background-position: center; /* Center the background image */
+  }
+
+  /* ==========================================================================
+       Mission Section Styles
+       ========================================================================== */
+
+  #mission.parallax-section {
+    background-attachment: scroll; /* Change background attachment for mobile compatibility */
+    height: auto; /* Adjust height for mobile devices */
+    padding: 25px 10px; /* Reduce padding on mobile */
+  }
+
+  /* ==========================================================================
+       Choose Section Styles
+       ========================================================================== */
+
+  #choose .parallax__layer {
+    flex: 1 0 100%; /* Make the images take up the full row on small screens */
+    padding-bottom: 100%; /* Maintain aspect ratio */
+  }
+
+  /* ==========================================================================
+       AboutMe Section Styles
+       ========================================================================== */
+}
+
+/* ==========================================================================
+   Section 0 - Navbar Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Section 1 - Welcome Styles
+   ========================================================================== */
+
 #welcome {
-    background-size: cover; /* Adjust as needed */
+  background-size: cover; /* Adjust as needed */
 }
 
 #welcome h1 {
-    font-size: 4em;
-    font-weight: 900;
-    color: #fff; /* Change the text color to white */
-    -webkit-text-stroke: 2px #000; /* Add a black border to the text */
-    text-shadow: -3px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; /* Add a black shadow around the text */
-    font-family: 'Arial Black', sans-serif; /* Change the font to Arial Black */
+  font-size: 4em;
+  font-weight: 900;
+  color: #fff; /* Change the text color to white */
+  -webkit-text-stroke: 2px #000; /* Add a black border to the text */
+  text-shadow: -3px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; /* Add a black shadow around the text */
+  font-family: "Arial Black", sans-serif; /* Change the font to Arial Black */
 }
 
 #welcome h2 {
-    font-size: 2em;
-    font-weight: 500;
-    color: #fff; /* Change the text color to white */
-    -webkit-text-stroke: 1px #000; /* Add a black border to the text */
-    text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; /* Add a black shadow around the text */
-    font-family: 'Arial Black', sans-serif; /* Change the font to Arial Black */
+  font-size: 2em;
+  font-weight: 500;
+  color: #fff; /* Change the text color to white */
+  -webkit-text-stroke: 1px #000; /* Add a black border to the text */
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; /* Add a black shadow around the text */
+  font-family: "Arial Black", sans-serif; /* Change the font to Arial Black */
 }
 
+/* ==========================================================================
+   Section 2 - Old News Styles
+   ========================================================================== */
 
 /* CSS for larger screens */
-#oldnews .container h2, #oldnews .container ul li {
-    text-align: left; /* Align the text to the left */
-    color: #000; /* Change the text color to black */
-    -webkit-text-stroke: 1px #fff; /* Add a white border to the text */
-    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; /* Add a white shadow around the text */
-    font-size: 3em; /* Make the text 3 times bigger */
-    font-weight: 1000; /* Make the text even thicker */
-    font-family: 'Times New Roman', serif; /* Change the font to Times New Roman */
+#oldnews .container h2,
+#oldnews .container ul li {
+  text-align: left; /* Align the text to the left */
+  color: #000; /* Change the text color to black */
+  -webkit-text-stroke: 1px #fff; /* Add a white border to the text */
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; /* Add a white shadow around the text */
+  font-size: 3em; /* Make the text 3 times bigger */
+  font-weight: 1000; /* Make the text even thicker */
+  font-family: "Times New Roman", serif; /* Change the font to Times New Roman */
 }
 
-
-
-#choose .title-line {
-    background-color: gray; /* Darker line */
-    text-align: center;
-    padding: 30px 0; /* Twice as big */
-}
-
-#choose .title-line h2 {
-    margin: 0;
-    font-family: 'Bungee', cursive;
-    font-size: 3em;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-} 
-
-#choose .parallax {
-    display: flex; /* Align the images in a row */
-    flex-wrap: wrap; /* Allow the images to wrap onto the next line on small screens */
-}
-
-#choose .parallax__layer {
-    flex: 1 0 33.33%;
-    height: 0;
-    padding-bottom: 33.33%;
-    position: relative;
-}
-
-#choose .parallax__layer--back {
-    background: url('/public/images/c1.jpeg') no-repeat center center / cover;
-}
-
-#choose .parallax__layer--middle {
-    background: url('/public/images/c2.png') no-repeat center center / cover;
-}
-
-#choose .parallax__layer--front {
-    background: url('/public/images/c3.png') no-repeat center center / cover;
-}
-
-#choose .card-container {
-    position: relative;
-    z-index: 1;
-}
-
-#choose .parallax__layer .content {
-    position: absolute;
-    bottom: 0; /* Position the content at the bottom of the layer */
-    left: 0;
-    width: 100%; /* Full width of the layer */
-    padding: 20px; /* Some padding to prevent the content from touching the edges */
-    text-align: center;
-    color: #fff;
-}
-
-#choose .parallax__layer .cta {
-    background-color: rgba(128, 128, 128, 0.7);
-    color: white;
-    border: 2px solid #eee; /* Lighter border color */
-    padding: 20px 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* Animate border color */
-    display: inline-block;
-    margin-top: 20px;
-    font-size: 1.4em;
-    font-family: 'Bungee', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#choose .parallax__layer .cta:hover {
-    background-color: rgba(105, 105, 105, 0.7);
-    border-color: #ccc; /* Lighter border color on hover */
-}
-
-@media (max-width: 768px) {
-   #welcome .container h1, #welcome .container h2 {
-        font-size: 2em; /* Adjust the font size as needed */
-    }
-
-    #welcome {
-        background-size: contain; /* Adjust the background image size on mobile devices */
-
-    }
-
-    #oldnews .container h2, #oldnews .container ul li {
-        font-size: 1em; /* Make the text significantly smaller on mobile devices */
-    }
-
-    #oldnews {
-        background-size: auto; /* Adjust the background image size on mobile devices */
-        background-position: center; /* Center the background image */
-    }
-    #choose .parallax__layer {
-        flex: 1 0 100%; /* Make the images take up the full row on small screens */
-        padding-bottom: 100%; /* Maintain aspect ratio */
-    }
-}
-
-
-
-/* ------------------------------------------------------------------------- */
-/* ------------ Web - Section 0 - navbar - Start -------------------------- */   
-/* ... */
-/* ----------- Web - Section 0 - navbar - End ---------------------------- */    
-/* ------------------------------------------------------------------------- */
-
-@media (max-width: 768px) {
-/* ------------------------------------------------------------------------- */
-/* ------------ Mobile - Section 0 - navbar - Start ----------------------- */   
-/* ... */
-/* ----------- Mobile - Section 0 - navbar - End ------------------------- */    
-/* ------------------------------------------------------------------------- */
-}
-
-/* ------------------------------------------------------------------------- */
-/* ------------ Web - Section 1 - welcome - Start -------------------------- */   
-/* ... */
-/* ----------- Web - Section 1 - welcome - End ---------------------------- */    
-/* ------------------------------------------------------------------------- */
-
-@media (max-width: 768px) {
-/* ------------------------------------------------------------------------- */
-/* ------------ Mobile - Section 1 - welcome - Start ----------------------- */   
-/* ... */
-/* ----------- Mobile - Section 1 - welcome - End ------------------------- */    
-/* ------------------------------------------------------------------------- */
-}
-
-/* ------------------------------------------------------------------------- */
-/* ------------ Web - Section 2 - oldnews - Start ------------------------- */   
-/* ... */
-/* ----------- Web - Section 2 - oldnews - End --------------------------- */    
-/* ------------------------------------------------------------------------- */
-
-@media (max-width: 768px) {
-/* ------------------------------------------------------------------------- */
-/* ------------ Mobile - Section 2 - oldnews - Start ---------------------- */   
-/* ... */
-/* ----------- Mobile - Section 2 - oldnews - End ------------------------ */    
-/* ------------------------------------------------------------------------- */
-}
-    
-    
-/* ------------------------------------------------------------------- */
-/* ----------- Web - Section 3 - mission - Start --------------------- */    
+/* ==========================================================================
+   Section 3 - Mission Styles
+   ========================================================================== */
 
 /* Specific Parallax Effect for the Mission Section */
 #mission.parallax-section {
-    background-image: url('/public/images/logo.png'); /* Assuming this is the correct path */
-    background-size: cover; /* Cover the entire section */
-    background-attachment: fixed; /* Fix the background */
-    background-position: center center; /* Center the background image */
-    color: #000; /* Text color set to black for better visibility */
-    height: 450px; /* Adjust this value as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 50px 20px; /* Adjust padding to suit content */
-    margin: 0 auto; /* Center the section */
+  background-image: url("/public/images/logo.png"); /* Assuming this is the correct path */
+  background-size: cover; /* Cover the entire section */
+  background-attachment: fixed; /* Fix the background */
+  background-position: center center; /* Center the background image */
+  color: #000; /* Text color set to black for better visibility */
+  height: 450px; /* Adjust this value as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px; /* Adjust padding to suit content */
+  margin: 0 auto; /* Center the section */
 }
 
 /* Ensure that the header in the mission section is styled appropriately */
 #mission h2 {
-    color: #000; /* Make sure the header is visible against the background */
-    font-size: 2em; /* Adjust font size as needed */
-    text-shadow: none; /* Remove text shadow if it's not needed */
-    /* Add any additional styling for the header here */
+  color: #000; /* Make sure the header is visible against the background */
+  font-size: 2em; /* Adjust font size as needed */
+  text-shadow: none; /* Remove text shadow if it's not needed */
+  /* Add any additional styling for the header here */
 }
 
 /* Mission Content specific styles */
 #mission .mission-content {
-    /* Style the text content area */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for legibility */
-    color: #000; /* Text color */
-    padding: 20px; /* Padding inside the content area */
-    border-radius: 5px; /* Optional: round the corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow for depth */
-    /* Add any additional styling for the content area here */
+  /* Style the text content area */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for legibility */
+  color: #000; /* Text color */
+  padding: 20px; /* Padding inside the content area */
+  border-radius: 5px; /* Optional: round the corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow for depth */
+  /* Add any additional styling for the content area here */
 }
 
-/* ----------- Web - Section 3 - mission - End ---------------------- */    
-/* ------------------------------------------------------------------ */
+/* ==========================================================================
+   Section 4 - Choose Styles
+   ========================================================================== */
 
-/* ----------------------------------------------------------------- */
-/* ------------ Mobile - Section 3 - mission - Start --------------- */   
+#choose .title-line {
+  background-color: gray; /* Darker line */
+  text-align: center;
+  padding: 30px 0; /* Twice as big */
+}
 
-@media (max-width: 768px) {
+#choose .title-line h2 {
+  margin: 0;
+  font-family: "Bungee", cursive;
+  font-size: 3em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-    #mission.parallax-section {
-           background-attachment: scroll; /* Change background attachment for mobile compatibility */
-           height: auto; /* Adjust height for mobile devices */
-           padding: 25px 10px; /* Reduce padding on mobile */
-    }
-}   
-/* --------- Mobile - Section 3 - mission - End --------------------- */    
-/* ------------------------------------------------------------------ */
+#choose .parallax {
+  display: flex; /* Align the images in a row */
+  flex-wrap: wrap; /* Allow the images to wrap onto the next line on small screens */
+}
 
+#choose .parallax__layer {
+  flex: 1 0 33.33%;
+  height: 0;
+  padding-bottom: 33.33%;
+  position: relative;
+}
+
+#choose .parallax__layer--back {
+  background: url("/public/images/c1.jpeg") no-repeat center center / cover;
+}
+
+#choose .parallax__layer--middle {
+  background: url("/public/images/c2.png") no-repeat center center / cover;
+}
+
+#choose .parallax__layer--front {
+  background: url("/public/images/c3.png") no-repeat center center / cover;
+}
+
+#choose .card-container {
+  position: relative;
+  z-index: 1;
+}
+
+#choose .parallax__layer .content {
+  position: absolute;
+  bottom: 0; /* Position the content at the bottom of the layer */
+  left: 0;
+  width: 100%; /* Full width of the layer */
+  padding: 20px; /* Some padding to prevent the content from touching the edges */
+  text-align: center;
+  color: #fff;
+}
+
+#choose .parallax__layer .cta {
+  background-color: rgba(128, 128, 128, 0.7);
+  color: white;
+  border: 2px solid #eee; /* Lighter border color */
+  padding: 20px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Animate border color */
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-family: "Bungee", cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#choose .parallax__layer .cta:hover {
+  background-color: rgba(105, 105, 105, 0.7);
+  border-color: #ccc; /* Lighter border color on hover */
+}
+
+/* ==========================================================================
+   Section 5 - AboutMe Styles
+   ========================================================================== */
