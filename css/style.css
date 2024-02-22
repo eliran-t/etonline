@@ -84,60 +84,7 @@ body {
     font-family: 'Times New Roman', serif; /* Change the font to Times New Roman */
 }
 
-/* Mission Section Specific Style */
-.mission-section {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: row; /* Align items in a row */
-    align-items: center; /* Align items vertically */
-    justify-content: space-between; /* Space between text and image */
-    padding: 50px; /* Padding inside the section */
-    background: none; /* No background set here */
-    height: auto; /* Height adjusts to content */
-}
 
-/* Mission Header Style */
-.mission-section h2 {
-    grid-column: 1 / -1; /* Header spans all columns */
-    justify-self: center; /* Center the header horizontally */
-    position: absolute;
-    top: 0;
-    z-index: 3;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin-top: 10px; /* Adjust as necessary */
-    padding: 5px 0; /* Adjust as necessary */
-}
-
-/* Mission Content Style */
-.mission-section .mission-content {
-    flex: 1; /* Allows the text container to grow */
-    text-align: left;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    margin-right: 20px; /* Space between text and image */
-}
-
-/* Mission Image Style */
-.mission-section .mission-image {
-    max-width: 50%;
-    max-height: 500px; /* Adjust based on your preference */
-}
-
-.mission-content .paragraph-pair p {
-    margin-bottom: 0; /* No gap after each paragraph by default */
-}
-
-.mission-content .paragraph-pair p:last-child {
-    margin-bottom: 10px; /* Gap after the last paragraph in each pair */
-}
-
-.mission-content .paragraph-pair:last-child p:last-child {
-    margin-bottom: 0; /* No gap after the last paragraph in the last pair */
-}
-
-.mission-content .emphasis, .mission-content .highlight {
-    font-weight: bold; /* Make the text bold */
-}
 
 #choose .title-line {
     background-color: gray; /* Darker line */
@@ -213,9 +160,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .parallax-section {
-        background-attachment: scroll; /* Change from fixed to scroll */
-    }
    #welcome .container h1, #welcome .container h2 {
         font-size: 2em; /* Adjust the font size as needed */
     }
@@ -237,20 +181,104 @@ body {
         flex: 1 0 100%; /* Make the images take up the full row on small screens */
         padding-bottom: 100%; /* Maintain aspect ratio */
     }
-
-    .mission-section {
-        flex-direction: column;
-    }
-
-    .mission-section .mission-content,
-    .mission-section .mission-image {
-        max-width: 100%;
-        margin-right: 0;
-    }
-
-    .mission-section h2 {
-        position: static; /* Keep the header in the normal document flow */
-    }
 }
 
+
+
+/* ------------------------------------------------------------------------- */
+/* ------------ Web - Section 0 - navbar - Start -------------------------- */   
+/* ... */
+/* ----------- Web - Section 0 - navbar - End ---------------------------- */    
+/* ------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+/* ------------------------------------------------------------------------- */
+/* ------------ Mobile - Section 0 - navbar - Start ----------------------- */   
+/* ... */
+/* ----------- Mobile - Section 0 - navbar - End ------------------------- */    
+/* ------------------------------------------------------------------------- */
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------ Web - Section 1 - welcome - Start -------------------------- */   
+/* ... */
+/* ----------- Web - Section 1 - welcome - End ---------------------------- */    
+/* ------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+/* ------------------------------------------------------------------------- */
+/* ------------ Mobile - Section 1 - welcome - Start ----------------------- */   
+/* ... */
+/* ----------- Mobile - Section 1 - welcome - End ------------------------- */    
+/* ------------------------------------------------------------------------- */
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------ Web - Section 2 - oldnews - Start ------------------------- */   
+/* ... */
+/* ----------- Web - Section 2 - oldnews - End --------------------------- */    
+/* ------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+/* ------------------------------------------------------------------------- */
+/* ------------ Mobile - Section 2 - oldnews - Start ---------------------- */   
+/* ... */
+/* ----------- Mobile - Section 2 - oldnews - End ------------------------ */    
+/* ------------------------------------------------------------------------- */
+}
+    
+    
+/* ------------------------------------------------------------------- */
+/* ----------- Web - Section 3 - mission - Start --------------------- */    
+
+/* Specific Parallax Effect for the Mission Section */
+#mission.parallax-section {
+    background-image: url('/public/images/logo.png'); /* Assuming this is the correct path */
+    background-size: cover; /* Cover the entire section */
+    background-attachment: fixed; /* Fix the background */
+    background-position: center center; /* Center the background image */
+    color: #000; /* Text color set to black for better visibility */
+    height: 450px; /* Adjust this value as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px; /* Adjust padding to suit content */
+    margin: 0 auto; /* Center the section */
+}
+
+/* Ensure that the header in the mission section is styled appropriately */
+#mission h2 {
+    color: #000; /* Make sure the header is visible against the background */
+    font-size: 2em; /* Adjust font size as needed */
+    text-shadow: none; /* Remove text shadow if it's not needed */
+    /* Add any additional styling for the header here */
+}
+
+/* Mission Content specific styles */
+#mission .mission-content {
+    /* Style the text content area */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for legibility */
+    color: #000; /* Text color */
+    padding: 20px; /* Padding inside the content area */
+    border-radius: 5px; /* Optional: round the corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow for depth */
+    /* Add any additional styling for the content area here */
+}
+
+/* ----------- Web - Section 3 - mission - End ---------------------- */    
+/* ------------------------------------------------------------------ */
+
+/* ----------------------------------------------------------------- */
+/* ------------ Mobile - Section 3 - mission - Start --------------- */   
+
+@media (max-width: 768px) {
+
+    #mission.parallax-section {
+           background-attachment: scroll; /* Change background attachment for mobile compatibility */
+           height: auto; /* Adjust height for mobile devices */
+           padding: 25px 10px; /* Reduce padding on mobile */
+    }
+}   
+/* --------- Mobile - Section 3 - mission - End --------------------- */    
+/* ------------------------------------------------------------------ */
 
