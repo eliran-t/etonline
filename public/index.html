@@ -61,6 +61,58 @@
         <img src="images/logo.png" alt="Mission Image" class="mission-image">
     </section>
 
+    <!-- Section 4: Choose -->
+    <section id="choose">
+        <div class="title-line">
+            <h2>The Choice is YOURS</h2>
+        </div>
+        <div class="parallax">
+            <div class="parallax__layer parallax__layer--back">
+                <div class="content">
+                    <button class="cta" data-toggle="modal" data-target="#serviceModal1">Consultation</button>
+                </div>
+            </div>
+            <div class="parallax__layer parallax__layer--middle">
+                <div class="content">
+                    <button class="cta" data-toggle="modal" data-target="#serviceModal2">Coaching</button>
+                </div>
+            </div>
+            <div class="parallax__layer parallax__layer--front">
+                <div class="content">
+                    <button class="cta" data-toggle="modal" data-target="#serviceModal3">Creation</button>
+                </div>
+            </div>
+        </div>
+        <div id="load-service-modals"></div>
+    </section>
+
+    <!-- <section id="choose">
+        <div class="parallax">
+            <div class="parallax__layer parallax__layer--back"></div>
+            <div class="parallax__layer parallax__layer--middle"></div>
+            <div class="parallax__layer parallax__layer--front"></div>
+        </div>
+        <div class="card-container">
+            <h2>The Choice is in your hands</h2>
+            <div class="text-cards">
+                <div class="card">
+                    <h3>Consultation</h3>
+                    <p>Customized advice to leverage technology for your business.</p>
+                    <button onclick="location.href='#';">Learn more</button>
+                </div>
+                <div class="card">
+                    <h3>Coaching</h3>
+                    <p>One-on-one coaching to navigate the tech landscape.</p>
+                    <button onclick="location.href='#';">Learn more</button>
+                </div>
+                <div class="card">
+                    <h3>Creating</h3>
+                    <p>Innovative solutions tailored to your specific needs.</p>
+                    <button onclick="location.href='#';">Learn more</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
     <!-- Scripts and additional sections go here -->
 
@@ -70,7 +122,7 @@
 
     <script>
         $(document).ready(function () {
-        //   $("#load-service-modals").load("/public/service-modals.html");
+        $("#load-service-modals").load("/public/service-modals.html");
         $(".mission-content").load("/public/mission.html");        
             //   $("#about-me-section").load("/public/about-me.html");
         });
