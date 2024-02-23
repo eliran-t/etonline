@@ -132,6 +132,16 @@ body {
   /* ==========================================================================
        AboutMe Section Styles
        ========================================================================== */
+
+  #aboutme {
+    background-attachment: scroll; /* Disable parallax effect for better performance on mobile */
+    padding: 50px 0;
+  }
+
+  .about-me-content {
+    padding: 10px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  }
 }
 
 /* ==========================================================================
@@ -186,7 +196,7 @@ body {
 
 /* Specific Parallax Effect for the Mission Section */
 #mission.parallax-section {
-  background-image: url("/public/images/logo.png"); /* Assuming this is the correct path */
+  background-image: url("/public/images/hiai.png"); /* Assuming this is the correct path */
   background-size: cover; /* Cover the entire section */
   background-attachment: fixed; /* Fix the background */
   background-position: center center; /* Center the background image */
@@ -298,3 +308,40 @@ body {
 /* ==========================================================================
    Section 5 - AboutMe Styles
    ========================================================================== */
+
+/* About Me Section Styles */
+#aboutme {
+  background: url("/public/images/myAvatar.png") no-repeat center center fixed;
+  background-size: cover;
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+#aboutme .container h2 {
+  font-size: 2.5em; /* Adjust font size for the header */
+  color: #fff; /* White color for visibility */
+  text-align: left; /* Align header text to the left */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  margin-top: 0; /* Align header with the start of the content */
+}
+
+/* Text Styles for About Me content */
+.about-me-content {
+  position: relative;
+  z-index: 2; /* Ensures content is above the background */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.2));
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left; /* Align text to the left */
+  margin: 0 auto; /* Centering content */
+  max-width: 800px; /* Max width of the content container */
+}
+
+/* Style paragraphs for better readability */
+.about-me-content p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
