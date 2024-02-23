@@ -1,11 +1,10 @@
-# This file deploys to Firebase Hosting only upon release creation
-
 name: Deploy to Firebase Hosting on Release
 on:
   release:
-    types: [created] 
+    types: [created]
+
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,5 +12,5 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ETECHLEAP }}'
-          channelId: live  
-          projectId: etechleap 
+          channelId: live
+          projectId: etechleap
