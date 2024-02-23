@@ -19,8 +19,8 @@ html {
 
 /* Fix for overlapping content by navbar */
 body {
-    padding-top: 70px; /* Adjust based on your navbar's actual height */
-  }
+  padding-top: 70px; /* Adjust based on your navbar's actual height */
+}
 
 /* ==========================================================================
    Navbar Styles
@@ -34,8 +34,6 @@ body {
   width: 100%;
   top: 0;
 }
-
-
 
 /* ==========================================================================
    Parallax Section Styles
@@ -103,6 +101,13 @@ body {
    Section 2 - Old News Styles
    ========================================================================== */
 
+#oldnews {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 600px; /* Fixed height */
+}
+
 /* CSS for larger screens */
 #oldnews .container h2,
 #oldnews .container ul li {
@@ -121,17 +126,18 @@ body {
 
 /* Specific Parallax Effect for the Mission Section */
 #mission.parallax-section {
-  background-image: url("/public/images/hiai.png"); /* Assuming this is the correct path */
-  background-size: cover; /* Cover the entire section */
-  background-attachment: fixed; /* Fix the background */
-  background-position: center center; /* Center the background image */
-  color: #000; /* Text color set to black for better visibility */
-  height: 450px; /* Adjust this value as needed */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px; /* Adjust padding to suit content */
-  margin: 0 auto; /* Center the section */
+    background-image: url("/public/images/hiai.png");
+    background-size: contain; /* This ensures the entire image is visible */
+    background-attachment: fixed; /* Fix the background */
+    background-position: right center; /* Position the image to the right */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: #000; /* Text color set to black for better visibility */
+    height: auto; /* Adjust this value as needed */
+    display: flex;
+    justify-content: flex-start; /* Align content to the start of the flex container */
+    align-items: flex-start; /* Align items to the start of the cross axis */
+    padding: 50px 20px; /* Adjust padding to suit content */
+    margin: 0 auto; /* Center the section */
 }
 
 /* Ensure that the header in the mission section is styled appropriately */
@@ -271,91 +277,87 @@ body {
   line-height: 1.6;
 }
 
-
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
 @media (max-width: 768px) {
-    /* ==========================================================================
+  /* ==========================================================================
          General Styles
          ========================================================================== */
-  
-    /* ==========================================================================
+
+  /* ==========================================================================
          Navbar Styles
          ========================================================================== */
-  
-    /* ==========================================================================
+
+  /* ==========================================================================
          Parallax Section Styles
          ========================================================================== */
-    .parallax-section {
-      height: 500px; /* Adjust height for mobile devices */
-      background-attachment: scroll; /* Change background attachment for mobile compatibility */
-    }
-  
-    /* ==========================================================================
+  .parallax-section {
+    height: 500px; /* Adjust height for mobile devices */
+    background-attachment: scroll; /* Change background attachment for mobile compatibility */
+  }
+
+  /* ==========================================================================
          Welcome Section Styles
          ========================================================================== */
-      /* Mobile styles for welcome section */
-      #welcome h1 {
-          font-size: 5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                vw; /* Adjust font size for mobile */
-      }
-      
-      #welcome h2 {
-          font-size: 4vw; /* Adjust font size for mobile */
-      }
-      
-    /* ==========================================================================
+  /* Mobile styles for welcome section */
+  #welcome h1 {
+    font-size: 5 vw; /* Adjust font size for mobile */
+  }
+
+  #welcome h2 {
+    font-size: 4vw; /* Adjust font size for mobile */
+  }
+
+  /* ==========================================================================
          Old News Section Styles
          ========================================================================== */
-  
-  /* Mobile styles for OldNews section */
-  #oldnews .container h2,
-  #oldnews .container ul li {
-    font-size: 4vw; /* Adjust font size based on viewport width */
-    text-align: center; /* Center-align the text */
-    padding: 0 5%; /* Add padding on both sides */
-    margin: 5px 0; /* Add margin to top and bottom of list items */
+
+  #oldnews .container {
+    text-align: left;
   }
-  
-  #oldnews {
-    background-size: cover; /* Ensure background covers the section */
-    background-position: center; /* Center the background image */
+  #oldnews h2,
+  #oldnews ul {
+    color: #fff; /* Example to improve readability */
+    background-color: rgba(0, 0, 0, 0.5); /* Example to improve readability */
+    border-radius: 5px; /* Example to style the text background */
+    font-size: 0.6em; /* Make the text 3 times bigger */
+    -webkit-text-stroke: 0px #fff; /* Add a white border to the text */
+    text-shadow: -0px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; /* Add a white shadow around the text */
+   
   }
-  
-  
-    /* ==========================================================================
+
+  /* ==========================================================================
          Mission Section Styles
          ========================================================================== */
-  
-    #mission.parallax-section {
-      background-attachment: scroll; /* Change background attachment for mobile compatibility */
-      height: auto; /* Adjust height for mobile devices */
-      padding: 25px 10px; /* Reduce padding on mobile */
-    }
-  
-    /* ==========================================================================
+
+  #mission.parallax-section {
+    background-attachment: scroll; /* Change background attachment for mobile compatibility */
+    height: auto; /* Adjust height for mobile devices */
+    padding: 25px 10px; /* Reduce padding on mobile */
+  }
+
+  /* ==========================================================================
          Choose Section Styles
          ========================================================================== */
-  
-    #choose .parallax__layer {
-      flex: 1 0 100%; /* Make the images take up the full row on small screens */
-      padding-bottom: 100%; /* Maintain aspect ratio */
-    }
-  
-    /* ==========================================================================
+
+  #choose .parallax__layer {
+    flex: 1 0 100%; /* Make the images take up the full row on small screens */
+    padding-bottom: 100%; /* Maintain aspect ratio */
+  }
+
+  /* ==========================================================================
          AboutMe Section Styles
          ========================================================================== */
-  
-    #aboutme {
-      background-attachment: scroll; /* Disable parallax effect for better performance on mobile */
-      padding: 50px 0;
-    }
-  
-    .about-me-content {
-      padding: 10px;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-    }
+
+  #aboutme {
+    background-attachment: scroll; /* Disable parallax effect for better performance on mobile */
+    padding: 50px 0;
   }
-  
+
+  .about-me-content {
+    padding: 10px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  }
+}
