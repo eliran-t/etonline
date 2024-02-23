@@ -125,7 +125,7 @@ body {
    ========================================================================== */
 
 #mission.parallax-section {
-  background-image: url("/public/images/hiai.png");
+  background-image: url("images/hiai.png");
   background-size: 50%; /* Adjust this percentage to scale the size of the image */
   background-attachment: fixed; /* Maintain the parallax effect */
   background-position: right center; /* Keep the image on the right */
@@ -207,15 +207,15 @@ body {
 }
 
 #choose .parallax__layer--back {
-  background: url("/public/images/c1.jpeg") no-repeat center center / cover;
+  background: url("images/c1.jpeg") no-repeat center center / cover;
 }
 
 #choose .parallax__layer--middle {
-  background: url("/public/images/c2.png") no-repeat center center / cover;
+  background: url("images/c2.png") no-repeat center center / cover;
 }
 
 #choose .parallax__layer--front {
-  background: url("/public/images/c3.png") no-repeat center center / cover;
+  background: url("images/c3.png") no-repeat center center / cover;
 }
 
 #choose .card-container {
@@ -259,7 +259,7 @@ body {
 
 /* About Me Section Styles */
 #aboutme {
-  background: url("/public/images/myAvatar.png") no-repeat center center fixed;
+  background: url("images/myAvatar.png") no-repeat center center fixed;
   background-size: cover;
   padding: 100px 0;
   position: relative;
