@@ -1,114 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eTechLeap - Empowering Progress</title>
+    <title>Elleaptech - Tech-A-Leap</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Link to your custom styles, adjusted path -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css" />
 </head>
-
 <body>
-
+    <!-- Section 0: Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="navbar-header">
-            <!-- Adjusted path for the logo -->
-            <img src="/images/logo.jpeg" alt="Logo" style="max-height: 50px;">
-            <a class="navbar-brand" href="#home">eTechLeap</a>
-        </div>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link" href="#home">Home</a>
-            <a class="nav-item nav-link" href="#services">Services</a>
-            <a class="nav-item nav-link" href="#about">Vision</a>
-            <a class="nav-item nav-link" href="#contact">Connect</a>
+        <a class="navbar-brand" href="#welcome">
+            <img src="images/logo.jpeg" alt="Elleaptech Logo" style="max-height: 50px;">
+            Elleaptech
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#welcome">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#oldnews">OldNews</a>
+                </li>
+                <!-- Add additional nav items here -->
+            </ul>
         </div>
     </nav>
 
-    <section id="home" class="welcome-section container-fluid"> 
-      <div class="container text-center">
-          <h1>Tech A Leap: Bringing the Future Your Way</h1>
-          <p class="subheading">Making Next-Generation Innovation Accessible Today</p>
-      </div>
-     </section>
+    <!-- Section 1: Welcome -->
+    <section id="welcome" class="parallax-section" style="background-image: url('images/leap.png');">
+        <div class="container text-center">
+            <h1>It’s Time to “Tech” a Leap</h1>
+            <h2>Let’s bring tomorrow YOUR way</h2>
+        </div>
+    </section>
 
-    <div id="services" class="container">
-        <h2>Our Tailored Tech Services</h2>
-        <div class="row">
-            <div class="col-md-4 text-center">
-                <!-- Adjusted path for the image -->
-                <img src="/images/c1.jpeg" alt="Consulation" class="img-fluid">
-                <h3>Essential - Consulation</h3>
-                <p>Forge your path in the tech landscape with expert guidance.</p>
+    <!-- Section 2: OldNews  -->
+    <section id="oldnews" class="parallax-section" style="background-image: url('images/oldNews.png');">
+        <div class="container text-center">
+            <h2>OldNews:</h2>
+            <ul class="list-unstyled">
+                <li>+ Create custom ChatGPTs</li>
+                <li>+ Automate routine tasks</li>
+                <li>+ Enhance customer service with AI</li>
+                <li>+ Improve decision-making with data analytics</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 3: Mission -->
+    <section id="mission" class="parallax-section mission-section">      
+        <!-- Mission Content -->
+        <div class="mission-content">
+            <!-- Text content will be loaded from mission.html -->
+        </div>
+    </section>
+
+    <!-- Section 4: Choose -->
+    <section id="choose">
+        <div class="title-line">
+            <h2>The Choice is YOURS</h2>
+        </div>
+        <div class="parallax">
+            <div class="parallax__layer parallax__layer--back">
+                <div class="content">
+                    <button class="cta" data-toggle="modal" data-target="#serviceModal1">Consultation</button>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <!-- Adjusted path for the image -->
-                <img src="/images/c2.png" alt="Coaching" class="img-fluid">
-                <h3>Enhanced - Coaching</h3>
-                <p>Unlock technological prowess with personal mentorship.</p>
+            <div class="parallax__layer parallax__layer--middle">
+                <div class="content">
+                    <button class="cta" data-toggle="modal" data-target="#serviceModal2">Coaching</button>
+                </div>
             </div>
-            <div class="col-md-4 text-center">
-                <!-- Adjusted path for the image -->
-                <img src="/images/c3.png" alt="Creation" class="img-fluid">
-                <h3>Elite - Creation</h3>
-                <p>Bespoke solutions crafted at the nexus of creativity and tech.</p>
+            <div class="parallax__layer parallax__layer--front">
+                <div class="content">
+                    <button class="cta" data-toggle="modal" data-target="#serviceModal3">Creation</button>
+                </div>
             </div>
         </div>
-    </div>
+        <div id="load-service-modals"></div>
+    </section>
+
+    <!-- Section 5: About Me -->
+    <section id="aboutme" class="about-section">
+        <div class="container text-center">
+            <!-- About Me Content -->
+            <div class="about-me-content">
+                <!-- Content loaded from about-me.html -->
+            </div>
+        </div>
+    </section>
 
 
-    <div id="about" class="container">
-        <h2>The Mission</h2>
-        <p>eTechLeap, is my path of spreadin rhe automation and AI, crafting solutions that bring simplicity and efficiency to the forefront of every small business and non-techie's workspace. This endeavor isn't just about deploying cutting-edge technology; it's a reflection of my dedication to infuse every innovation with empathy, understanding, and a human touch. I champion the cause of transforming operations, not by overshadowing the human element, but by enhancing it, ensuring that behind every automated solution lies a foundation of genuine care and connectivity. My mission is to illuminate the potential within each workflow, celebrating the seamless integration of technology with the warmth of human spirit..</p>
-    </div>
+    <!-- Section 6: Contact Me -->
+    <section id="contactme" class="contact-section">
+        <div class="container text-center">
+            <!-- Contact Form Embed -->
+            <div class="contact-form">
+                <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
+            </div>
+        </div>
+    </section>
 
-    <div id="contact" class="container">
-        <h2>Get in Touch</h2>
-        <p>Ready for a tech leap? Reach out and let's innovate together.</p>
-        <form id="contact-form"  method="post">
-          <div class="row">
-              <div class="col-md-6">
-                  <div class="form-group">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" id="name" name="name" required>
-                  </div>
-                  <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" required>
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="form-group">
-                      <label for="message">Message</label>
-                      <textarea class="form-control" id="message" name="message" rows="2" required></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-          </div>
-      </form>
+    <!-- Scripts and additional sections go here -->
 
-
-    </div>    
-    </form>
-    </div>
-
-    <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    
-    <!-- Firebase Initialization -->
-    <script src="/scripts/firebase-config.js"></script>
 
-    <!-- Your App's JavaScript -->
-    <script src="/scripts/app.js"></script>
-    
-      
-        
+    <script>
+        $(document).ready(function () {
+        $("#load-service-modals").load("/public/service-modals.html");
+        $(".mission-content").load("/public/mission.html");        
+        $(".about-me-content").load("/public/about-me.html");
+        });
+      </script>
 </body>
-
 </html>
