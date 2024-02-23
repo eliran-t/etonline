@@ -124,20 +124,32 @@ body {
    Section 3 - Mission Styles
    ========================================================================== */
 
-/* Specific Parallax Effect for the Mission Section */
 #mission.parallax-section {
-    background-image: url("/public/images/hiai.png");
-    background-size: contain; /* This ensures the entire image is visible */
-    background-attachment: fixed; /* Fix the background */
-    background-position: right center; /* Position the image to the right */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    color: #000; /* Text color set to black for better visibility */
-    height: auto; /* Adjust this value as needed */
-    display: flex;
-    justify-content: flex-start; /* Align content to the start of the flex container */
-    align-items: flex-start; /* Align items to the start of the cross axis */
-    padding: 50px 20px; /* Adjust padding to suit content */
-    margin: 0 auto; /* Center the section */
+  background-image: url("/public/images/hiai.png");
+  background-size: 50%; /* Adjust this percentage to scale the size of the image */
+  background-attachment: fixed; /* Maintain the parallax effect */
+  background-position: right center; /* Keep the image on the right */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  color: #000; /* Text color set to black for better visibility */
+  height: auto; /* Height of the section as required */
+  display: flex;
+  align-items: center; /* Align items to the center of the cross axis */
+  padding: 50px 20px; /* Adjust padding to suit content */
+  margin: 0 auto; /* Center the section */
+  justify-content: flex-start; /* Align content to the start of the container */
+}
+
+#mission .mission-content {
+  width: auto; /* Let the content determine its own width */
+  max-width: none; /* Remove max-width restriction */
+  margin-left: 15%; /* Decrease this percentage to move the text to the left */
+  margin-right: 10%; /* Keep it away from the robot image, adjust as needed */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  white-space: nowrap; /* Add this line to prevent text from breaking */
+  font-family: 'Roboto', sans-serif; /* This is the base font for the body text */
+
 }
 
 /* Ensure that the header in the mission section is styled appropriately */
@@ -148,15 +160,20 @@ body {
   /* Add any additional styling for the header here */
 }
 
-/* Mission Content specific styles */
-#mission .mission-content {
-  /* Style the text content area */
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for legibility */
-  color: #000; /* Text color */
-  padding: 20px; /* Padding inside the content area */
-  border-radius: 5px; /* Optional: round the corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow for depth */
-  /* Add any additional styling for the content area here */
+/* Reset the font weight for all text within .mission-content */
+.mission-content p {
+  font-weight: normal;
+}
+
+/* Style for emphasis class */
+.mission-content .emphasis {
+  font-weight: bold;
+}
+
+/* Style for highlight class */
+.mission-content .highlight {
+  font-weight: bold;
+  color: #ff0000; /* Change this to the color you want */
 }
 
 /* ==========================================================================
@@ -325,7 +342,6 @@ body {
     font-size: 0.6em; /* Make the text 3 times bigger */
     -webkit-text-stroke: 0px #fff; /* Add a white border to the text */
     text-shadow: -0px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; /* Add a white shadow around the text */
-   
   }
 
   /* ==========================================================================
@@ -333,9 +349,14 @@ body {
          ========================================================================== */
 
   #mission.parallax-section {
-    background-attachment: scroll; /* Change background attachment for mobile compatibility */
+    background-image: url("/public/images/hiai.png"); /* Path to the mobile version of the image if it's different */
+    background-size: contain; /* Or use a specific pixel value if 'contain' doesn't give the desired result */
+    background-attachment: scroll; /* 'fixed' is not supported on all mobile browsers, use 'scroll' */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    /* Adjust other styles as needed */
     height: auto; /* Adjust height for mobile devices */
-    padding: 25px 10px; /* Reduce padding on mobile */
+    padding: 25px 10px;
   }
 
   /* ==========================================================================
