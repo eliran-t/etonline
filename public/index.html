@@ -1,106 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Elleaptech - Tech-A-Leap</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-</head>
-<body>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
     <!-- Section 0: Nav Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#welcome">
-            <img src="images/logo.jpeg" alt="Elleaptech Logo" style="max-height: 50px;">
-            Elleaptech
-        </a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#welcome">Welcome</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#oldnews">OldNews</a>
-                </li>
-                <!-- Add additional nav items here -->
-            </ul>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#welcome">
+        <img src="images/logo.png" alt="Elleaptech Logo" style="max-height: 50px" />
+        lleaptech
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#welcome">Welcome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#oldnews">CANDoIt</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mission">Mission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#choose">Choose</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutme">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactme">Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Section 1: Welcome -->
-    <section id="welcome" class="parallax-section" style="background-image: url('images/leap.png');">
-        <div class="container text-center">
-            <h1>It’s Time to “Tech” a Leap</h1>
-            <h2>Let’s bring tomorrow YOUR way</h2>
-        </div>
+    <section id="welcome" class="parallax-section">
+      <div class="container text-center">
+        <h1>It’s Time to “Tech” a Leap</h1>
+        <h2>Let's bring tomorrow YOUR way</h2>
+      </div>
     </section>
 
-    <!-- Section 2: OldNews  -->
-    <section id="oldnews" class="parallax-section" style="background-image: url('images/oldNews.png');">
+    <!-- Section 2: CAN Do It (a.k.a. - candi) -->
+    <section id="candoit">
+      <div class="title-line">
+        <h2></h2>
+      </div>
+      <div class="parallax-section">
         <div class="container text-center">
-            <h2>OldNews:</h2>
-            <ul class="list-unstyled">
-                <li>+ Create custom ChatGPTs</li>
-                <li>+ Automate routine tasks</li>
-                <li>+ Enhance customer service with AI</li>
-                <li>+ Improve decision-making with data analytics</li>
-            </ul>
+            <h2>What we CAN Do do for you?...</h2>
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" data-toggle="modal" data-target="#santaHelpersModal">
+                ✨ A.I as Your Business's little "🎅" Helpers ✨
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#appScriptsModal">
+                ✨ Streamline Workflows 📊 using Google eco-system ✨
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#smartOfficeModal">
+                ✨ Create 🎓 Smarter Office Environment ✨
+              </a>
+            </li>
+          </ul>
         </div>
+        <div id="load-candi-modals"></div>
+      </div>
+      <div class="title-line">
+        <h2>Candi can do many things.</h2>
+      </div>
     </section>
 
     <!-- Section 3: Mission -->
-    <section id="mission" class="parallax-section mission-section">      
-        <!-- Mission Content -->
-        <div class="mission-content">
-            <!-- Text content will be loaded from mission.html -->
-        </div>
+    <section id="mission" class="parallax-section mission-section">
+      <!-- Mission Content -->
+      <div class="mission-content">
+        <!-- Text content will be loaded from mission.html -->
+      </div>
     </section>
 
     <!-- Section 4: Choose -->
     <section id="choose">
-        <div class="title-line">
-            <h2>The Choice is YOURS</h2>
+      <div class="title-line">
+        <h2>The Choice is YOURS</h2>
+      </div>
+      <div class="parallax">
+        <div class="parallax__layer parallax__layer--back">
+          <div class="content">
+            <button class="cta" data-toggle="modal" data-target="#serviceModal1">Consultation</button>
+          </div>
         </div>
-        <div class="parallax">
-            <div class="parallax__layer parallax__layer--back">
-                <div class="content">
-                    <button class="cta" data-toggle="modal" data-target="#serviceModal1">Consultation</button>
-                </div>
-            </div>
-            <div class="parallax__layer parallax__layer--middle">
-                <div class="content">
-                    <button class="cta" data-toggle="modal" data-target="#serviceModal2">Coaching</button>
-                </div>
-            </div>
-            <div class="parallax__layer parallax__layer--front">
-                <div class="content">
-                    <button class="cta" data-toggle="modal" data-target="#serviceModal3">Creation</button>
-                </div>
-            </div>
+        <div class="parallax__layer parallax__layer--middle">
+          <div class="content">
+            <button class="cta" data-toggle="modal" data-target="#serviceModal2">Coaching</button>
+          </div>
         </div>
-        <div id="load-service-modals"></div>
+        <div class="parallax__layer parallax__layer--front">
+          <div class="content">
+            <button class="cta" data-toggle="modal" data-target="#serviceModal3">Creation</button>
+          </div>
+        </div>
+      </div>
+      <div id="load-service-modals"></div>
+      <div class="title-line">
+        <h2>Don't drop the ball.</h2>
+      </div>
     </section>
 
     <!-- Section 5: About Me -->
     <section id="aboutme" class="about-section">
-        <div class="container text-center">
-            <!-- About Me Congittent -->
-            <div class="about-me-content">
-                <!-- Content loaded from about-me.html -->
-            </div>
+      <div class="container text-center">
+        <!-- About Me Congittent -->
+        <div class="about-me-content">
+          <!-- Content loaded from about-me.html -->
         </div>
+      </div>
     </section>
 
     <!-- Section 6: Contact Me -->
     <section id="contactme" class="contact-section">
-        <div class="container text-center">
-            <!-- Contact Form Embed -->
-            <div class="contact-form">
-                <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
-            </div>
+      <div class="container text-center">
+        <!-- Contact Form Embed -->
+        <div class="contact-form">
+          <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
         </div>
+      </div>
     </section>
 
     <!-- Scripts and additional sections go here -->
@@ -110,11 +154,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        $(document).ready(function () {
+      $(document).ready(function () {
         $("#load-service-modals").load("service-modals.html");
-        $(".mission-content").load("mission.html");        
+        $("#load-candi-modals").load("candi-modals.html");
+        $(".mission-content").load("mission.html");
         $(".about-me-content").load("about-me.html");
-        });
-      </script>
-</body>
+      });
+    </script>
+  </body>
 </html>
