@@ -446,16 +446,22 @@ body {
          Mission Section Styles
          ========================================================================== */
 
-  #mission.parallax-section {
-    background-size: contain; /* Or use a specific pixel value if 'contain' doesn't give the desired result */
-    background-attachment: scroll; /* 'fixed' is not supported on all mobile browsers, use 'scroll' */
-    background-position: center center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    /* Adjust other styles as needed */
-    height: auto; /* Adjust height for mobile devices */
-    padding: 25px 10px;
-  }
-
+         #mission.parallax-section {
+          background-image: url("../images/hiai.png");
+          background-size: contain; /* Adjust size to fit within the container */
+          background-position: bottom center; /* Position at the bottom center on small screens */
+          background-repeat: no-repeat; /* Do not repeat the image */
+          padding-bottom: 200px; /* Add padding to make space for the image */
+        }
+      
+        #mission .mission-content {
+          text-align: center; /* Center the text */
+          padding: 50px 20px; /* Add padding on top and bottom, and less on the sides */
+          margin: 0 auto; /* Center the content container */
+          width: 100%; /* Allow the text container to take full width */
+          max-width: 500px; /* Maximum width of the text container */
+          box-sizing: border-box; /* Adjust box-sizing */
+        }
   /* ==========================================================================
          Choose Section Styles
          ========================================================================== */
