@@ -6,9 +6,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"); /* Import a cool font */
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 /* ==========================================================================
    General Styles
@@ -47,10 +47,14 @@ body {
 }
 
 /* Adjusting sections to prevent navbar overlap */
-#welcome, #candoit, #mission, #choose, #aboutme, #contactme {
+#welcome,
+#candoit,
+#mission,
+#choose,
+#aboutme,
+#contactme {
   scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
 }
-
 
 /* ==========================================================================
    Navbar Styles
@@ -362,7 +366,6 @@ body {
   line-height: 1.6;
 }
 
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -389,10 +392,10 @@ body {
          ========================================================================== */
 
   #welcome {
-  background-size: contain; /* Adjusts the background image to make sure it's fully visible */
-  background-position: center center; /* Centers the background image */
-  background-attachment: scroll; /* Changes the attachment to scroll, which is better supported on mobile */
-      }
+    background-size: contain; /* Adjusts the background image to make sure it's fully visible */
+    background-position: center center; /* Centers the background image */
+    background-attachment: scroll; /* Changes the attachment to scroll, which is better supported on mobile */
+  }
 
   #welcome h1 {
     font-size: 5 vw; /* Adjust font size for mobile */
@@ -403,32 +406,31 @@ body {
   }
 
   /* ==========================================================================
-         Candoit Section Styles
-         ========================================================================== */
+        Candoit Section Styles
+        ========================================================================== */
 
-         #candoit {
-          background-size: cover; /* Ensures the background covers the area */
-          background-attachment: scroll; /* Adjusts for mobile compatibility */
-          height: auto; /* Adjusts height to fit content on mobile */
-          padding: 20px 0; /* Adds padding to avoid content touching the edges */
-        }
-        
-        #candoit .title-line h2 {
-          font-size: 1.5em; /* Adjusts title font size for mobile */
-        }
-        
-        #candoit h2 {
-          font-size: 2em; /* Adjusts section header font size for mobile */
-        }
-        
-        #candoit ul li {
-          font-size: 1em; /* Adjusts list item font size for better readability on mobile */
-        }
-        
-        #candoit a {
-          font-size: 0.9em; /* Adjusts link font size for mobile */
-        }
-        
+  #candoit {
+    background-size: cover; /* Ensures the background covers the area */
+    background-attachment: scroll; /* Adjusts for mobile compatibility */
+    height: auto; /* Adjusts height to fit content on mobile */
+    padding: 20px 0; /* Adds padding to avoid content touching the edges */
+  }
+
+  #candoit .title-line h2 {
+    font-size: 1.5em; /* Adjusts title font size for mobile */
+  }
+
+  #candoit h2 {
+    font-size: 2em; /* Adjusts section header font size for mobile */
+  }
+
+  #candoit ul li {
+    font-size: 1em; /* Adjusts list item font size for better readability on mobile */
+  }
+
+  #candoit a {
+    font-size: 0.9em; /* Adjusts link font size for mobile */
+  }
 
   /* ==========================================================================
          Mission Section Styles
