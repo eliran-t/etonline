@@ -196,7 +196,6 @@ body {
   font-size: 4vw; /* Adjusts size based on 4% of the viewport's width */
 }
 
-
 #candoit a {
   font-size: 2vw; /* Adjusts size based on 2% of the viewport's width */
 }
@@ -208,8 +207,6 @@ body {
 #candoit .title-line h2 {
   font-size: 3vw; /* Adjusts size based on 3% of the viewport's width */
 }
-
-
 
 /* ==========================================================================
    Section 3 - Mission Styles
@@ -393,6 +390,17 @@ body {
          General Styles
          ========================================================================== */
 
+  .modal-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+
+  .modal {
+    overflow-y: auto;
+  }
   /* ==========================================================================
          Navbar Styles
          ========================================================================== */
@@ -409,14 +417,14 @@ body {
          Welcome Section Styles
          ========================================================================== */
 
-         #welcome {
-          background-size: cover; /* Ensures the image covers the section */
-          background-position: center; /* Centers the image */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh; /* Optional: Adjust the height to fit the screen */
-        }
+  #welcome {
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional: Adjust the height to fit the screen */
+  }
 
   #welcome h1 {
     font-size: 5 vw; /* Adjust font size for mobile */
@@ -429,39 +437,38 @@ body {
   /* ==========================================================================
         Candoit Section Styles
         ========================================================================== */
-        #candoit h2 {
-          font-size: 35px; /* Minimum font size */
-        }
+  #candoit h2 {
+    font-size: 35px; /* Minimum font size */
+  }
 
-
-        #candoit .title-line h2,
-        #candoit ul li,
-        #candoit a,
-        #candoit a:hover {
-          font-size: 20px; /* Minimum font size */
-        }
-      
+  #candoit .title-line h2,
+  #candoit ul li,
+  #candoit a,
+  #candoit a:hover {
+    font-size: 20px; /* Minimum font size */
+  }
 
   /* ==========================================================================
          Mission Section Styles
          ========================================================================== */
 
-         #mission.parallax-section {
-          background-image: url("../images/hiai.png");
-          background-size: contain; /* Adjust size to fit within the container */
-          background-position: bottom center; /* Position at the bottom center on small screens */
-          background-repeat: no-repeat; /* Do not repeat the image */
-          padding-bottom: 200px; /* Add padding to make space for the image */
-        }
-      
-        #mission .mission-content {
-          text-align: center; /* Center the text */
-          padding: 50px 20px; /* Add padding on top and bottom, and less on the sides */
-          margin: 0 auto; /* Center the content container */
-          width: 100%; /* Allow the text container to take full width */
-          max-width: 500px; /* Maximum width of the text container */
-          box-sizing: border-box; /* Adjust box-sizing */
-        }
+  #mission.parallax-section {
+    background-image: url("../images/hiai.png");
+    background-size: contain; /* Adjust size to fit within the container */
+    background-position: bottom center; /* Position at the bottom center on small screens */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    padding-bottom: 200px; /* Add padding to make space for the image */
+  }
+
+  #mission .mission-content {
+    text-align: center; /* Center the text */
+    padding: 50px 20px; /* Add padding on top and bottom, and less on the sides */
+    margin: 0 auto; /* Center the content container */
+    width: 100%; /* Allow the text container to take full width */
+    max-width: 500px; /* Maximum width of the text container */
+    box-sizing: border-box; /* Adjust box-sizing */
+  }
+
   /* ==========================================================================
          Choose Section Styles
          ========================================================================== */
