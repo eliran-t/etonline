@@ -263,6 +263,14 @@ body {
   color: #ff0000; /* Change this to the color you want */
 }
 
+.paragraph-pair p {
+  margin-bottom: 0;
+}
+
+.paragraph-pair p:last-child {
+  margin-bottom: 20px;
+}
+
 /* ==========================================================================
    Section 4 - Choose Styles
    ========================================================================== */
@@ -451,24 +459,28 @@ body {
   /* ==========================================================================
          Mission Section Styles
          ========================================================================== */
+#mission.parallax-section {
+  background-image: url("../images/hiai.png");
+  background-size: contain; /* Adjust size to fit within the container */
+  background-position: bottom center; /* Position at the bottom center on small screens */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  padding-bottom: 200px; /* Add padding to make space for the image */
+  background-attachment: scroll; /* Disable parallax effect for better performance on mobile */
+}
 
-  #mission.parallax-section {
-    background-image: url("../images/hiai.png");
-    background-size: contain; /* Adjust size to fit within the container */
-    background-position: bottom center; /* Position at the bottom center on small screens */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    padding-bottom: 200px; /* Add padding to make space for the image */
-  }
-
-  #mission .mission-content {
-    text-align: center; /* Center the text */
-    padding: 50px 20px; /* Add padding on top and bottom, and less on the sides */
-    margin: 0 auto; /* Center the content container */
-    width: 100%; /* Allow the text container to take full width */
-    max-width: 500px; /* Maximum width of the text container */
-    box-sizing: border-box; /* Adjust box-sizing */
-  }
-
+#mission .mission-content {
+  text-align: left; /* Align text to the left */
+  padding: 50px 10px; /* Add padding on top and bottom, and small padding on the sides */
+  margin: 0 0px; /* Add small margin on the sides */
+  width: auto; /* Let the text use the full available width */
+  max-width: none; /* Remove the maximum width restriction */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  word-wrap: break-word; /* Add this line to break long words */
+  overflow-wrap: break-word; /* Break words to prevent overflow */
+  overflow: hidden; /* Hide any content that goes beyond the boundaries */
+}
+        
+        
   /* ==========================================================================
          Choose Section Styles
          ========================================================================== */
