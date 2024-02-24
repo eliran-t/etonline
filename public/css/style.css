@@ -460,17 +460,20 @@ body {
          Mission Section Styles
          ========================================================================== */
 #mission.parallax-section {
-  background-image: url("../images/hiai.png");
+  background-image: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+    url("../images/hiai.png");
   background-size: contain; /* Adjust size to fit within the container */
   background-position: bottom center; /* Position at the bottom center on small screens */
   background-repeat: no-repeat; /* Do not repeat the image */
   padding-bottom: 200px; /* Add padding to make space for the image */
   background-attachment: scroll; /* Disable parallax effect for better performance on mobile */
+  position: relative; /* Add this to position the pseudo-element relative to this element */
 }
 
 #mission .mission-content {
   text-align: left; /* Align text to the left */
-  padding: 50px 10px; /* Add padding on top and bottom, and small padding on the sides */
+  padding: 5px 5px 100px; /* Top and bottom padding is 10px, left and right padding is 10px, bottom padding is 50px */
   margin: 0 0px; /* Add small margin on the sides */
   width: auto; /* Let the text use the full available width */
   max-width: none; /* Remove the maximum width restriction */
@@ -480,6 +483,7 @@ body {
   overflow: hidden; /* Hide any content that goes beyond the boundaries */
 }
         
+
         
   /* ==========================================================================
          Choose Section Styles
