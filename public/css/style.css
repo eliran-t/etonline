@@ -142,7 +142,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover; /* Add this line */
   height: 70vh;
   color: #ffffff;
 }
@@ -190,8 +190,26 @@ body {
 
 #candoit a:hover {
   color: #ffffff; /* Light coral color on hover for visibility and interaction feedback */
-  font-size: 1.4em; /* Increase font size for better readability */
 }
+
+#candoit h2 {
+  font-size: 4vw; /* Adjusts size based on 4% of the viewport's width */
+}
+
+
+#candoit a {
+  font-size: 2vw; /* Adjusts size based on 2% of the viewport's width */
+}
+
+#candoit a:hover {
+  font-size: 2.1vw; /* Adjusts size based on 2.2% of the viewport's width */
+}
+
+#candoit .title-line h2 {
+  font-size: 3vw; /* Adjusts size based on 3% of the viewport's width */
+}
+
+
 
 /* ==========================================================================
    Section 3 - Mission Styles
@@ -391,11 +409,14 @@ body {
          Welcome Section Styles
          ========================================================================== */
 
-  #welcome {
-    background-size: contain; /* Adjusts the background image to make sure it's fully visible */
-    background-position: center center; /* Centers the background image */
-    background-attachment: scroll; /* Changes the attachment to scroll, which is better supported on mobile */
-  }
+         #welcome {
+          background-size: cover; /* Ensures the image covers the section */
+          background-position: center; /* Centers the image */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh; /* Optional: Adjust the height to fit the screen */
+        }
 
   #welcome h1 {
     font-size: 5 vw; /* Adjust font size for mobile */
@@ -408,29 +429,18 @@ body {
   /* ==========================================================================
         Candoit Section Styles
         ========================================================================== */
+        #candoit h2 {
+          font-size: 35px; /* Minimum font size */
+        }
 
-  #candoit {
-    background-size: cover; /* Ensures the background covers the area */
-    background-attachment: scroll; /* Adjusts for mobile compatibility */
-    height: auto; /* Adjusts height to fit content on mobile */
-    padding: 20px 0; /* Adds padding to avoid content touching the edges */
-  }
 
-  #candoit .title-line h2 {
-    font-size: 1.5em; /* Adjusts title font size for mobile */
-  }
-
-  #candoit h2 {
-    font-size: 2em; /* Adjusts section header font size for mobile */
-  }
-
-  #candoit ul li {
-    font-size: 1em; /* Adjusts list item font size for better readability on mobile */
-  }
-
-  #candoit a {
-    font-size: 0.9em; /* Adjusts link font size for mobile */
-  }
+        #candoit .title-line h2,
+        #candoit ul li,
+        #candoit a,
+        #candoit a:hover {
+          font-size: 20px; /* Minimum font size */
+        }
+      
 
   /* ==========================================================================
          Mission Section Styles
