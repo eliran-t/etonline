@@ -46,6 +46,12 @@ body {
   text-align: left; /* Align title to the left */
 }
 
+/* Adjusting sections to prevent navbar overlap */
+#welcome, #candoit, #mission, #choose, #aboutme, #contactme {
+  scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
+}
+
+
 /* ==========================================================================
    Navbar Styles
    ========================================================================== */
@@ -180,7 +186,7 @@ body {
 
 #candoit a:hover {
   color: #ffffff; /* Light coral color on hover for visibility and interaction feedback */
-  font-size: 2em; /* Increase font size for better readability */
+  font-size: 1.4em; /* Increase font size for better readability */
 }
 
 /* ==========================================================================
@@ -323,7 +329,7 @@ body {
 #aboutme {
   background: url("../images/myAvatar.png") no-repeat center center fixed;
   background-size: cover;
-  padding: 100px 0;
+  padding: 100px 0; /* Adjust top and bottom padding as needed */
   position: relative;
   z-index: 1;
 }
@@ -347,7 +353,7 @@ body {
   border-radius: 5px;
   text-align: left; /* Align text to the left */
   margin: 0 auto; /* Centering content */
-  max-width: 800px; /* Max width of the content container */
+  max-width: 1200px; /* Adjusted max-width for wider content area */
 }
 
 /* Style paragraphs for better readability */
@@ -355,6 +361,7 @@ body {
   font-size: 1.1em;
   line-height: 1.6;
 }
+
 
 /* ==========================================================================
    Media Queries
