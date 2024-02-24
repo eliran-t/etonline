@@ -387,7 +387,13 @@ body {
   /* ==========================================================================
          Welcome Section Styles
          ========================================================================== */
-  /* Mobile styles for welcome section */
+
+  #welcome {
+  background-size: contain; /* Adjusts the background image to make sure it's fully visible */
+  background-position: center center; /* Centers the background image */
+  background-attachment: scroll; /* Changes the attachment to scroll, which is better supported on mobile */
+      }
+
   #welcome h1 {
     font-size: 5 vw; /* Adjust font size for mobile */
   }
@@ -397,21 +403,32 @@ body {
   }
 
   /* ==========================================================================
-         Old News Section Styles
+         Candoit Section Styles
          ========================================================================== */
 
-  #oldnews .container {
-    text-align: left;
-  }
-  #oldnews h2,
-  #oldnews ul {
-    color: #fff; /* Example to improve readability */
-    background-color: rgba(0, 0, 0, 0.5); /* Example to improve readability */
-    border-radius: 5px; /* Example to style the text background */
-    font-size: 0.6em; /* Make the text 3 times bigger */
-    -webkit-text-stroke: 0px #fff; /* Add a white border to the text */
-    text-shadow: -0px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; /* Add a white shadow around the text */
-  }
+         #candoit {
+          background-size: cover; /* Ensures the background covers the area */
+          background-attachment: scroll; /* Adjusts for mobile compatibility */
+          height: auto; /* Adjusts height to fit content on mobile */
+          padding: 20px 0; /* Adds padding to avoid content touching the edges */
+        }
+        
+        #candoit .title-line h2 {
+          font-size: 1.5em; /* Adjusts title font size for mobile */
+        }
+        
+        #candoit h2 {
+          font-size: 2em; /* Adjusts section header font size for mobile */
+        }
+        
+        #candoit ul li {
+          font-size: 1em; /* Adjusts list item font size for better readability on mobile */
+        }
+        
+        #candoit a {
+          font-size: 0.9em; /* Adjusts link font size for mobile */
+        }
+        
 
   /* ==========================================================================
          Mission Section Styles
