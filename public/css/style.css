@@ -13,13 +13,6 @@
 /* ==========================================================================
    General Styles
    ========================================================================== */
-#candoit .title-line h2 {
-  margin: 0;
-  font-family: "Fredericka the Great", cursive; /* Change the font here */
-  font-size: 2em;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 body,
 html {
@@ -134,79 +127,75 @@ body {
 /* ==========================================================================
    Section 2 - CanDoIT Styles
    ========================================================================== */
-#candoit {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-image: url("../images/section2-candi-bg.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; /* Add this line */
-  height: 70vh;
-  color: #ffffff;
-}
-#candoit .title-line {
-  background-color: rgb(24, 21, 21); /* Darker line */
-  text-align: center;
-  padding: 30px 0; /* Twice as big */
-  margin: 0; /* Ensure no margin for the title-line to keep it flush */
-}
-
-#candoit .title-line h2 {
-  margin: 0;
-  font-family: "Pacifico", cursive; /* Change the font here */
-  font-size: 2em;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-#candoit h2 {
-  font-family: "Pacifico", cursive; /* Change the font here */
-  font-size: 3em; /* Adjust based on your design */
-  color: #060606; /* Gold color for the header to stand out */
-  margin-bottom: 30px; /* Space below the header */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
-}
-
-#candoit ul {
-  list-style-type: none; /* Remove default list styling */
-  padding: 0;
-}
-
-#candoit ul li {
-  font-size: 1.5em; /* Adjust based on your design */
-  margin-bottom: 15px; /* Space between list items */
-}
-
-#candoit a {
-  color: #000000; /* Dark color for better contrast and readability */
-  font-family: "Pacifico", cursive; /* Change the font here */
-  font-size: 1.2em; /* Increase font size for better readability */
-  line-height: 1.5; /* Adjust line height for better readability */
-  text-decoration: none; /* No underline for a cleaner look */
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#candoit a:hover {
-  color: #ffffff; /* Light coral color on hover for visibility and interaction feedback */
-}
-
-#candoit h2 {
-  font-size: 4vw; /* Adjusts size based on 4% of the viewport's width */
-}
-
-#candoit a {
-  font-size: 2vw; /* Adjusts size based on 2% of the viewport's width */
-}
-
-#candoit a:hover {
-  font-size: 2.1vw; /* Adjusts size based on 2.2% of the viewport's width */
-}
-
-#candoit .title-line h2 {
-  font-size: 3vw; /* Adjusts size based on 3% of the viewport's width */
-}
+   #candoit {
+    /* padding-top: 200px; Remove or reduce this line */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
+    color: #ffffff;
+    overflow: hidden;
+  }
+  
+  #candoit .parallax-section {
+    background-image: url("../images/section2-candi-bg.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+  }
+  
+  #candoit .title-line,
+  #candoit h2 {
+    font-family: "Pacifico", cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  #candoit .title-line {
+    background-color: rgb(24, 21, 21);
+    text-align: center;
+    padding: 30px 0;
+    margin: 0;
+  }
+  
+  #candoit .title-line h2 {
+    margin: 0;
+    font-size: 3vw;
+    color: white;
+  }
+  
+  #candoit h2 {
+    font-size: 4vw;
+    color: #060606;
+    margin-bottom: 30px;
+  }
+  
+  #candoit ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #candoit ul li {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  #candoit a {
+    color: #000000;
+    font-family: "Pacifico", cursive;
+    font-size: 2vw;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #candoit a:hover {
+    color: #ffffff;
+    font-size: 2.1vw;
+  }
+  
 
 /* ==========================================================================
    Section 3 - Mission Styles

@@ -60,9 +60,7 @@
 
     <!-- Section 2: CAN Do It (a.k.a. - candi) -->
     <section id="candoit">
-      <div class="title-line">
-        <h2>  <br/></h2>
-      </div>
+
       <div class="parallax-section">
         <div class="container text-center">
             <h2>CAN Do many thIngs:</h2>
@@ -161,5 +159,12 @@
         $(".about-me-content").load("about-me.html");
       });
     </script>
+
+<script>
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    $('#welcome, #candoit').css('background-position', 'center ' + (-scroll/5) + 'px');
+  });
+</script>
   </body>
 </html>
