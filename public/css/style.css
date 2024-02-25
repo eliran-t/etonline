@@ -344,38 +344,6 @@ body {
   border-color: #ccc; /* Lighter border color on hover */
 }
 
-.modal-content {
-  background: none;
-}
-
-.modal-dialog {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  display: flex;
-  align-items: flex-start; /* Aligns items at the top */
-  justify-content: center; /* Centers items horizontally */
-  padding: 20px; /* Adds some space around the content */
-}
-
-.overlay-content {
-  position: absolute;
-  top: 0; /* Adjust this value as needed */
-  left: 50%;
-  transform: translate(-50%, 0);
-}
 
 /* ==========================================================================
    Section 5 - AboutMe Styles
