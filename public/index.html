@@ -254,6 +254,16 @@
     }
   });
 </script>
+<script>
+  // Get all close buttons
+  var closeButtons = document.getElementsByClassName('close');
 
+  // Add event listeners to close buttons
+  for (var i = 0; i < closeButtons.length; i++) {
+    closeButtons[i].addEventListener('click', function() {
+      document.body.style.overflow = ''; // Unlock scroll when modal is closed
+    });
+  }
+</script>
   </body>
 </html>
