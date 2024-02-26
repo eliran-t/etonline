@@ -396,6 +396,146 @@ body {
   border-color: #ccc; /* Lighter border color on hover */
 }
 
+.service-overlay {
+  position: absolute;
+  top: 50%;  /* Adjust as necessary */
+  left: 50%; /* Adjust as necessary */
+  transform: translate(-50%, -50%);
+  color: #FFF; /* Text color */
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2; /* Ensure it's above the background image */
+}
+
+.modal-full {
+  min-width: 100%;
+  margin: 0;
+}
+
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.service-container {
+  position: relative;
+}
+
+.service-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Add additional styling for the button here */
+}
+
+/* Custom styles for full-screen modals */
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, 100%);
+}
+
+.modal.show .modal-dialog {
+  transform: translate(0, 0);
+}
+
+#choose .parallax {
+  position: relative;
+}
+
+#choose .parallax__layer {
+  position: relative;
+}
+
+#choose .service-container {
+  position: relative;
+}
+
+#choose .service-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#choose .modal.fade .modal-dialog {
+  transform: translate(0);
+  transition: transform 0.3s ease-out;
+}
+
+#choose .modal.show .modal-dialog {
+  transform: translate(0, 0);
+}
+
+#choose .modal-dialog.modal-full {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+}
+
+#choose .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  border-radius: 0;
+}
+
+#choose .modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 11; /* Ensure the close button is above the overlay */
+}
+
+#choose .modal-body {
+  padding-top: 60px; /* Provide space for the header */
+}
+
+/* Ensure modal background covers the specific image area only */
+#choose #consultationModal,
+#choose #coachingModal,
+#choose #creationModal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Hide modals by default */
+#choose .modal {
+  display: none;
+}
+
+/* Custom styles for the close button */
+#choose .close {
+  font-size: 2rem;
+  color: #fff;
+  opacity: 1;
+}
+
+/* Additional styles if you want to animate the modal appearance */
+#choose .modal.fade .modal-dialog {
+  transform: translateY(-100%);
+}
+
+#choose .modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+
 /* ==========================================================================
       Section 5 - AboutMe Styles
       ========================================================================== */

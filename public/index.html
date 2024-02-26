@@ -105,33 +105,76 @@
       </div>
     </section>
 
-    <!-- Section 4: Choose -->
-    <section id="choose">
-      <div class="title-line">
-        <h2>Choose your way</h2>
-      </div>
-      <div class="parallax">
-        <div class="parallax__layer parallax__layer--back">
-          <div class="content">
-            <button class="cta" data-toggle="modal" data-target="#serviceModal1">Consultation</button>
+<!-- Section 4: Choose -->
+<!-- Section 4: Choose -->
+<section id="choose">
+  <div class="title-line">
+    <h2>Choose your way</h2>
+  </div>
+  <div class="parallax">
+    <!-- Consultation -->
+    <div class="parallax__layer parallax__layer--back service-container" id="consultation-container">
+      <button class="service-btn" data-toggle="modal" data-target="#consultationModal">Consultation</button>
+      <!-- Modal -->
+      <div class="modal fade" id="consultationModal" tabindex="-1" role="dialog" aria-labelledby="consultationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="consultationModalLabel">Consultation: Your Technology Roadmap</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Include the rest of the text here -->
+            </div>
           </div>
         </div>
-        <div class="parallax__layer parallax__layer--middle">
-          <div class="content">
-            <button class="cta" data-toggle="modal" data-target="#serviceModal2">Coaching</button>
-          </div>
-        </div>
-        <div class="parallax__layer parallax__layer--front">
-          <div class="content">
-            <button class="cta" data-toggle="modal" data-target="#serviceModal3">Creation</button>
+      </div>
+    </div>
+    <!-- Coaching -->
+    <div class="parallax__layer parallax__layer--middle service-container" id="coaching-container">
+      <button class="service-btn" data-toggle="modal" data-target="#coachingModal">Coaching</button>
+      <!-- Modal -->
+      <div class="modal fade" id="coachingModal" tabindex="-1" role="dialog" aria-labelledby="coachingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="coachingModalLabel">Coaching: Elevate Yourself AND Your Business</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Include the rest of the text here -->
+            </div>
           </div>
         </div>
       </div>
-      <div id="load-service-modals"></div>
-      <div class="title-line">
-        <!-- <h2>Don't drop the ball.</h2> -->
+    </div>
+    <!-- Creation -->
+    <div class="parallax__layer parallax__layer--front service-container" id="creation-container">
+      <button class="service-btn" data-toggle="modal" data-target="#creationModal">Creation</button>
+      <!-- Modal -->
+      <div class="modal fade" id="creationModal" tabindex="-1" role="dialog" aria-labelledby="creationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="creationModalLabel">Creation: Custom Solutions Built for You</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Include the rest of the text here -->
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <!-- Section 5: About Me -->
     <section id="aboutme" class="about-section">
@@ -161,7 +204,7 @@
 
     <script>
       $(document).ready(function () {
-        $("#load-service-modals").load("service-modals.html");
+        // $("#load-service-modals").load("service-modals.html");
         $("#load-candi-modals").load("candi-modals.html");
         $(".mission-content").load("mission.html");
         $(".about-me-content").load("about-me.html");
@@ -174,5 +217,43 @@
     $('#welcome, #candoit').css('background-position', 'center ' + (-scroll/5) + 'px');
   });
 </script>
+
+<script>
+  // Get all service buttons and modals
+  var serviceButtons = document.getElementsByClassName('service-btn');
+  var modals = document.getElementsByClassName('modal');
+
+  // Function to open the modal
+  function openModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Lock scroll when modal is open
+  }
+
+  // Function to close the modal
+  function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // Unlock scroll when modal is closed
+  }
+
+  // Add event listeners to buttons
+  for (var i = 0; i < serviceButtons.length; i++) {
+    serviceButtons[i].addEventListener('click', function() {
+      var targetModal = this.getAttribute('data-target').substring(1); // Remove '#' from id
+      openModal(targetModal);
+    });
+  }
+
+  // Add event listeners to modal close elements and outside modal click
+  window.addEventListener('click', function(event) {
+    for (var i = 0; i < modals.length; i++) {
+      if (event.target == modals[i]) {
+        closeModal(modals[i].id);
+      }
+    }
+  });
+</script>
+
   </body>
 </html>
