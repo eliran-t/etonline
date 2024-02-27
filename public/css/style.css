@@ -248,19 +248,28 @@ body {
   font-weight: normal;
 }
 
+.mission-content h3 {
+  font-size: 1.3em; /* Adjust this value to your preference */
+}
+
 /* Styled blockquote */
 .styled-quote {
-  margin: 1.5em 0;
-  padding-left: 10px;
+  margin: 1.em 0;
+  padding-left: -10px;
   position: relative;
   font-style: italic;
+  font-size: 2em;
+  margin-left: 0; /* Adjust this value to move the elements further to the left */
 }
 
+/* This rule applies to all paragraph elements within elements with the class 'styled-quote' */
 .styled-quote p {
-  margin: 0;
+  margin: 0; /* Removes the default margin from the paragraph */
   display: block; /* Ensures the text follows the quote icon on the same line */
+  margin-left: 0.4em; /* Adjusts the space between the quote icon and the text */
 }
 
+/* This rule adds a special style to the first paragraph of the styled quote */
 .styled-quote p:first-child::before {
   content: "\201C"; /* Unicode for left double quotation mark */
   font-size: 4em;
@@ -279,21 +288,20 @@ body {
   line-height: 0.1em; /* Align with the text line */
   vertical-align: -0.4em; /* Adjust alignment as needed */
   position: absolute;
-  right: -0.5em; /* Position to the right of the text */
+  right: -0.3em; /* Position to the right of the text */
   color: #c22727; /* Match the color of the opening quote */
+
 }
 
+/* This rule applies to the last paragraph element within elements with the class 'styled-quote' */
 .styled-quote p:last-child {
   display: inline-block;
   margin-left: 0.4em; /* Adjust space between the two quote lines */
 }
 
-/* Adjust footer style if needed */
-.styled-quote footer {
-  text-align: right;
-  display: block;
-  margin-top: 0.5em;
-  font-style: normal;
+/* Select all paragraphs except the first one in .styled-quote */
+.styled-quote p:not(:first-child) {
+  margin-left: 1.6em; /* Adjust this value to move the paragraphs to the right */
 }
 
 /* Styled list */
@@ -304,7 +312,7 @@ body {
 }
 
 .styled-list li {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
   font-weight: normal;
 }
 
@@ -319,6 +327,11 @@ body {
   position: relative;
 }
 
+.styled-quote {
+  margin-bottom: 2em; /* Adjust this value to add more space under the .styled-quote */
+  margin-left: -1em; /* Adjust this value to move the .styled-quote to the left */
+}
+
 /* ==========================================================================
       Section 4 - Choose Styles
       ========================================================================== */
@@ -327,11 +340,12 @@ body {
   background-color: gray; /* Darker line */
   text-align: center;
   padding: 30px 0; /* Twice as big */
+  font-family: "Arial", Arial, sans-serif;
+
 }
 
 #choose .title-line h2 {
   margin: 0;
-  font-family: "Bungee", cursive;
   font-size: 3em;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -433,10 +447,20 @@ body {
 
 .service-btn {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
-  /* Add additional styling for the button here */
+  transform: translateX(-50%);
+  background-color: rgba(128, 128, 128, 0.7);
+  color: white;
+  border: 2px solid #eee; /* Lighter border color */
+  padding: 20px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Animate border color */
+  display: inline-block;
+  font-size: 1.4em;
+  font-family: "Arial", Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Custom styles for full-screen modals */
@@ -522,7 +546,7 @@ body {
 /* Custom styles for the close button */
 #choose .close {
   font-size: 2rem;
-  color: #fff;
+  color: black;
   opacity: 1;
 }
 
