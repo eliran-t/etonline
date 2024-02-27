@@ -586,7 +586,7 @@ body {
 .about-me-content {
   position: relative;
   z-index: 2; /* Ensures content is above the background */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.4));
   color: #fff;
   padding: 20px;
   border-radius: 5px;
@@ -597,8 +597,10 @@ body {
 
 /* Style paragraphs for better readability */
 .about-me-content p {
-  font-size: 1.1em;
+  font-size: 1.5em;
   line-height: 1.6;
+  font-weight:400;
+
 }
 
 
