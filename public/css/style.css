@@ -316,7 +316,7 @@ body {
   font-weight: normal;
 }
 
-.styled-list li::before {
+.styled-list h3::before {
   content: "";
   display: inline-block;
   height: 10px;
@@ -601,6 +601,7 @@ body {
   line-height: 1.6;
 }
 
+
 /* ==========================================================================
       Media Queries
       ========================================================================== */
@@ -683,7 +684,7 @@ body {
 
   #mission .mission-content {
     text-align: left; /* Align text to the left */
-    padding: 5px 2px 100px; /* Top and bottom padding is 10px, left and right padding is 10px, bottom padding is 50px */
+    padding: 5px 5px 100px; /* Top and bottom padding is 5px, left and right padding is 10px, bottom padding is 50px */
     margin: 0 0px; /* Add small margin on the sides */
     width: auto; /* Let the text use the full available width */
     max-width: none; /* Remove the maximum width restriction */
@@ -696,6 +697,39 @@ body {
   #mission .mission-content {
     font-size: 12px; /* Adjust as needed */
   }
+
+  .styled-quote {
+    margin-bottom: 1em; /* Adjust this value to add more space under the .styled-quote */
+    margin-left: 0.1em; /* Adjust this value to move the .styled-quote to the left */
+    font-size: 1.7em; /* Adjust this value to make the font smaller */
+
+  }
+
+  /* This rule adds a special style to the first paragraph of the styled quote */
+.styled-quote p:first-child::before {
+  content: "\201C"; /* Unicode for left double quotation mark */
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+  position: relative;
+  left: -0.1em;
+  top: -0.1em; /* Adjust top position to align with the text */
+  color: #c22727;
+}
+
+/* Add closing quote */
+.styled-quote p:last-child::after {
+  content: "\201D"; /* Unicode for right double quotation mark */
+  font-size: 3em; /* Adjust to match the opening quote size */
+  line-height: 0.1em; /* Align with the text line */
+  vertical-align: -0.4em; /* Adjust alignment as needed */
+  position: absolute;
+  right: 0em; /* Position to the right of the text */
+  color: #c22727; /* Match the color of the opening quote */
+
+}
+
+  
 
   /* ==========================================================================
       Choose Section Styles
