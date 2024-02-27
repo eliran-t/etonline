@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elleaptech - Tech-A-Leap</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Section 0: Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand" href="#welcome">
+        <img src="images/logo.png" alt="Elleaptech Logo" style="max-height: 50px" />
+        lleaptech
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#welcome">Welcome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#oldnews">CANDoIt</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mission">Mission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#choose">Choose</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutme">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactme">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Section 1: Welcome -->
+    <section id="welcome" class="parallax-section">
+      <div class="container text-center">
+        <h1>It’s Time to<wbr /> “Tech” a Leap</h1>
+        <h2>Let's bring tomorrow <wbr />YOUR way</h2>
+      </div>
+    </section>
+
+    <!-- Section 2: CAN Do It (a.k.a. - candi) -->
+    <section id="candoit">
+      <div class="title-line">
+        <h2></h2>
+        <!--  Candi can do IT. -->
+      </div>
+      <div class="parallax-section">
+        <div class="container text-center">
+          <h2>CAN Do many things:</h2>
+          <h3>(click below to learn more)</h3>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#" data-toggle="modal" data-target="#customeAIbotsModal">
+                ✨ Make A.I do what you don't want to ✨
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#appScriptsModal">
+                ✨ Streamline Workflows in Google eco-system ✨
+              </a>
+            </li>
+            <li>
+              <a href="#" data-toggle="modal" data-target="#smartOfficeModal">
+                ✨ Create Smarter Office Environment ✨
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="load-candi-modals"></div>
+      </div>
+      <div class="title-line">
+        <h2></h2>
+        <!--  Candi can do IT. -->
+      </div>
+    </section>
+
+    <!-- Section 3: Mission -->
+    <section id="mission" class="parallax-section mission-section">
+      <!-- Mission Content -->
+      <div class="mission-content">
+        <!-- Text content will be loaded from mission.html -->
+      </div>
+    </section>
+
+    <!-- Section 4: Choose -->
+    <section id="choose">
+      <div class="parallax">
+        <!-- Consultation -->
+        <div class="parallax__layer parallax__layer--back service-container" id="consultation-container">
+          <button class="service-btn" data-toggle="modal" data-target="#consultationModal">Consultation</button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="consultationModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="consultationModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-full" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="consultationModalLabel">Consultation: <br />Your Technology Roadmap</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p class="service-info-header"><strong>How We Start:</strong></p>
+                  <p class="service-info-p1">Let's analyze your current systems together</p>
+                  <p class="service-info-p2">to pinpoint where technology can make the biggest impact.</p>
+
+                  <p class="service-info-header"><strong>Your Choice:</strong></p>
+                  <p class="service-info-p1">Tell me what your priorities are: streamlining operations,</p>
+                  <p class="service-info-p2">boosting your online presence, or something else entirely.</p>
+
+                  <p class="service-info-header"><strong>Your Product:</strong></p>
+                  <p class="service-info-p1">You'll leave with a clear, actionable plan tailored</p>
+                  <p class="service-info-p2">to your business's specific technology needs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Coaching -->
+        <div class="parallax__layer parallax__layer--middle service-container" id="coaching-container">
+          <button class="service-btn" data-toggle="modal" data-target="#coachingModal">Coaching</button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="coachingModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="coachingModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-full" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="coachingModalLabel">Coaching: Elevate Yourself AND Your Business</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p class="service-info-header"><strong>How We Start:</strong></p>
+                  <p class="service-info-p1">We'll discuss your goals and pinpoint specific</p>
+                  <p class="service-info-p2">tech skills that will elevate you & your business.</p>
+
+                  <p class="service-info-header"><strong>Your Choice:</strong></p>
+                  <p class="service-info-p1">Data analytics, digital marketing, AI integration –</p>
+                  <p class="service-info-p2">we'll focus on the areas that matter most to you.</p>
+
+                  <p class="service-info-header"><strong>Your Product:</strong></p>
+                  <p class="service-info-p1">Gain hands-on skills and the confidence to make</p>
+                  <p class="service-info-p2">informed technology decisions for your business.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Creation -->
+        <div class="parallax__layer parallax__layer--front service-container" id="creation-container">
+          <button class="service-btn" data-toggle="modal" data-target="#creationModal">Creation</button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="creationModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="creationModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-full" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="creationModalLabel">Creation: Custom Solutions Built for You</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p class="service-info-header"><strong>How We Start:</strong></p>
+                  <p class="service-info-p1">We'll collaborate on a requirements document</p>
+                  <p class="service-info-p2">that captures your specific needs and vision in detail.</p>
+
+                  <p class="service-info-header"><strong>Your Choice:</strong></p>
+                  <p class="service-info-p1">I'll present several options, giving you the power</p>
+                  <p class="service-info-p2">to choose the direction that fits your business best.</p>
+
+                  <p class="service-info-header"><strong>Your Product:</strong></p>
+                  <p class="service-info-p1">A tailored solution that seamlessly integrates</p>
+                  <p class="service-info-p2">into how you operate, solving your unique challenges.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="title-line">
+        <h2>Choose your way</h2>
+      </div>
+    </section>
+
+    <!-- Section 5: About Me -->
+    <section id="aboutme" class="about-section">
+      <div class="container text-center">
+        <!-- About Me Congittent -->
+        <div class="about-me-content">
+          <!-- Content loaded from about-me.html -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Contact Me -->
+    <section id="contactme" class="contact-section">
+      <div class="container text-center">
+        <!-- Contact Form Embed -->
+        <div class="contact-form">
+          <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts and additional sections go here -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // $("#load-service-modals").load("service-modals.html");
+        $("#load-candi-modals").load("candi-modals.html");
+        $(".mission-content").load("mission.html");
+        $(".about-me-content").load("about-me.html");
+      });
+    </script>
+
+    <script>
+      $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        $("#welcome, #candoit").css("background-position", "center " + -scroll / 5 + "px");
+      });
+    </script>
+
+    <script>
+      // Get all service buttons and modals
+      var serviceButtons = document.getElementsByClassName("service-btn");
+      var modals = document.getElementsByClassName("modal");
+
+      // Function to open the modal
+      function openModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Lock scroll when modal is open
+      }
+
+      // Function to close the modal
+      function closeModal(modalId) {
+        var modal = document.getElementById(modalId);
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Unlock scroll when modal is closed
+      }
+
+      // Add event listeners to buttons
+      for (var i = 0; i < serviceButtons.length; i++) {
+        serviceButtons[i].addEventListener("click", function () {
+          var targetModal = this.getAttribute("data-target").substring(1); // Remove '#' from id
+          openModal(targetModal);
+        });
+      }
+
+      // Add event listeners to modal close elements and outside modal click
+      window.addEventListener("click", function (event) {
+        for (var i = 0; i < modals.length; i++) {
+          if (event.target == modals[i]) {
+            closeModal(modals[i].id);
+          }
+        }
+      });
+    </script>
+    <script>
+      // Get all close buttons
+      var closeButtons = document.getElementsByClassName("close");
+
+      // Add event listeners to close buttons
+      for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener("click", function () {
+          document.body.style.overflow = ""; // Unlock scroll when modal is closed
+        });
+      }
+    </script>
+  </body>
+</html>

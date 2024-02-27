@@ -1,0 +1,762 @@
+/* ==========================================================================
+   General Styles
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"); /* Import a cool font */
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+/* ==========================================================================
+      General Styles
+      ========================================================================== */
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+/* Fix for overlapping content by navbar */
+body {
+  padding-top: 70px; /* Adjust based on your navbar's actual height */
+}
+
+.modal-content {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.75); /* Set the background color to white with 20% transparency */
+  font-family: "Arial", Arial, sans-serif;
+}
+
+/* Adjusting sections to prevent navbar overlap */
+#welcome,
+#candoit,
+#mission,
+#choose,
+#aboutme,
+#contactme {
+  scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
+}
+
+/* ==========================================================================
+      Navbar Styles
+      ========================================================================== */
+
+.navbar {
+  background-color: #007bff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+/* ==========================================================================
+      Parallax Section Styles
+      ========================================================================== */
+
+/* Parallax sections */
+.parallax-section {
+  position: relative; /* Needed to position the overlay correctly */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px; /* Fixed height */
+  color: white;
+  text-align: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Text Styles for Readability */
+.parallax-section h1,
+.parallax-section h2,
+.parallax-section p {
+  /* Increase font weight to make the text bolder */
+  font-weight: 700; /* 700 is bold, higher numbers are bolder */
+}
+
+/* ==========================================================================
+      Section 0 - Navbar Styles
+      ========================================================================== */
+
+/* ==========================================================================
+      Section 1 - Welcome Styles
+      ========================================================================== */
+
+#welcome {
+  background: url("../images/leap.png") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  height: 70vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+#welcome h1 {
+  font-size: 6em; /* Larger font size for the first line */
+  color: #fff; /* White color for visibility */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+  -webkit-text-stroke: 1px black; /* Black text stroke for better legibility */
+  margin-bottom: 0.5em; /* Space between the first and second line */
+}
+
+#welcome h2 {
+  font-size: 4em; /* Smaller font size for the second line */
+  color: #fff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+  -webkit-text-stroke: 1px black; /* Black text stroke for better legibility */
+}
+
+/* ==========================================================================
+      Section 2 - CanDoIT Styles
+      ========================================================================== */
+#candoit {
+  /* padding-top: 200px; Remove or reduce this line */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+#candoit .parallax-section {
+  background-image: url("../images/section2-candi-bg.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+
+#candoit .title-line,
+#candoit h2 {
+  font-family: "Pacifico", cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#candoit .title-line {
+  background-color: rgb(24, 21, 21);
+  text-align: center;
+  padding: 30px 0;
+  margin: 0;
+}
+
+#candoit .title-line h2 {
+  margin: 0;
+  font-size: 3vw;
+  color: white;
+}
+
+#candoit h2 {
+  font-size: 4vw;
+  color: #060606;
+  margin-bottom: 30px;
+}
+
+#candoit h3 {
+  font-family: "Pacifico", cursive;
+  font-size: 2vw;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+#candoit ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#candoit ul li {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+#candoit a {
+  color: #000000;
+  font-family: "Pacifico", cursive;
+  font-size: 2vw;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#candoit a:hover {
+  color: #ffffff;
+  font-size: 2.1vw;
+}
+
+/* ==========================================================================
+      Section 3 - Mission Styles
+      ========================================================================== */
+
+#mission.parallax-section {
+  background-image: url("../images/hiai.png");
+  background-size: 50%; /* Adjust this percentage to scale the size of the image */
+  background-attachment: fixed; /* Maintain the parallax effect */
+  background-position: right center; /* Keep the image on the right */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  color: #000; /* Text color set to black for better visibility */
+  height: auto; /* Height of the section as required */
+  display: flex;
+  align-items: center; /* Align items to the center of the cross axis */
+  padding: 50px 20px; /* Adjust padding to suit content */
+  margin: 0 auto; /* Center the section */
+  justify-content: flex-start; /* Align content to the start of the container */
+}
+
+#mission .mission-content {
+  width: auto; /* Let the content determine its own width */
+  max-width: none; /* Remove max-width restriction */
+  margin-left: 5vw; /* Decrease this percentage to move the text to the left */
+  margin-right: 10%; /* Keep it away from the robot image, adjust as needed */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+  white-space: nowrap; /* Add this line to prevent text from breaking */
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+/* Ensure that the header in the mission section is styled appropriately */
+#mission h2 {
+  color: #000; /* Make sure the header is visible against the background */
+  font-size: 2em; /* Adjust font size as needed */
+  text-shadow: none; /* Remove text shadow if it's not needed */
+  /* Add any additional styling for the header here */
+}
+
+/* Reset the font weight for all text within .mission-content */
+.mission-content p {
+  font-weight: normal;
+}
+
+.mission-content h3 {
+  font-size: 1.3em; /* Adjust this value to your preference */
+}
+
+/* Styled blockquote */
+.styled-quote {
+  margin: 1em 0;
+  padding-left: -10px;
+  position: relative;
+  font-style: italic;
+  font-size: 2em;
+  margin-left: 0; /* Adjust this value to move the elements further to the left */
+}
+
+/* This rule applies to all paragraph elements within elements with the class 'styled-quote' */
+.styled-quote p {
+  margin: 0; /* Removes the default margin from the paragraph */
+  display: block; /* Ensures the text follows the quote icon on the same line */
+  margin-left: 0.4em; /* Adjusts the space between the quote icon and the text */
+}
+
+/* This rule adds a special style to the first paragraph of the styled quote */
+.styled-quote p:first-child::before {
+  content: "\201C"; /* Unicode for left double quotation mark */
+  font-size: 4em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+  position: relative;
+  left: -0.1em;
+  top: -0.1em; /* Adjust top position to align with the text */
+  color: #c22727;
+}
+
+/* Add closing quote */
+.styled-quote p:last-child::after {
+  content: "\201D"; /* Unicode for right double quotation mark */
+  font-size: 4em; /* Adjust to match the opening quote size */
+  line-height: 0.1em; /* Align with the text line */
+  vertical-align: -0.4em; /* Adjust alignment as needed */
+  position: absolute;
+  right: -0.3em; /* Position to the right of the text */
+  color: #c22727; /* Match the color of the opening quote */
+}
+
+/* This rule applies to the last paragraph element within elements with the class 'styled-quote' */
+.styled-quote p:last-child {
+  display: inline-block;
+  margin-left: 0.4em; /* Adjust space between the two quote lines */
+}
+
+/* Select all paragraphs except the first one in .styled-quote */
+.styled-quote p:not(:first-child) {
+  margin-left: 1.6em; /* Adjust this value to move the paragraphs to the right */
+}
+
+/* Styled list */
+.styled-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.styled-list li {
+  margin-bottom: 0.3em;
+  font-weight: normal;
+}
+
+.styled-list h3::before {
+  content: "";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  background-color: #d93118;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  position: relative;
+}
+
+.styled-quote {
+  margin-bottom: 2em; /* Adjust this value to add more space under the .styled-quote */
+  margin-left: -1em; /* Adjust this value to move the .styled-quote to the left */
+}
+
+/* ==========================================================================
+      Section 4 - Choose Styles
+      ========================================================================== */
+
+#choose .title-line {
+  background-color: gray; /* Darker line */
+  text-align: center;
+  padding: 30px 0; /* Twice as big */
+  font-family: "Arial", Arial, sans-serif;
+}
+
+#choose .title-line h2 {
+  margin: 0;
+  font-size: 3em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#choose .parallax {
+  display: flex; /* Align the images in a row */
+  flex-wrap: wrap; /* Allow the images to wrap onto the next line on small screens */
+}
+
+#choose .parallax__layer {
+  flex: 1 0 33.33%;
+  height: 0;
+  padding-bottom: 33.33%;
+  position: relative;
+}
+
+#choose .parallax__layer--back {
+  background: url("../images/c1.jpeg") no-repeat center center / cover;
+}
+
+#choose .parallax__layer--middle {
+  background: url("../images/c2.png") no-repeat center center / cover;
+}
+
+#choose .parallax__layer--front {
+  background: url("../images/c3.png") no-repeat center center / cover;
+}
+
+#choose .card-container {
+  position: relative;
+  z-index: 1;
+}
+
+#choose .parallax__layer .content {
+  position: absolute;
+  bottom: 0; /* Position the content at the bottom of the layer */
+  left: 0;
+  width: 100%; /* Full width of the layer */
+  padding: 20px; /* Some padding to prevent the content from touching the edges */
+  text-align: center;
+  color: #fff;
+}
+
+#choose .parallax__layer .cta {
+  background-color: rgba(128, 128, 128, 0.7);
+  color: white;
+  border: 2px solid #eee; /* Lighter border color */
+  padding: 20px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Animate border color */
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-family: "Bungee", cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#choose .parallax__layer .cta:hover {
+  background-color: rgba(105, 105, 105, 0.7);
+  border-color: #ccc; /* Lighter border color on hover */
+}
+
+.service-overlay {
+  position: absolute;
+  top: 50%; /* Adjust as necessary */
+  left: 50%; /* Adjust as necessary */
+  transform: translate(-50%, -50%);
+  color: #fff; /* Text color */
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 2; /* Ensure it's above the background image */
+}
+
+.modal-full {
+  min-width: 100%;
+  margin: 0;
+}
+
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
+
+.service-container {
+  position: relative;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+}
+/* Specific adjustments for the consultation container if needed */
+#consultation-container {
+  align-self: start; /* For flex or grid parents */
+}
+
+.service-btn {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(128, 128, 128, 0.7);
+  color: white;
+  border: 2px solid #eee; /* Lighter border color */
+  padding: 20px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Animate border color */
+  display: inline-block;
+  font-size: 1.4em;
+  font-family: "Arial", Arial, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom styles for full-screen modals */
+.modal.fade .modal-dialog {
+  transition: transform 0.3s ease-out;
+  transform: translate(0, 100%);
+}
+
+.modal.show .modal-dialog {
+  transform: translate(0, 0);
+}
+
+#choose .parallax {
+  position: relative;
+}
+
+#choose .parallax__layer {
+  position: relative;
+}
+
+#choose .service-container {
+  position: relative;
+}
+
+#choose .service-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#choose .modal.fade .modal-dialog {
+  transform: translate(0);
+  transition: transform 0.3s ease-out;
+}
+
+#choose .modal.show .modal-dialog {
+  transform: translate(0, 0);
+}
+
+#choose .modal-dialog.modal-full {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  margin: 0;
+}
+
+#choose .modal-content {
+  height: 100%;
+  overflow-y: auto;
+  border-radius: 0;
+  font-size: 0.5em; /* Adjust this value to make the font smaller */
+}
+
+#choose .modal-header {
+  top: 0;
+  right: 0;
+  z-index: 11; /* Ensure the close button is above the overlay */
+}
+
+/* Ensure modal background covers the specific image area only */
+#choose #consultationModal,
+#choose #coachingModal,
+#choose #creationModal {
+  background-color: rgba(255, 255, 255, 0.2); /* Set the background color to white with 20% transparency */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Hide modals by default */
+#choose .modal {
+  display: none;
+}
+
+/* Custom styles for the close button */
+#choose .close {
+  font-size: 2rem;
+  color: black;
+  opacity: 1;
+}
+
+/* Additional styles if you want to animate the modal appearance */
+#choose .modal.fade .modal-dialog {
+  transform: translateY(-100%);
+}
+
+#choose .modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+.service-info-header {
+  font-size: 2.2em;
+  margin-bottom: 0; /* Removes the default bottom margin */
+}
+
+.service-info-p1 {
+  font-size: 1.9em;
+  margin-bottom: 0; /* Adds more space below the paragraph */
+}
+
+.service-info-p2 {
+  font-size: 1.9em;
+  margin-bottom: 2em; /* Adds more space below the paragraph */
+}
+
+/* ==========================================================================
+      Section 5 - AboutMe Styles
+      ========================================================================== */
+
+/* About Me Section Styles */
+#aboutme {
+  background: url("../images/myAvatar.png") no-repeat center center fixed;
+  background-size: cover;
+  padding: 100px 0; /* Adjust top and bottom padding as needed */
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+#aboutme .container h2 {
+  font-size: 2.5em; /* Adjust font size for the header */
+  color: #fff; /* White color for visibility */
+  text-align: left; /* Align header text to the left */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+  margin-top: 0; /* Align header with the start of the content */
+}
+
+/* Text Styles for About Me content */
+.about-me-content {
+  position: relative;
+  z-index: 2; /* Ensures content is above the background */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 0.4));
+  color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left; /* Align text to the left */
+  margin: 0 auto; /* Centering content */
+  max-width: 1200px; /* Adjusted max-width for wider content area */
+}
+
+/* Style paragraphs for better readability */
+.about-me-content p {
+  font-size: 1.5em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+      Media Queries
+      ========================================================================== */
+@media (max-width: 768px), (max-height: 420px) and (orientation: landscape) {
+  /* ==========================================================================
+      General Styles
+      ========================================================================== */
+
+  .modal-dialog {
+    margin: 0.5rem auto;
+    max-width: 100%;
+  }
+  .modal {
+    overflow-y: auto;
+  }
+  /* ==========================================================================
+      Navbar Styles
+      ========================================================================== */
+
+  /* ==========================================================================
+      Parallax Section Styles
+      ========================================================================== */
+  .parallax-section {
+    height: 500px; /* Adjust height for mobile devices */
+    background-attachment: scroll; /* Change background attachment for mobile compatibility */
+  }
+
+  /* ==========================================================================
+      Welcome Section Styles
+      ========================================================================== */
+
+  #welcome {
+    background-size: cover; /* Ensures the image covers the section */
+    background-position: center; /* Centers the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Optional: Adjust the height to fit the screen */
+  }
+
+  #welcome h1 {
+    font-size: 35px; /* Adjust font size for mobile */
+  }
+
+  #welcome h2 {
+    font-size: 25px; /* Adjust font size for mobile */
+  }
+
+  /* ==========================================================================
+        Candoit Section Styles
+        ========================================================================== */
+  #candoit h2 {
+    font-size: 35px; /* Minimum font size */
+  }
+
+  #candoit h3 {
+    font-size: 25px; /* Minimum font size */
+  }
+
+  #candoit .title-line h2,
+  #candoit ul li,
+  #candoit a,
+  #candoit a:hover {
+    font-size: 17px; /* Minimum font size */
+  }
+
+  /* ==========================================================================
+      Mission Section Styles
+      ========================================================================== */
+  #mission.parallax-section {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+      url("../images/hiai.png");
+    background-size: contain; /* Adjust size to fit within the container */
+    background-position: bottom center; /* Position at the bottom center on small screens */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    padding-bottom: 175px; /* Add padding to make space for the image */
+    background-attachment: scroll; /* Disable parallax effect for better performance on mobile */
+    position: relative; /* Add this to position the pseudo-element relative to this element */
+  }
+
+  #mission .mission-content {
+    text-align: left; /* Align text to the left */
+    padding: 5px 5px 100px; /* Top and bottom padding is 5px, left and right padding is 10px, bottom padding is 50px */
+    margin: 0 0px; /* Add small margin on the sides */
+    width: auto; /* Let the text use the full available width */
+    max-width: none; /* Remove the maximum width restriction */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    word-wrap: break-word; /* Add this line to break long words */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+    overflow: hidden; /* Hide any content that goes beyond the boundaries */
+  }
+
+  #mission .mission-content {
+    font-size: 12px; /* Adjust as needed */
+  }
+
+  .styled-quote {
+    margin-bottom: 1em; /* Adjust this value to add more space under the .styled-quote */
+    margin-left: 0.1em; /* Adjust this value to move the .styled-quote to the left */
+    font-size: 1.7em; /* Adjust this value to make the font smaller */
+  }
+
+  /* This rule adds a special style to the first paragraph of the styled quote */
+  .styled-quote p:first-child::before {
+    content: "\201C"; /* Unicode for left double quotation mark */
+    font-size: 3em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+    position: relative;
+    left: -0.1em;
+    top: -0.1em; /* Adjust top position to align with the text */
+    color: #c22727;
+  }
+
+  /* Add closing quote */
+  .styled-quote p:last-child::after {
+    content: "\201D"; /* Unicode for right double quotation mark */
+    font-size: 3em; /* Adjust to match the opening quote size */
+    line-height: 0.1em; /* Align with the text line */
+    vertical-align: -0.4em; /* Adjust alignment as needed */
+    position: absolute;
+    right: 0em; /* Position to the right of the text */
+    color: #c22727; /* Match the color of the opening quote */
+  }
+
+  /* ==========================================================================
+      Choose Section Styles
+      ========================================================================== */
+
+  #choose .parallax__layer {
+    flex: 1 0 100%; /* Make the images take up the full row on small screens */
+    padding-bottom: 100%; /* Maintain aspect ratio */
+  }
+
+  /* ==========================================================================
+      AboutMe Section Styles
+      ========================================================================== */
+
+  #aboutme {
+    background-attachment: scroll; /* Disable parallax effect for better performance on mobile */
+    padding: 50px 0;
+  }
+
+  .about-me-content {
+    padding: 10px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  }
+}
