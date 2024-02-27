@@ -31,7 +31,8 @@ body {
 
 .modal-content {
   position: relative;
-  color: #000000; /* Black color for the text */
+  background-color: rgba(255, 255, 255, 0.75); /* Set the background color to white with 20% transparency */
+  font-family: "Arial", Arial, sans-serif;
 }
 
 /* Adjusting sections to prevent navbar overlap */
@@ -525,7 +526,7 @@ body {
 #choose #consultationModal,
 #choose #coachingModal,
 #choose #creationModal {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.2); /* Set the background color to white with 20% transparency */
   position: absolute;
   top: 0;
   bottom: 0;
