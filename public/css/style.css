@@ -32,12 +32,6 @@ body {
 .modal-content {
   position: relative;
   color: #000000; /* Black color for the text */
-  text-align: left; /* Align text to the left */
-}
-
-.modal-title {
-  color: #000000; /* Black color for the title */
-  text-align: left; /* Align title to the left */
 }
 
 /* Adjusting sections to prevent navbar overlap */
@@ -254,7 +248,7 @@ body {
 
 /* Styled blockquote */
 .styled-quote {
-  margin: 1.em 0;
+  margin: 1em 0;
   padding-left: -10px;
   position: relative;
   font-style: italic;
@@ -290,7 +284,6 @@ body {
   position: absolute;
   right: -0.3em; /* Position to the right of the text */
   color: #c22727; /* Match the color of the opening quote */
-
 }
 
 /* This rule applies to the last paragraph element within elements with the class 'styled-quote' */
@@ -341,7 +334,6 @@ body {
   text-align: center;
   padding: 30px 0; /* Twice as big */
   font-family: "Arial", Arial, sans-serif;
-
 }
 
 #choose .title-line h2 {
@@ -412,10 +404,10 @@ body {
 
 .service-overlay {
   position: absolute;
-  top: 50%;  /* Adjust as necessary */
+  top: 50%; /* Adjust as necessary */
   left: 50%; /* Adjust as necessary */
   transform: translate(-50%, -50%);
-  color: #FFF; /* Text color */
+  color: #fff; /* Text color */
   text-align: center;
   background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   padding: 20px;
@@ -443,6 +435,13 @@ body {
 
 .service-container {
   position: relative;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: left;
+}
+/* Specific adjustments for the consultation container if needed */
+#consultation-container {
+  align-self: start; /* For flex or grid parents */
 }
 
 .service-btn {
@@ -513,17 +512,13 @@ body {
   height: 100%;
   overflow-y: auto;
   border-radius: 0;
+  font-size: 0.5em; /* Adjust this value to make the font smaller */
 }
 
 #choose .modal-header {
-  position: absolute;
   top: 0;
   right: 0;
   z-index: 11; /* Ensure the close button is above the overlay */
-}
-
-#choose .modal-body {
-  padding-top: 60px; /* Provide space for the header */
 }
 
 /* Ensure modal background covers the specific image area only */
@@ -559,6 +554,20 @@ body {
   transform: translateY(0);
 }
 
+.service-info-header {
+  font-size: 1.7rem;
+  margin-bottom: 0; /* Removes the default bottom margin */
+}
+
+.service-info-p1 {
+  font-size: 1.4rem;
+  margin-bottom: 0; /* Adds more space below the paragraph */
+}
+
+.service-info-p2 {
+  font-size: 1.4rem;
+  margin-bottom: 2em; /* Adds more space below the paragraph */
+}
 
 /* ==========================================================================
       Section 5 - AboutMe Styles
@@ -599,16 +608,14 @@ body {
 .about-me-content p {
   font-size: 1.5em;
   line-height: 1.6;
-  font-weight:400;
-
+  font-weight: 400;
 }
-
 
 /* ==========================================================================
       Media Queries
       ========================================================================== */
-  @media (max-width: 768px), (max-height: 420px) and (orientation: landscape) {
-        /* ==========================================================================
+@media (max-width: 768px), (max-height: 420px) and (orientation: landscape) {
+  /* ==========================================================================
       General Styles
       ========================================================================== */
 
@@ -704,34 +711,30 @@ body {
     margin-bottom: 1em; /* Adjust this value to add more space under the .styled-quote */
     margin-left: 0.1em; /* Adjust this value to move the .styled-quote to the left */
     font-size: 1.7em; /* Adjust this value to make the font smaller */
-
   }
 
   /* This rule adds a special style to the first paragraph of the styled quote */
-.styled-quote p:first-child::before {
-  content: "\201C"; /* Unicode for left double quotation mark */
-  font-size: 3em;
-  line-height: 0.1em;
-  vertical-align: -0.4em;
-  position: relative;
-  left: -0.1em;
-  top: -0.1em; /* Adjust top position to align with the text */
-  color: #c22727;
-}
+  .styled-quote p:first-child::before {
+    content: "\201C"; /* Unicode for left double quotation mark */
+    font-size: 3em;
+    line-height: 0.1em;
+    vertical-align: -0.4em;
+    position: relative;
+    left: -0.1em;
+    top: -0.1em; /* Adjust top position to align with the text */
+    color: #c22727;
+  }
 
-/* Add closing quote */
-.styled-quote p:last-child::after {
-  content: "\201D"; /* Unicode for right double quotation mark */
-  font-size: 3em; /* Adjust to match the opening quote size */
-  line-height: 0.1em; /* Align with the text line */
-  vertical-align: -0.4em; /* Adjust alignment as needed */
-  position: absolute;
-  right: 0em; /* Position to the right of the text */
-  color: #c22727; /* Match the color of the opening quote */
-
-}
-
-  
+  /* Add closing quote */
+  .styled-quote p:last-child::after {
+    content: "\201D"; /* Unicode for right double quotation mark */
+    font-size: 3em; /* Adjust to match the opening quote size */
+    line-height: 0.1em; /* Align with the text line */
+    vertical-align: -0.4em; /* Adjust alignment as needed */
+    position: absolute;
+    right: 0em; /* Position to the right of the text */
+    color: #c22727; /* Match the color of the opening quote */
+  }
 
   /* ==========================================================================
       Choose Section Styles
