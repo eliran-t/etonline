@@ -555,17 +555,17 @@ body {
 }
 
 .service-info-header {
-  font-size: 1.7rem;
+  font-size: 2.2em;
   margin-bottom: 0; /* Removes the default bottom margin */
 }
 
 .service-info-p1 {
-  font-size: 1.4rem;
+  font-size: 1.9em;
   margin-bottom: 0; /* Adds more space below the paragraph */
 }
 
 .service-info-p2 {
-  font-size: 1.4rem;
+  font-size: 1.9em;
   margin-bottom: 2em; /* Adds more space below the paragraph */
 }
 
