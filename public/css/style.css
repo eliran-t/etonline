@@ -110,6 +110,57 @@
   margin-left: 8px;
 }
 
+/* Styled blockquote */
+.styled-quote {
+  margin: 1em 0;
+  padding-left: -10px;
+  position: relative;
+  font-style: italic;
+  font-size: 0.7em;
+  margin-left: 0; /* Adjust this value to move the elements further to the left */
+}
+
+/* This rule applies to all paragraph elements within elements with the class 'styled-quote' */
+.styled-quote p {
+  margin: 0; /* Removes the default margin from the paragraph */
+  display: block; /* Ensures the text follows the quote icon on the same line */
+  margin-left: 0.4em; /* Adjusts the space between the quote icon and the text */
+}
+
+/* This rule adds a special style to the first paragraph of the styled quote */
+.styled-quote p:first-child::before {
+  content: "\201C"; /* Unicode for left double quotation mark */
+  font-size: 4em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+  position: relative;
+  left: -0.1em;
+  top: -0.1em; /* Adjust top position to align with the text */
+  color: #d4c715;
+}
+
+/* Add closing quote */
+.styled-quote p:last-child::after {
+  content: "\201D"; /* Unicode for right double quotation mark */
+  font-size: 1em; /* Adjust to match the opening quote size */
+  line-height: 0.1em; /* Align with the text line */
+  vertical-align: -0.4em; /* Adjust alignment as needed */
+  position: relative;
+  right: -0.3em; /* Position to the right of the text */
+  color: #d4c715; /* Match the color of the opening quote */
+}
+
+/* This rule applies to the last paragraph element within elements with the class 'styled-quote' */
+.styled-quote p:last-child {
+  display: inline-block;
+  margin-left: 0.4em; /* Adjust space between the two quote lines */
+}
+
+/* Select all paragraphs except the first one in .styled-quote */
+.styled-quote p:not(:first-child) {
+  margin-left: 1.6em; /* Adjust this value to move the paragraphs to the right */
+}
+
 @media (max-width: 991.98px) {
   .navbar .navbar-nav .nav-link {
     margin-right: 0;
