@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-  --primary: #333333;
+  --primary: hsl(0, 0%, 20%);
   --secondary: #e1e1e1;
   --light: #f7f7f7;
   --dark: #00000;
@@ -238,22 +238,33 @@
 }
 
 /***  quote ***/
-.quote-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Adjust as needed */
-  padding: 3rem 0;
+.quote-container {
+  font-family: "Open Sans", sans-serif; /* This keeps the font consistent with the rest of the site */
+  color: #333; /* Dark grey color for text, ensures readability */
+  background-color: #f8f9fa; /* Light background to contrast with the text */
+  border-left: 4px solid #007bff; /* Blue line to tie into your color scheme */
+  padding: 20px 30px; /* Padding to ensure the text does not touch the edges */
+  margin: 20px 0; /* Margin to keep space around the container */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Soft shadow to lift the container off the page */
+  border-radius: 5px; /* Slightly rounded corners for a modern feel */
 }
 
-.quote-content {
-  width: 70%;
-  text-align: center; /* Center the text */
+.quote-line {
+  margin: 0; /* Removes default paragraph margins */
+  line-height: 1.6; /* Spacing between lines for better readability */
+  font-size: 1.1rem; /* Adjust font size to your preference */
 }
 
-.blockquote {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+.quote-line.quote-indent-1 {
+  margin-left: 20px; /* Indent lines for visual hierarchy */
+  font-style: italic; /* Italicize to differentiate the items */
+}
+
+.quote-author {
+  text-align: right; /* Align the author to the right */
+  color: #007bff; /* Use the theme's blue for the author */
+  font-weight: bold; /* Make the author's name bold */
+  margin-top: 15px; /* Space between the quote and the author */
 }
 
 /*** About ***/
