@@ -259,7 +259,9 @@
   margin: 10% auto; /* 10% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 60%;
+  min-width: 28rem; /* Could be more or less, depending on screen size */
+  max-width: 40rem;
   border-radius: 10px; /* This will give you rounded corners */
 }
 
@@ -278,31 +280,34 @@
   cursor: pointer;
 }
 
-/* Modal Header */
-.custom-modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-
 /* Modal Body */
 .custom-modal-body {
-  padding: 2px 16px;
+  padding: 2px 10px;
 }
 
 .custom-modal-area {
+  font-size: 0.4em;
   position: relative;
-  padding: 20px;
-  margin-top: 30px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.432);
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #0400006e;
+}
+
+.custom-modal-area h2 {
+  font-size: 3em;
+  color: #eeeeee;
+}
+
+.custom-modal-area h3 {
+  font-size: 1.5em;
 }
 
 /* Modal Group */
 .custom-modal-group {
   position: relative;
-  padding: 20px;
-  margin-top: 30px;
+  padding: 10px;
+  margin-top: 20px;
   border-radius: 10px;
 }
 
