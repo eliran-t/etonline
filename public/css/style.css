@@ -183,7 +183,6 @@
 
 .page-header {
   background: url(https://elleaptech.com/images/leap.png) top center no-repeat;
-  image-opacity: 0.5;
   background-size: cover;
 }
 
@@ -256,7 +255,7 @@
 
 /* Modal Content */
 .custom-modal-content {
-  background-color: #0c0101;
+  background-color: rgba(12, 1, 1, 0.5);
   margin: 10% auto; /* 10% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
@@ -291,17 +290,12 @@
   padding: 2px 16px;
 }
 
-/* Background Ellipse for the modal groups */
-.custom-bg-ellipse {
-  width: 200px;
-  height: 100px;
-  background-color: #eddd5e; /* Adjust color as necessary */
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  transform: rotate(45deg);
-  z-index: -1;
+.custom-modal-area {
+  position: relative;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.432);
 }
 
 /* Modal Group */
@@ -571,6 +565,4 @@
   color: var(--light);
   letter-spacing: 1px;
   box-shadow: none;
-}
-.banner {
 }
