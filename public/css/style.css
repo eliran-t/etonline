@@ -237,35 +237,91 @@
   left: 0;
 }
 
-/***  quote ***/
-.quote-container {
-  font-family: "Open Sans", sans-serif; /* This keeps the font consistent with the rest of the site */
-  color: #333; /* Dark grey color for text, ensures readability */
-  background-color: #f8f9fa; /* Light background to contrast with the text */
-  border-left: 4px solid #007bff; /* Blue line to tie into your color scheme */
-  padding: 20px 30px; /* Padding to ensure the text does not touch the edges */
-  margin: 20px 0; /* Margin to keep space around the container */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Soft shadow to lift the container off the page */
-  border-radius: 5px; /* Slightly rounded corners for a modern feel */
+/*** Possibilities Modal - Start ***/
+
+/* General Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none; /* Hide by default, will be displayed when triggered */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.quote-line {
-  margin: 0; /* Removes default paragraph margins */
-  line-height: 1.6; /* Spacing between lines for better readability */
-  font-size: 1.1rem; /* Adjust font size to your preference */
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-.quote-line.quote-indent-1 {
-  margin-left: 20px; /* Indent lines for visual hierarchy */
-  font-style: italic; /* Italicize to differentiate the items */
+/* Close button for modal */
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.quote-author {
-  text-align: right; /* Align the author to the right */
-  color: #007bff; /* Use the theme's blue for the author */
-  font-weight: bold; /* Make the author's name bold */
-  margin-top: 15px; /* Space between the quote and the author */
+/* Title Ellipse */
+.title-ellipse {
+  background: #f0f0f0;
+  color: #333;
+  padding: 1rem 2rem;
+  border-radius: 50%;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto; /* Center the ellipse */
+  font-size: 1.25rem;
+  margin-bottom: 2rem; /* Space from title to content */
 }
+
+/* Content Styles */
+.modal-section {
+  margin-bottom: 1.5rem;
+}
+
+.modal-section h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.modal-section p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* List Styles */
+.modal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-list-item {
+  background: #f7f7f7;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  color: #333;
+}
+
+/* Apply styles when modal is active */
+.modal-overlay.active {
+  display: flex;
+}
+
+/*** Possibilities Modal - End ***/
 
 /*** About ***/
 .about-experience {
