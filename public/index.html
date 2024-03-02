@@ -193,52 +193,37 @@
             document creation and data analysis, freeing up valuable time
             for strategic tasks </span> </div>
         </div>
-        <a class="btn btn-secondary rounded-pill py-3 px-5" href="javascript:void(0);" id="openModalButton">Read More</a>
-        <button  class="btn btn-secondary rounded-pill py-3 px-5" onclick="openModal()">Open Modal</button>
-
 
       <!-- Possibilites Modal Start --> 
       <!-- Modal Overlay -->
-      <!-- Modal structure -->
-      <div id="modalOverlay" class="modal-overlay">
-        <div id="modalContent" class="modal-content">
-          <!-- Close button -->
-          <button class="modal-close" onclick="closeModal()">×</button>
-          
-          <!-- Title for AI: Unleashing the Power -->
-          <div>AI: Unleashing the Power</div>
-      
-          <!-- Enhance Customer Experience Section -->
-          <div class="modal-section">
-            <h2>Enhance Customer Experience</h2>
-            <ul class="modal-list">
-              <li class="modal-list-item">Implement AI-powered chatbots for 24/7 support and basic questions.</li>
-              <li class="modal-list-item">Utilize sentiment analysis to understand feedback and proactively address issues.</li>
-              <li class="modal-list-item">Provide personalized recommendations based on customer data.</li>
-            </ul>
-          </div>
-      
-          <!-- Enhance Your Marketing Section -->
-          <div class="modal-section">
-            <h2>Enhance Your Marketing</h2>
-            <ul class="modal-list">
-              <li class="modal-list-item">Automate targeted email campaigns based on customer preferences.</li>
-              <li class="modal-list-item">Analyze marketing data with AI to optimize your budget allocation.</li>
-              <li class="modal-list-item">Utilize AI for content generation (product descriptions, social media posts, etc.).</li>
-            </ul>
-          </div>
-      
-          <!-- Enhance Your Products Section -->
-          <div class="modal-section">
-            <h2>Enhance Your Products</h2>
-            <ul class="modal-list">
-              <li class="modal-list-item">Leverage AI to analyze customer feedback and market trends for product improvement/development.</li>
-              <li class="modal-list-item">Use AI for predictive analytics to forecast demand and streamline inventory.</li>
-              <li class="modal-list-item">Implement AI-powered pricing optimization based on market data.</li>
-            </ul>
-          </div>
-        </div>
+      <!--  Trigger/Open The Modal Button -->
+    <!-- Trigger/Open The Modal Button -->
+<!-- Trigger/Open The Modal Button -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="custom-modal">
+
+  <!-- Modal content -->
+  <div class="custom-modal-content">
+    <span class="custom-close">&times;</span>
+    <h2>AI: Power up Your Business.</h2>
+    <div class="custom-modal-body">
+      <!-- Modal group content goes here -->
+      <div class="custom-modal-group">
+        <div class="custom-bg-ellipse"></div>
+        <h3>Enhance Customer Experience</h3>
+        <ul>
+          <li>Implement AI-powered chatbots for 24/7 support and basic questions.</li>
+          <li>Utilize sentiment analysis to understand feedback and proactively address issues.</li>
+          <li>Provide personalized recommendations based on customer data.</li>
+        </ul>
       </div>
+      <!-- Repeat for other groups -->
+    </div>
+  </div>
+</div>
+
       
   </div>
 </div>
@@ -392,56 +377,35 @@
 <script src="lib/lightbox/js/lightbox.min.js"></script> 
 
 <script>
-  // When DOM is fully loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    // Function to open the modal
-    function openModal() {
-      // Add 'show' class to display the modal
-      document.getElementById('modalOverlay').classList.add('show');
-      // Add 'body-no-scroll' class to prevent background scrolling
-      document.body.classList.add('body-no-scroll');
-    }
+// Get the modal
+var modal = document.getElementById("myModal");
 
-    // Function to close the modal
-    function closeModal() {
-      // Remove 'show' class to hide the modal
-      document.getElementById('modalOverlay').classList.remove('show');
-      // Remove 'body-no-scroll' class to enable background scrolling
-      document.body.classList.remove('body-no-scroll');
-    }
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
-    // Event listener for the 'Read More' button to open the modal
-    var openModalButton = document.getElementById('openModalButton');
-    if (openModalButton) {
-      openModalButton.addEventListener('click', openModal);
-    }
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("custom-close")[0];
 
-    // Event listener for clicking outside the modal content to close it
-    var modalOverlay = document.getElementById('modalOverlay');
-    if (modalOverlay) {
-      modalOverlay.addEventListener('click', function(event) {
-        // Close only if the clicked target is the modalOverlay itself
-        if (event.target === modalOverlay) {
-          closeModal();
-        }
-      });
-    }
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent scrolling
+}
 
-    // Prevent closing the modal when clicking inside the modal content
-    var modalContent = document.getElementById('modalContent');
-    if (modalContent) {
-      modalContent.addEventListener('click', function(event) {
-        event.stopPropagation();
-      });
-    }
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // Enable scrolling
+}
 
-    // Attach the closeModal function to any elements that should close the modal
-    // For example, if you have a close button with the class 'modal-close'
-    var closeButtons = document.querySelectorAll('.modal-close');
-    closeButtons.forEach(function(button) {
-      button.addEventListener('click', closeModal);
-    });
-  });
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto"; // Allow scrolling again
+  }
+}
+
 </script>
 
 
