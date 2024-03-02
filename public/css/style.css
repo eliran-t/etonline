@@ -256,11 +256,12 @@
 
 /* Modal Content */
 .custom-modal-content {
-  background-color: #fefefe;
+  background-color: #0c0101;
   margin: 10% auto; /* 10% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 10px; /* This will give you rounded corners */
 }
 
 /* The Close Button */
@@ -306,7 +307,6 @@
 /* Modal Group */
 .custom-modal-group {
   position: relative;
-  background-color: #f4f4f4;
   padding: 20px;
   margin-top: 30px;
   border-radius: 10px;
