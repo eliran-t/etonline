@@ -100,7 +100,7 @@
 </nav>
 <!-- Navbar End --> 
 
-<!-- Carousel Start -->
+<!-- S1 - Carousel Tech-A-Leap - Start -->
 <div class="container-fluid px-0 mb-5">
   <div id="header">
     <div class="carousel-inner">
@@ -120,7 +120,11 @@
     </div>
   </div>
 </div>
-<!-- Qoute End -->
+<!-- S1- Carousel Tech-A-Leap - End -->
+
+<!-- S2 - Opportunity - Start -->
+
+<!-- Qoute Start -->
 <div class="container-xxl py-5">
   <div class="container">
 
@@ -141,9 +145,7 @@
     </div>
   </div>
 </div>
-
-
-<!--WHY US Start -->
+<!-- Qoute End -->
 
 <!-- Possibilites Start -->
 <div class="container-xxl py-5">
@@ -197,8 +199,10 @@
 
       <!-- Possibilites Modal Start --> 
       <!-- Modal Overlay -->
+      <!-- Modal structure -->
       <div id="modalOverlay" class="modal-overlay">
-        <div class="modal-content">
+        <div id="modalContent" class="modal-content">
+          <!-- Close button -->
           <button class="modal-close" onclick="closeModal()">×</button>
           
           <!-- Title for AI: Unleashing the Power -->
@@ -238,7 +242,9 @@
       
   </div>
 </div>
-<!-- Possibilites - End--> 
+<!-- Possibilites - End-->
+
+<!-- S3 - Opportunity - Start -->
 
 
 <!-- Service Start -->
@@ -386,46 +392,58 @@
 <script src="lib/lightbox/js/lightbox.min.js"></script> 
 
 <script>
-  // Event listener to open the modal
+  // When DOM is fully loaded
   document.addEventListener('DOMContentLoaded', function() {
-    var openModalButton = document.getElementById('openModalButton');
-    if (openModalButton) {
-      openModalButton.addEventListener('click', function() {
-        var modalOverlay = document.getElementById('modalOverlay');
-        if (modalOverlay) {
-          modalOverlay.classList.add('show'); // use 'show' instead of 'active'
-        }
-      });
+    // Function to open the modal
+    function openModal() {
+      // Add 'show' class to display the modal
+      document.getElementById('modalOverlay').classList.add('show');
+      // Add 'body-no-scroll' class to prevent background scrolling
+      document.body.classList.add('body-no-scroll');
     }
 
-    // Event listener to close the modal when clicking on the overlay
+    // Function to close the modal
+    function closeModal() {
+      // Remove 'show' class to hide the modal
+      document.getElementById('modalOverlay').classList.remove('show');
+      // Remove 'body-no-scroll' class to enable background scrolling
+      document.body.classList.remove('body-no-scroll');
+    }
+
+    // Event listener for the 'Read More' button to open the modal
+    var openModalButton = document.getElementById('openModalButton');
+    if (openModalButton) {
+      openModalButton.addEventListener('click', openModal);
+    }
+
+    // Event listener for clicking outside the modal content to close it
     var modalOverlay = document.getElementById('modalOverlay');
     if (modalOverlay) {
       modalOverlay.addEventListener('click', function(event) {
-        if (event.target === this || event.target.classList.contains('modal-close')) {
-          this.classList.remove('show');
+        // Close only if the clicked target is the modalOverlay itself
+        if (event.target === modalOverlay) {
+          closeModal();
         }
       });
     }
 
-    // Stop propagation of click events in the modal content to prevent closing
+    // Prevent closing the modal when clicking inside the modal content
     var modalContent = document.getElementById('modalContent');
     if (modalContent) {
       modalContent.addEventListener('click', function(event) {
         event.stopPropagation();
       });
     }
+
+    // Attach the closeModal function to any elements that should close the modal
+    // For example, if you have a close button with the class 'modal-close'
+    var closeButtons = document.querySelectorAll('.modal-close');
+    closeButtons.forEach(function(button) {
+      button.addEventListener('click', closeModal);
+    });
   });
-
-  function openModal() {
-  document.getElementById('modalOverlay').classList.add('active');
-}
-
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('active');
-}
-
 </script>
+
 
 
 <!-- Template Javascript --> 
