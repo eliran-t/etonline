@@ -321,6 +321,39 @@
   display: flex;
 }
 
+/* Add this CSS to your existing stylesheet */
+.bg-ellipse {
+  width: 100%; /* Full width of the container */
+  height: 200px; /* Adjust the height as needed */
+  background-color: var(
+    --bg-secondary
+  ); /* Replace with your actual color if variable is not set */
+  border-radius: 50%;
+  transform: rotate(45deg); /* Creates the slanted ellipse */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0; /* Adjusts the origin of rotation */
+  z-index: -1; /* Ensures the ellipse is in the background */
+  transform: translate(-50%, -50%) rotate(45deg); /* Center the ellipse and then rotate it */
+}
+
+.level-3-group {
+  position: relative;
+  padding: 20px; /* Space for content */
+  margin: 20px 0; /* Space between groups */
+}
+
+.level-3-title {
+  font-size: 1.5rem; /* Example size, adjust as needed */
+  color: #fff; /* Adjust text color as needed */
+}
+
+.level-3-list {
+  list-style: none; /* Removes default list styling */
+  padding-left: 0; /* Removes default padding */
+}
+
 /*** Possibilities Modal - End ***/
 
 /*** About ***/

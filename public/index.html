@@ -192,6 +192,8 @@
             for strategic tasks </span> </div>
         </div>
         <a class="btn btn-secondary rounded-pill py-3 px-5" href="javascript:void(0);" id="openModalButton">Read More</a>
+        <button  class="btn btn-secondary rounded-pill py-3 px-5" onclick="openModal()">Open Modal</button>
+
 
       <!-- Possibilites Modal Start --> 
       <!-- Modal Overlay -->
@@ -206,7 +208,7 @@
           <div class="modal-section">
             <h2>Enhance Customer Experience</h2>
             <ul class="modal-list">
-              <li class="modal-list-item">Implement AI-powered chatbots for 24/7 support and basic questions.</li>
+              <li class="title-ellipse">Implement AI-powered chatbots for 24/7 support and basic questions.</li>
               <li class="modal-list-item">Utilize sentiment analysis to understand feedback and proactively address issues.</li>
               <li class="modal-list-item">Provide personalized recommendations based on customer data.</li>
             </ul>
@@ -384,15 +386,47 @@
 <script src="lib/lightbox/js/lightbox.min.js"></script> 
 
 <script>
-  function openModal() {
-    document.getElementById('modalOverlay').classList.add('active');
-  }
+  // Event listener to open the modal
+  document.addEventListener('DOMContentLoaded', function() {
+    var openModalButton = document.getElementById('openModalButton');
+    if (openModalButton) {
+      openModalButton.addEventListener('click', function() {
+        var modalOverlay = document.getElementById('modalOverlay');
+        if (modalOverlay) {
+          modalOverlay.classList.add('show'); // use 'show' instead of 'active'
+        }
+      });
+    }
 
-  function closeModal() {
-    document.getElementById('modalOverlay').classList.remove('active');
-  }
+    // Event listener to close the modal when clicking on the overlay
+    var modalOverlay = document.getElementById('modalOverlay');
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', function(event) {
+        if (event.target === this || event.target.classList.contains('modal-close')) {
+          this.classList.remove('show');
+        }
+      });
+    }
+
+    // Stop propagation of click events in the modal content to prevent closing
+    var modalContent = document.getElementById('modalContent');
+    if (modalContent) {
+      modalContent.addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+    }
+  });
+
+  function openModal() {
+  document.getElementById('modalOverlay').classList.add('active');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+}
 
 </script>
+
 
 <!-- Template Javascript --> 
 <script src="js/main.js"></script>
