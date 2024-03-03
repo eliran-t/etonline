@@ -330,6 +330,12 @@
 }
 
 /*** Service ***/
+
+.text-highlight {
+  font-weight: bold; /* Makes text bold */
+  color: black; /* Darker text color for contrast */
+}
+
 .service-item {
   position: relative;
   border-radius: 8px;
