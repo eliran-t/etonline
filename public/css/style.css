@@ -282,7 +282,7 @@
 
 /* Modal Body */
 .custom-modal-body {
-  padding: 2px 10px;
+  padding: 2px 7px;
 }
 
 .custom-modal-area {
@@ -295,12 +295,19 @@
 }
 
 .custom-modal-area h2 {
-  font-size: 3em;
+  font-size: 1.6rem;
   color: #eeeeee;
 }
 
 .custom-modal-area h3 {
-  font-size: 1.5em;
+  font-size: 1.3rem;
+}
+
+.custom-modal-area ul,
+li {
+  font-size: 0.8rem;
+  padding-left: -0.3 px;
+  color: black;
 }
 
 /* Modal Group */
