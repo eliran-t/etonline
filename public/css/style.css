@@ -336,6 +336,11 @@
   color: black; /* Darker text color for contrast */
 }
 
+.about-text-highlight {
+  font-size: 2rem;
+  color: black; /* Darker text color for contrast */
+}
+
 .service-item {
   position: relative;
   border-radius: 8px;
@@ -426,6 +431,11 @@
 }
 
 /*** Product ***/
+
+.aboutMe p {
+  font-size: 3rem;
+}
+
 .product-item {
   position: relative;
   border-radius: 8px;
