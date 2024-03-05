@@ -147,10 +147,11 @@
   right: 0;
   bottom: 0;
   display: flex;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.1);
+  align-items: flex-start; /* Align items to the start of the container */
+  justify-content: center; /* Center items along the vertical axis */
   z-index: 1;
   white-space: nowrap;
+  margin-top: 35%; /* Add margin to the top to push content down */
 }
 
 .carousel-control-prev,
@@ -167,20 +168,6 @@
   border: 10px solid var(--primary);
 }
 
-@media (max-width: 768px) {
-  #header-carousel .carousel-item {
-    position: relative;
-    min-height: 450px;
-  }
-
-  #header-carousel .carousel-item img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
 .page-header {
   background: url(https://elleaptech.com/images/leap.png) top center no-repeat;
   background-size: cover;
@@ -194,6 +181,44 @@
 .page-header .breadcrumb-item a {
   font-size: 18px;
   color: var(--light);
+}
+
+#header .carousel-item img {
+  width: 100%;
+  height: 100vh; /* This will make the image cover the full height of the viewport */
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #header-carousel .carousel-item {
+    position: relative;
+    min-height: 550px;
+  }
+
+  #header-carousel .carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #header .carousel-item img {
+    height: 70vh; /* This will make the image cover 70% of the viewport's height on screens smaller than 768px */
+  }
+
+  .carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto; /* Allow height to adjust to content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    overflow: hidden; /* Prevent content from spilling outside */
+  }
 }
 
 /*** Section Title ***/
