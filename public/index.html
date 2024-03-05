@@ -8,11 +8,11 @@
   <meta content="" name="keywords" />
   <meta content="" name="description" />
   <!-- update the version number as needed -->
-  <script defer src="/__/firebase/10.7.2/firebase-app-compat.js"></script>
+  <script defer src="/__/firebase/10.8.1/firebase-app-compat.js"></script>
   <!-- include only the Firebase features as you need -->
-  <script defer src="/__/firebase/10.7.2/firebase-database-compat.js"></script>
-  <script defer src="/__/firebase/10.7.2/firebase-firestore-compat.js"></script>
-  <script defer src="/__/firebase/10.7.2/firebase-storage-compat.js"></script>
+  <script defer src="/__/firebase/10.8.1/firebase-database-compat.js"></script>
+  <script defer src="/__/firebase/10.8.1/firebase-firestore-compat.js"></script>
+  <script defer src="/__/firebase/10.8.1/firebase-storage-compat.js"></script>
   <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
   <!-- Favicon -->
@@ -57,15 +57,19 @@
         class="navbar-toggler-icon"></span> </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="index.html" class="nav-item nav-link active">Home</a>
-        <a href="#techLeaps" class="nav-item nav-link">Tech-Leaps</a>
-        <a href="#theService" class="nav-item nav-link">Services</a>
+        <a href="index.html" class="nav-item nav-link">Home</a>
+        <!--S3-->
+        <a href="#options" class="nav-item nav-link">Options</a>
+        <!--S4-->
+        <a href="#my_service" class="nav-item nav-link">Services</a>
+        <!--S5-->
         <a href="#about_me" class="nav-item nav-link">About</a>
+        <!--S6-->
         <a href="#contactMe" class="nav-item nav-link">Contact</a>
       </div>
-      <div class="border-start ps-4 d-none d-lg-block">
+      <!-- <div class="border-start ps-4 d-none d-lg-block">
         <button type="button" class="btn btn-sm p-0"> <i class="fa fa-search"></i> </button>
-      </div>
+      </div> -->
     </div>
   </nav>
   <!-- Navbar End -->
@@ -106,37 +110,19 @@
   <!-- S2 - Opportunity - End -->
 
 
-  <!-- S3 - TechLeaps Start -->
-  <div class="container-xxl py-5">
+  <!-- S3 - Options - Start -->
+  <div class="container-xxl py-5" id="options">
     <div class="container">
       <!-- possibilites title -->
       <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
-        <p class="section-title bg-white text-center text-primary px-3">Tech Leaps.</p>
+        <p class="section-title bg-white text-center text-primary px-3"> Options </p>
+        <h1 class="mb-5">Some Leap-Options</h1>
       </div>
 
       <!-- possibilites content - start -->
       <div class="row g-5 align-items-end">
 
-        <!-- possibilites images stack - start -->
-        <div class="col-lg-6">
-          <div class="row g-2">
-            <div class="col-6 position-relative wow fadeIn" data-wow-delay="0.7s">
-              <div class="about-experience bg-secondary rounded">
-                <h2 class="mb-0">Work Less </h2>
-                <h1 class="fw-bold">Gain More</h1>
-              </div>
-            </div>
-            <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
-              <img class="img-fluid rounded" src="images/example1_ai.png" />
-            </div>
-            <div class="col-6 wow fadeIn" data-wow-delay="0.3s">
-              <img class="img-fluid rounded" src="images/example2_automation.png" />
-            </div>
-            <div class="col-6 wow fadeIn" data-wow-delay="0.5s">
-              <img class="img-fluid rounded" src="images/example3_iot.png" />
-            </div>
-          </div>
-        </div>
+
 
         <!-- possibilites text teaser - start -->
         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -145,13 +131,19 @@
             AI is revolutionizing business. From enhancing customer interactions
             to unlocking the power of data for better marketing and product development,
             the possibilities are vast.
-            In today's race, neglecting AI is like running your first marathon in flip flops
-            while your competitors train, gear up, and even get special approval to take shortcuts. </p>
+            <strong><mark>In today's race, neglecting AI is like running your first marathon in flip flops
+                while your competitors train, gear up, and even get special approval to take shortcuts.</mark></strong>
+          </p>
           <div class="row g-5 pt-2 mb-5">
             <div class="col-sm-6">
               <h5 class="mb-3">Automation: Your business work for you.</h5>
               <span>
-                Besides freeing up your time, automated tasks significantly reduce errors in tedious and repetitive work
+                <strong>
+                  <mark>
+                    Besides freeing up your time, automated tasks significantly reduce errors in tedious and repetitive
+                    work
+                  </mark>
+                </strong>
                 like invoice generation, form filling, project tracking and more. Automation also provides real-time
                 alerts, data visualization, and automated reports, giving you increased control and insights over your
                 business operations.
@@ -160,8 +152,10 @@
             <div class="col-sm-6">
               <h5 class="mb-3"> IoT: Smarter Office Space!</h5>
               <span>
-                IoT makes your office smarter, more comfortable, secure, and cost-efficient, boosting your team's
-                productivity – from automated lighting and thermostats to smart locks and cameras. Get control for all
+                IoT makes your office smarter,
+                <strong><mark>
+                    more comfortable, secure, and cost-efficient, boosting your team's productivity </mark></strong>–
+                from automated lighting and thermostats to smart locks and cameras. Get control for all
                 your office needs, even when you're not there.
               </span>
             </div>
@@ -297,13 +291,35 @@
           <!-- possibilites text Modal Overlay End -->
         </div>
         <!-- possibilites text teaser - End -->
+
+        <!-- possibilites images stack - start -->
+        <div class="col-lg-6">
+          <div class="row g-2">
+            <div class="col-6 position-relative wow fadeIn" data-wow-delay="0.7s">
+              <div class="leap-options bg-secondary rounded" id="leap-options-square">
+                <h2 class="mb-0">Work Less </h2>
+                <h1 class="fw-bold">Gain More</h1>
+              </div>
+            </div>
+            <div class="col-6 wow fadeIn" data-wow-delay="0.1s">
+              <img class="img-fluid rounded" src="images/example1_ai.png" />
+            </div>
+            <div class="col-6 wow fadeIn" data-wow-delay="0.3s">
+              <img class="img-fluid rounded" src="images/example2_automation.png" />
+            </div>
+            <div class="col-6 wow fadeIn" data-wow-delay="0.5s">
+              <img class="img-fluid rounded" src="images/example3_iot.png" />
+            </div>
+          </div>
+        </div>
+
       </div>
-      <!-- S3 - TechLeap - End-->
     </div>
   </div>
+  <!-- S3 - Options - End -->
 
-  <!-- S4 - Services - Start -->
-  <div class="container-xxl py-5" id="theService">
+  <!-- S4 - My Services - Start -->
+  <div class="container-xxl py-5" id="my_service">
     <div class="container">
       <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px">
         <p class="section-title bg-white text-center text-primary px-3"> The Services </p>
@@ -383,7 +399,7 @@
       </div>
     </div>
   </div>
-  <!-- S4 - Service -    End  -->
+  <!-- S4 - My Services -    End  -->
 
   <!-- S5: About Me - Start -->
   <div class="container-xxl py-5" id="about_me">
@@ -425,23 +441,35 @@
   <!-- S5: About Me - End -->
 
   <!-- S6: Contact Me - Start -->
-  <section id="contactMe" class="contact-section">
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name">
-      <input type="email" id="email" placeholder="Your Email">
-      <textarea id="message" placeholder="Your Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-
-
-
-    <!-- <div class="container text-center">
-       Contact Form Embed 
-      <div class="contact-form">
-        <script type="text/javascript" src="https://form.jotform.com/jsform/240508773505053"></script>
+  <section id="contactMe" class="contact-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+          <h2 class="mb-4">Contact Me</h2>
+          <form id="contactForm">
+            <div class="form-group mb-3">
+              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group mb-3">
+              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group mb-3">
+              <textarea id="message" class="form-control" placeholder="Your Message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
       </div>
-    </div> -->
+    </div>
+
+    <div id="user-msg-modal" class="user-msg-modal">
+      <div class="user-msg-modal-content">
+        <span class="user-msg-modal-close">&times;</span>
+        <p id="user-msg-modal-text"></p>
+      </div>
+    </div>
   </section>
+
   <!-- S6: Contact Me - End -->
 
   <!-- Copyright Start -->
@@ -514,8 +542,9 @@
   <!-- Template Javascript -->
   <script src="js/main.js"></script>
 
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const loadEl = document.querySelector('#load');
       // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
       // // The Firebase SDK is initialized and available here!
@@ -531,13 +560,13 @@
       // firebase.performance(); // call to activate
       //
       // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-  
+
       try {
         let app = firebase.app();
         let features = [
-          'database', 
+          'database',
           'firestore',
-          'storage', 
+          'storage',
         ].filter(feature => typeof app[feature] === 'function');
         loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
       } catch (e) {
@@ -546,5 +575,98 @@
       }
     });
   </script>
-  </body>
+
+  <!-- Place your Firebase Configuration and Initialization here -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDq_YboGfPcxHuqjj38WhTFmwdHhINYnQA",
+      authDomain: "etechleap.firebaseapp.com",
+      databaseURL: "https://etechleap-default-rtdb.firebaseio.com",
+      projectId: "etechleap",
+      storageBucket: "etechleap.appspot.com",
+      messagingSenderId: "805570885698",
+      appId: "1:805570885698:web:57eed9c795604f634055db",
+      measurementId: "G-V0BDZ0PEE7"
+    };
+
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(app);
+  </script>
+
+  <!-- Place your form submission script here -->
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', submitForm);
+
+    function submitForm(e) {
+      e.preventDefault();
+
+      // Get values
+      var name = getInputVal('name');
+      var email = getInputVal('email');
+      var message = getInputVal('message');
+      // Save message
+      saveMessage(name, email, message);
+
+      // Clear form
+      document.getElementById('contactForm').reset();
+    }
+
+    // Function to get form values
+    function getInputVal(id) {
+      return document.getElementById(id).value;
+    }
+
+    // Save message to firebase
+    function saveMessage(name, email, message) {
+      db.collection('messages').add({
+        name: name,
+        email: email,
+        message: message
+      })
+        .then(() => {
+          console.log('Message saved');
+          showModal(`Thank you for reaching out. <br> I'll get back to you soon.`);
+        })
+        .catch((error) => {
+          console.error('Error writing document: ', error);
+          showModal(`There was an error. Please try later. <br> 
+          Or just email me at <a href="mailto:elleaptech@gmail.com">elleaptech@gmail.com</a>`);
+        });
+    }
+
+    // Show modal with message
+    function showModal(message) {
+      modalText.innerHTML = message;
+      modal.style.display = "block";
+    }
+  </script>
+
+<script>
+var modal = document.getElementById("user-msg-modal");
+var span = document.getElementsByClassName("user-msg-modal-close")[0];
+var modalText = document.getElementById("user-msg-modal-text");
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+</script>
+</body>
+
 </html>

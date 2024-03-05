@@ -324,7 +324,7 @@ li {
 /*****************************************/
 
 /*** About ***/
-.about-experience {
+.leap-options {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -334,6 +334,7 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  opacity: 0.85; /* 100% - 15% = 85% opacity */
 }
 
 /*** Service ***/
@@ -435,6 +436,60 @@ li {
 .service-item .service-text .btn:hover {
   color: var(--dark);
   background: var(--secondary);
+}
+
+/*** User Msg ***/
+.user-msg-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* This matches the modal background color used elsewhere in the CSS */
+}
+
+.user-msg-modal-content {
+  background-color: var(--light);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: var(--fw-medium);
+  border-radius: 10px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em 2em;
+}
+
+.user-msg-modal-close {
+  color: var(
+    --primary
+  ); /* Using the --primary color variable defined in the root */
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.user-msg-modal-close:hover,
+.user-msg-modal-close:focus {
+  color: var(
+    --secondary
+  ); /* Using the --secondary color variable defined in the root */
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*** Product ***/
