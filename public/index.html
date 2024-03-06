@@ -500,35 +500,40 @@
 
   <script>
     // Get the modal
-    var modal = document.getElementById("myModal");
-
+    let modal = document.getElementById('myModal');
+  
     // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-
+    let btn = document.getElementById('myBtn');
+  
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("custom-close")[0];
-
-    // When the user clicks the button, open the modal
-    btn.onclick = function () {
-      modal.style.display = "block";
-      document.body.style.overflow = "hidden"; // Prevent scrolling
+    let span = document.getElementsByClassName('custom-close')[0];
+  
+    // Function to close the modal and enable scrolling
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Enable scrolling
     }
-
+  
+    // When the user clicks the button, open the modal and prevent scrolling
+    btn.onclick = function() {
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    };
+  
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-      modal.style.display = "none";
-      document.body.style.overflow = "auto"; // Enable scrolling
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto"; // Allow scrolling again
+    span.onclick = function() {
+      closeModal();
+    };
+  
+    // Refining window.onclick to improve modal closing behavior
+    window.addEventListener('click', function(event) {
+      // Check if the click is outside the modal content
+      if (event.target === modal) {
+        closeModal();
       }
-    }
-
+    });
   </script>
+  
 
 
 
@@ -559,7 +564,7 @@
   </script>
 
   <!-- Place your form submission script here -->
-
+ 
   <script>
     document.getElementById('contactForm').addEventListener('submit', submitForm);
 
@@ -605,22 +610,22 @@
       modalText.innerHTML = message;
       modal.style.display = "block";
     }
-  </script>
+  </script> 
 
 <script>
-var modal = document.getElementById("user-msg-modal");
-var span = document.getElementsByClassName("user-msg-modal-close")[0];
-var modalText = document.getElementById("user-msg-modal-text");
+let modalUserMsg = document.getElementById("user-msg-modal");
+let spanUserMsg = document.getElementsByClassName("user-msg-modal-close")[0];
+let modalText = document.getElementById("user-msg-modal-text");
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+spanUserMsg.onclick = function() {
+  modalUserMsg.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modalUserMsg) {
+    modalUserMsg.style.display = "none";
   }
 }
 
