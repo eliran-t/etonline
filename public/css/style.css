@@ -1,11 +1,12 @@
-/********** Template CSS **********/
+/********** Base Colors **********/
 :root {
   --primary: hsl(0, 0%, 20%);
   --secondary: #e1e1e1;
   --light: #f7f7f7;
-  --dark: #00000;
+  --dark: #000000; /* Corrected the hex value for black */
 }
 
+/********** Back To Top Button **********/
 .back-to-top {
   position: fixed;
   display: none;
@@ -13,15 +14,13 @@
   bottom: 30px;
   z-index: 99;
 }
-
+/********** Font Weight Utility Classes **********/
 .fw-bold {
   font-weight: 700 !important;
 }
-
 .fw-medium {
   font-weight: 600 !important;
 }
-
 .fw-semi-bold {
   font-weight: 500 !important;
 }
