@@ -209,7 +209,7 @@
 }
 
 .carousel-caption h1,
-h2 {
+.carousel-caption h2 {
   color: #ffffff; /* Ensure the text is white */
   -webkit-text-stroke: 1px black; /* Add black outline for Webkit browsers */
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
@@ -537,4 +537,12 @@ li {
   color: var(--light);
   letter-spacing: 1px;
   box-shadow: none;
+}
+
+/* Adjusting sections to prevent navbar overlap */
+#s3-leap-options,
+#s4-services,
+#s5-about-me,
+#s6-contact-me {
+  scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
 }
