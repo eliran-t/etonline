@@ -218,47 +218,7 @@
 
 /*** s1-intro - End  ***/
 
-/*** Section Title ***/
-.section-title {
-  position: relative;
-  display: inline-block;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.section-title::before {
-  position: absolute;
-  content: "";
-  width: calc(100% + 80px);
-  height: 2px;
-  top: 5px;
-  left: -40px;
-  background: var(--primary);
-  z-index: -1;
-}
-
-.section-title::after {
-  position: absolute;
-  content: "";
-  width: calc(100% + 120px);
-  height: 2px;
-  bottom: 6px;
-  left: -60px;
-  background: var(--primary);
-  z-index: -1;
-}
-
-.section-title.text-start::before {
-  width: calc(100% + 40px);
-  left: 0;
-}
-
-.section-title.text-start::after {
-  width: calc(100% + 60px);
-  left: 0;
-}
-
-/*** Leap Options Modal - Start ***/
+/*** S3 - Leap-Options - Start ***/
 
 /* Modal (background) */
 .custom-modal {
@@ -338,9 +298,6 @@ li {
   border-radius: 10px;
 }
 
-/*** Leap Options Modal - End ***/
-
-/*** About ***/
 .leap-options {
   position: absolute;
   width: 100%;
@@ -354,17 +311,7 @@ li {
   opacity: 0.85; /* 100% - 15% = 85% opacity */
 }
 
-/*** Service ***/
-
-.text-highlight {
-  font-weight: bold; /* Makes text bold */
-  color: black; /* Darker text color for contrast */
-}
-
-.about-text-highlight {
-  font-size: 1.1rem;
-  color: black; /* Darker text color for contrast */
-}
+/*** S4 - Services - Start ***/
 
 .service-item {
   position: relative;
@@ -455,6 +402,57 @@ li {
   background: var(--secondary);
 }
 
+/***  S5: About Me - Start ***/
+.text-highlight {
+  font-weight: bold; /* Makes text bold */
+  color: black; /* Darker text color for contrast */
+}
+
+.about-text-highlight {
+  font-size: 1.1rem;
+  color: black; /* Darker text color for contrast */
+}
+
+/*** Sections Title - Start  ***/
+.section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section-title::before {
+  position: absolute;
+  content: "";
+  width: calc(100% + 80px);
+  height: 2px;
+  top: 5px;
+  left: -40px;
+  background: var(--primary);
+  z-index: -1;
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: calc(100% + 120px);
+  height: 2px;
+  bottom: 6px;
+  left: -60px;
+  background: var(--primary);
+  z-index: -1;
+}
+
+.section-title.text-start::before {
+  width: calc(100% + 40px);
+  left: 0;
+}
+
+.section-title.text-start::after {
+  width: calc(100% + 60px);
+  left: 0;
+}
+
 /*** User Msg ***/
 .user-msg-modal {
   display: none;
@@ -473,6 +471,8 @@ li {
     0.4
   ); /* This matches the modal background color used elsewhere in the CSS */
 }
+
+/*** User Message Modal - Start  ***/
 
 .user-msg-modal-content {
   background-color: var(--light);
@@ -509,7 +509,7 @@ li {
   cursor: pointer;
 }
 
-/*** Footer ***/
+/*** Footer - Start ***/
 .footer {
   color: #b0b9ae;
 }
