@@ -1,3 +1,4 @@
+/***** style.css *****/
 /********** Base Colors **********/
 :root {
   --primary: hsl(0, 0%, 20%);
@@ -140,18 +141,19 @@
   }
 }
 
-/*** Header ***/
+/*** s1-intro - Start  ***/
+
+/* Mobile styles */
 .carousel-caption {
-  top: 0;
+  position: absolute;
+  bottom: 15%; /* Centered in the bottom half of the image */
   left: 0;
   right: 0;
-  bottom: 0;
   display: flex;
-  align-items: flex-start; /* Align items to the start of the container */
-  justify-content: center; /* Center items along the vertical axis */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
   z-index: 1;
   white-space: nowrap;
-  margin-top: 35%; /* Add margin to the top to push content down */
 }
 
 .carousel-control-prev,
@@ -168,41 +170,26 @@
   border: 10px solid var(--primary);
 }
 
-.page-header {
-  background: url(https://elleaptech.com/images/leap.png) top center no-repeat;
-  background-size: cover;
-}
-
-.page-header .breadcrumb-item + .breadcrumb-item::before {
-  color: var(--light);
-}
-
-.page-header .breadcrumb-item,
-.page-header .breadcrumb-item a {
-  font-size: 18px;
-  color: var(--light);
-}
-
-#header .carousel-item img {
+#s1-intro .carousel-item img {
   width: 100%;
   height: 100vh; /* This will make the image cover the full height of the viewport */
   object-fit: cover;
 }
 
 @media (max-width: 768px) {
-  #header-carousel .carousel-item {
+  #s1-intro-carousel .carousel-item {
     position: relative;
     min-height: 550px;
   }
 
-  #header-carousel .carousel-item img {
+  #s1-intro-carousel .carousel-item img {
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  #header .carousel-item img {
+  #s1-intro .carousel-item img {
     height: 70vh; /* This will make the image cover 70% of the viewport's height on screens smaller than 768px */
   }
 
@@ -216,10 +203,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    padding: 20px;
+    padding: 10px;
     overflow: hidden; /* Prevent content from spilling outside */
   }
 }
+
+.carousel-caption h1,
+h2 {
+  color: #ffffff; /* Ensure the text is white */
+  -webkit-text-stroke: 1px black; /* Add black outline for Webkit browsers */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Add black outline for all browsers */
+}
+
+/*** s1-intro - End  ***/
 
 /*** Section Title ***/
 .section-title {
