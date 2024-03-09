@@ -581,6 +581,8 @@
 
     // Save message to firebase
     function saveMessage(name, email, message) {
+      const myEmail = 'elleaptech@gmail.com';
+
       db.collection('messages').add({
         name: name,
         email: email,
@@ -588,19 +590,34 @@
       })
         .then(() => {
           console.log('Message saved');
-          showModal(`Thank you for reaching out. <br> I'll get back to you soon.`);
+          showModal(`
+          Thank you for reaching out :) ! <br> 
+          I'll get back to you soon as possible.<br>
+          For faster response, you can also email me at <a href="mailto:${myEmail}">${myEmail}</a>`);
         })
         .catch((error) => {
           console.error('Error writing document: ', error);
           showModal(`There was an error. Please try later. <br> 
-          Or just email me at <a href="mailto:elleaptech@gmail.com">elleaptech@gmail.com</a>`);
+          Or just email me at <a href="mailto:${myEmail}">${myEmail}</a>`);
         });
+        sendGetRequest();
     }
 
     // Show modal with message
     function showModal(message) {
       modalText.innerHTML = message;
-      modal.style.display = "block";
+      modalUserMsg.style.display = "block";
+    }
+
+    // Separate function to send a GET request
+    function sendGetRequest() {
+      fetch('https://script.google.com/macros/s/AKfycbyJnMbbipbmHWGGL94svnj0M-UOwDBIBPYu2yeSvqLU2PExdJiCPcUMl4SMO18Uk1Ea/exec')
+      .then(response => {
+        if(response.ok) {
+          console.log('GET request sent successfully');
+        }
+      })
+      .catch(error => console.error('Error sending GET request:', error));
     }
   </script> 
 
