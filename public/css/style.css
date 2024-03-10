@@ -95,7 +95,7 @@
   font-weight: normal;
 }
 
-/*** Navbar ***/
+/*** S0 - Navbar - Start ***/
 .navbar.sticky-top {
   top: -100px;
   transition: 0.5s;
@@ -153,6 +153,14 @@
     opacity: 1;
   }
 }
+
+.navbar-brand img {
+  height: 5em; /* Assuming the navbar height is 3em */
+  margin-bottom: -50%; /* Pushes the bottom of the image 20% below the navbar line */
+  display: block; /* Ensures the image is a block-level element for margin to work */
+}
+
+/*** s0-Navbar - End  ***/
 
 /*** s1-intro - Start  ***/
 
