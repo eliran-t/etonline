@@ -156,6 +156,7 @@
 
 .navbar-brand img {
   height: 5em; /* Assuming the navbar height is 3em */
+  margin-top: -30%;
   margin-bottom: -50%; /* Pushes the bottom of the image 20% below the navbar line */
   display: block; /* Ensures the image is a block-level element for margin to work */
 }
