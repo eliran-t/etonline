@@ -1,0 +1,599 @@
+/********* style.css *************/
+
+:root {
+  --primary: hsl(0, 0%, 20%);
+  --secondary: #e1e1e1;
+  --light: #f7f7f7;
+  --dark: #000000;
+}
+
+/* Add this at the top of your CSS file */
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+/********** Back To Top Button **********/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 30px;
+  bottom: 30px;
+  z-index: 99;
+}
+
+/********** Font Weight Utility Classes **********/
+.fw-bold {
+  font-weight: 700 !important;
+}
+.fw-medium {
+  font-weight: 600 !important;
+}
+.fw-semi-bold {
+  font-weight: 500 !important;
+}
+
+/*** Spinner ***/
+#spinner {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+  z-index: 99999;
+}
+
+#spinner.show {
+  transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/*** Button ***/
+.btn {
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+.btn-primary,
+.btn-outline-primary:hover {
+  color: var(--light);
+}
+
+.btn-secondary,
+.btn-outline-secondary:hover {
+  color: var(--dark);
+}
+
+.btn-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-sm-square {
+  width: 32px;
+  height: 32px;
+}
+
+.btn-lg-square {
+  width: 48px;
+  height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+}
+
+/*** S0 - Navbar - Start ***/
+.navbar.sticky-top {
+  top: -100px;
+  transition: 0.5s;
+}
+
+.navbar .navbar-nav .nav-link {
+  margin-right: 35px;
+  padding: 25px 0;
+  background: linear-gradient(45deg, #f2da8f, #cd8b23); /* Gradient colors */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent; /* Fallback for browsers that do not support background-clip */
+  -webkit-text-fill-color: transparent;
+  font-size: 25px; /* Increased font size */
+  font-weight: 500;
+  outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+  background: none;
+  color: #ffffff; /* Font color changed to white on hover */
+}
+
+.navbar .dropdown-toggle::after {
+  border: none;
+  content: "\f107";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav .nav-link {
+    margin-right: 0;
+    padding: 10px 0;
+    font-size: 16px; /* Adjusted font size for mobile */
+  }
+
+  .navbar .navbar-nav {
+    border-top: 1px solid #eeeeee;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-item .dropdown-menu {
+    display: block;
+    border: none;
+    margin-top: 0;
+    top: 150%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+    top: 100%;
+    visibility: visible;
+    transition: 0.5s;
+    opacity: 1;
+  }
+}
+
+.navbar-brand img {
+  height: 5em;
+  margin-top: -30%;
+  margin-bottom: -50%; /* Pushes the bottom of the image 20% below the navbar line */
+  display: block; /* Ensures the image is a block-level element for margin to work */
+}
+/*** s0-Navbar - End  ***/
+
+/*** s1-intro - Start  ***/
+
+/* Mobile styles */
+.carousel-caption {
+  position: absolute;
+  bottom: 15%; /* Centered in the bottom half of the image */
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+  background-color: var(--primary);
+  border: 10px solid var(--primary);
+}
+
+#s1-intro .carousel-item img {
+  width: 100%;
+  height: 100vh; /* This will make the image cover the full height of the viewport */
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #s1-intro-carousel .carousel-item {
+    position: relative;
+    min-height: 550px;
+  }
+
+  #s1-intro-carousel .carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #s1-intro .carousel-item img {
+    height: 70vh; /* This will make the image cover 70% of the viewport's height on screens smaller than 768px */
+  }
+
+  .carousel-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto; /* Allow height to adjust to content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    overflow: hidden; /* Prevent content from spilling outside */
+  }
+}
+
+.carousel-caption h1,
+.carousel-caption h2 {
+  color: #ffffff; /* Ensure the text is white */
+  -webkit-text-stroke: 1px black; /* Add black outline for Webkit browsers */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Add black outline for all browsers */
+}
+
+.carousel-caption h2 {
+  font-size: 3rem;
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-caption h2 {
+    font-size: 2.2rem; /* Smaller font size for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption h2 {
+    font-size: 1.75rem; /* Even smaller font size for phones */
+  }
+}
+
+@media (max-width: 430px) {
+  .carousel-caption h2 {
+    font-size: 1.5rem; /* Even smaller font size for phones */
+    font-weight: 900;
+  }
+}
+
+/*** s1-intro - End  ***/
+
+/*** S3 - leap-portunities - Start ***/
+
+/* Modal (background) */
+.custom-modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.custom-modal-content {
+  background-color: rgba(12, 1, 1, 0.5);
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  min-width: 28rem; /* Could be more or less, depending on screen size */
+  max-width: 40rem;
+  border-radius: 10px; /* This will give you rounded corners */
+}
+
+/* The Close Button */
+.custom-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.custom-close:hover,
+.custom-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal Body */
+.custom-modal-body {
+  padding: 2px 7px;
+}
+
+.custom-modal-area {
+  font-size: 0.4em;
+  position: relative;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #0400006e;
+}
+
+.custom-modal-area h2 {
+  font-size: 1.6rem;
+  color: #eeeeee;
+}
+
+.custom-modal-area h3 {
+  font-size: 1.3rem;
+}
+
+.custom-modal-area ul,
+li {
+  font-size: 0.8rem;
+  padding-left: -0.3 px;
+  color: black;
+}
+
+/* Modal Group */
+.custom-modal-group {
+  position: relative;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.leap-portunities {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: -45px;
+  bottom: -45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85; /* 100% - 15% = 85% opacity */
+}
+
+/*** S4 - Services - Start ***/
+
+.service-item {
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
+}
+
+.service-item .service-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.service-item .service-img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.service-item .service-img::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.service-item .service-img::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  transition: 0.5s ease-out;
+  z-index: 2;
+}
+
+.service-item:hover .service-img::after {
+  width: 0;
+  left: auto;
+  right: 0;
+}
+
+.service-item .service-text .service-icon {
+  width: 140px;
+  height: 140px;
+  padding: 15px;
+  margin-top: -70px;
+  margin-bottom: 40px;
+  background: #ffffff;
+  border-radius: 140px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+}
+
+.service-item .service-text h5,
+.service-item .service-text p {
+  transition: 0.5s;
+}
+
+.service-item:hover .service-text h5,
+.service-item:hover .service-text p {
+  color: #ffffff;
+}
+
+.service-item .service-text .btn {
+  color: var(--secondary);
+  background: #ffffff;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.25);
+}
+
+.service-item .service-text .btn:hover {
+  color: var(--dark);
+  background: var(--secondary);
+}
+
+/***  S5: About Me - Start ***/
+.text-highlight {
+  font-weight: bold; /* Makes text bold */
+  color: black; /* Darker text color for contrast */
+}
+
+.about-text-highlight {
+  font-size: 1.1rem;
+  color: black; /* Darker text color for contrast */
+}
+
+/*** Sections Title - Start  ***/
+.section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.section-title::before {
+  position: absolute;
+  content: "";
+  width: calc(100% + 80px);
+  height: 2px;
+  top: 5px;
+  left: -40px;
+  background: var(--primary);
+  z-index: -1;
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: calc(100% + 120px);
+  height: 2px;
+  bottom: 6px;
+  left: -60px;
+  background: var(--primary);
+  z-index: -1;
+}
+
+.section-title.text-start::before {
+  width: calc(100% + 40px);
+  left: 0;
+}
+
+.section-title.text-start::after {
+  width: calc(100% + 60px);
+  left: 0;
+}
+
+/*** User Msg ***/
+.user-msg-modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.4
+  ); /* This matches the modal background color used elsewhere in the CSS */
+}
+
+/*** User Message Modal - Start  ***/
+
+.user-msg-modal-content {
+  background-color: var(--light);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: var(--fw-medium);
+  border-radius: 10px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.07);
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em 2em;
+}
+
+.user-msg-modal-close {
+  color: var(
+    --primary
+  ); /* Using the --primary color variable defined in the root */
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.user-msg-modal-close:hover,
+.user-msg-modal-close:focus {
+  color: var(
+    --secondary
+  ); /* Using the --secondary color variable defined in the root */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/*** Footer - Start ***/
+.footer {
+  color: #b0b9ae;
+}
+
+.footer .btn.btn-link {
+  display: block;
+  margin-bottom: 5px;
+  padding: 0;
+  text-align: left;
+  color: #b0b9ae;
+  font-weight: normal;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.footer .btn.btn-link::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+  color: var(--light);
+  letter-spacing: 1px;
+  box-shadow: none;
+}
+
+/* Adjusting sections to prevent navbar overlap */
+#s3-leap-portunities,
+#s4-services,
+#s5-about-me,
+#s6-contact-me {
+  scroll-margin-top: 80px; /* Adjust this value to match your navbar's height */
+}
