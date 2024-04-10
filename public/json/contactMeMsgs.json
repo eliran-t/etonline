@@ -1,0 +1,9 @@
+{
+    "postRequestSuccess": "POST request sent successfully",
+    "postRequestError": "Error sending POST request",
+    "messageSaved": "Message saved",
+    "thankYouMessage": "Thank you for reaching out :) ! <br> I'll get back to you soon as possible.<br> For faster response, you can also email me at <a href='mailto:%s'>%s</a>",
+    "errorMessage": "There was an error. Please try later. <br> Or just email me at <a href='mailto:%s'>%s</a>",
+    "getError": "Error sending GET request:",
+    "getRequestSuccess": "GET request sent successfully"
+}

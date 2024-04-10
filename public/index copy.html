@@ -787,7 +787,7 @@
 
     <script>
       const myEmail = "elleaptech@gmail.com";
-      const url =
+      const appScriptUrl =
         "https://script.google.com/macros/s/AKfycbzN3pdd8LzFcbfast2-MUlNb-eS9hQmqCC6-DqY3rF86g9bTSJ_qDVBZldjaKnf0xUk/exec";
 
       document
@@ -798,11 +798,11 @@
         e.preventDefault();
 
         // Get values
-        var name = getInputVal("name");
-        var email = getInputVal("email");
-        var message = getInputVal("message");
+        let contactName = getInputVal("name");
+        let email = getInputVal("email");
+        let message = getInputVal("message");
         // Save message
-        saveMessage(name, email, message);
+        saveMessage(contactName, email, message);
 
         // Clear form
         document.getElementById("contactForm").reset();
@@ -827,7 +827,7 @@
             },
             body: JSON.stringify(payload),
           };
-          const response = await fetch(url, options);
+          const response = await fetch(appScriptUrl, options);
           if (response.ok) {
             console.log("POST request sent successfully");
             const data = await response.json();
@@ -876,7 +876,7 @@
 
       // Separate function to send a GET request
       function sendGetRequest() {
-        fetch(url)
+        fetch(appScriptUrl)
           .then((response) => {
             if (response.ok) {
               console.log("GET request sent successfully");

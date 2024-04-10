@@ -1,0 +1,14 @@
+{
+    "firebaseConfig": {
+        "apiKey": "AIzaSyDq_YboGfPcxHuqjj38WhTFmwdHhINYnQA",
+        "authDomain": "etechleap.firebaseapp.com",
+        "databaseURL": "https://etechleap-default-rtdb.firebaseio.com",
+        "projectId": "etechleap",
+        "storageBucket": "etechleap.appspot.com",
+        "messagingSenderId": "805570885698",
+        "appId": "1:805570885698:web:57eed9c795604f634055db",
+        "measurementId": "G-V0BDZ0PEE7"
+    },
+    "myEmail": "elleaptech@gmail.com",
+    "url": "https://script.google.com/macros/s/AKfycbzN3pdd8LzFcbfast2-MUlNb-eS9hQmqCC6-DqY3rF86g9bTSJ_qDVBZldjaKnf0xUk/exec"
+}
