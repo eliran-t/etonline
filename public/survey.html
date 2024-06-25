@@ -730,7 +730,7 @@
      -->
     <div id="survey" class="container-fluid">
       <!-- section#1 User -->
-      <div class="container-fluid collapse" id="s1_user">
+      <div class="container-fluid collapse show" id="s1_user">
         <div class="section-label-container">
           <label class="section-label" for="userData">Who Are You...?</label>
         </div>
@@ -769,7 +769,7 @@
       </div>
 
       <!-- section#2 Tasks -->
-      <div class="container-fluid collapse show" id="s2_tasks">
+      <div class="container-fluid collapse" id="s2_tasks">
         <div class="section-label-container">
           <label class="section-label" for="taskSelection"
             >Which Tasks Are...?</label
@@ -2098,6 +2098,7 @@
               console.log("Dummy response:", dummyResponse);
               return dummyResponse;
             }
+
             let jsonData = JSON.stringify(data);
 
             try {
@@ -2127,8 +2128,9 @@
               } else {
                 // Handle any server-side errors
                 throw new Error(
-                  "Server did not indicate success:",
-                  jsonResponse
+                  `Server did not indicate success: ${JSON.stringify(
+                    jsonResponse
+                  )}`
                 );
               }
             } catch (error) {
