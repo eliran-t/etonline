@@ -138,7 +138,6 @@
         color: #1bc0de;
         top: 0;
         right: 0;
-        padding: 5px;
       }
 
       .focused {
@@ -206,8 +205,7 @@
         width: 40%;
         max-width: 400px;
         z-index: 4;
-        padding: 8px;
-        padding-top: 50px;
+        padding: 50px 8px;
         transform: translateX(-100%);
         transition: height 0.5s ease, padding-top 0.5s ease; /* Consistent transition for expanding */
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 2px white; /* Outer shadow and inner frame */
@@ -241,7 +239,7 @@
         transition: all 0.5s ease;
       }
 
-      @media (max-width: 767px) {
+      @media (max-width: 768px) {
         .pill-pool.kids-pool {
           opacity: 0;
           width: 280px; /* Optional: Adjust width as needed for smaller screens */
@@ -252,7 +250,6 @@
         .pill-pool {
           width: 280px; /* Optional: Adjust width as needed for smaller screens */
           max-width: none; /* Remove max-width constraint */
-          padding: 7px;
           padding-top: 40px;
           position: absolute;
           opacity: 1;
@@ -303,6 +300,13 @@
         background-color: #d0e0ff; /* Even lighter background on focus */
         border-color: #0056b3; /* Darker border color to highlight focus */
         box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2); /* Subtle shadow for depth */
+      }
+
+      .info-modal-icon {
+        display: inline-block;
+        background-color: rgb(5, 5, 5); /* Background color of the button */
+        box-shadow: 0 2px rgba(0, 0, 0, 0.2); /* More subtle 3D effect */
+        border-radius: 50%; /* Rounded corners for the button */
       }
 
       .submit-button {
@@ -364,6 +368,7 @@
         overflow: visible; /* Prevents the indicator from appearing outside the pill */
         margin: 5px;
       }
+
       .dropzone .pill::after {
         content: "×"; /* The 'X' symbol */
         position: absolute;
@@ -379,21 +384,25 @@
       }
 
       .user-fields {
-        width: 70%; /* Match the drop zone width */
+        width: 100%; /* Full width of the parent container */
         display: flex;
-        justify-content: space-between; /* Space out the input fields */
-        margin-top: 20px;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center elements horizontally */
+        justify-content: center; /* Center elements vertically if height is constrained */
+        margin-top: 50px;
       }
 
       .user-floating-label {
         position: relative;
-        width: 48%; /* Each field takes half the space minus a small gap */
+        width: 60%; /* Take 60% of the screen width */
+        max-width: 400px; /* Max width of 400px */
+        margin-bottom: 20px; /* Space between fields */
       }
 
       .user-floating-label input {
-        width: 100%;
+        width: 100%; /* Full width of the parent container */
         padding: 10px;
-        padding-left: 60px;
+        padding-left: 10px; /* Adjust if the icon or padding needs to be inside the input */
         font-size: 16px;
         border: 2px solid #ccc;
         border-radius: 4px;
@@ -667,6 +676,7 @@
         position: fixed; /* Changed from absolute to fixed */
         bottom: 0;
         width: 100%;
+        height: 45px;
         display: flex;
         justify-content: space-between;
         padding: 0 50px; /* Adjust padding as necessary */
@@ -680,7 +690,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 10px; /* Adjusted to ensure content is centered, might need fine-tuning */
+        padding: 3px; /* Adjusted to ensure content is centered, might need fine-tuning */
         font-size: 1rem;
         font-weight: bold;
         color: #000;
@@ -691,6 +701,8 @@
         transition: all 0.3s ease;
         margin-right: 18px; /* Ensure a minimum 8px gap between the icon and the text */
         width: 118px; /* Maintain specified width */
+        height: 36px;
+        margin-top: 3px;
       }
 
       .nav-button i {
@@ -712,13 +724,23 @@
         .nav-buttons {
           flex-direction: row; /* Changed to row to keep buttons side by side */
           justify-content: space-between; /* Ensures buttons are aligned to each side */
-          padding: 0 20px; /* Adjusted padding for smaller screens */
+          padding: 0 5px; /* Adjusted padding for smaller screens */
+          height: 45px;
         }
 
         .nav-button {
           margin: 10px 0; /* Removed to prevent unnecessary spacing on mobile */
           padding: 5px 10px; /* Smaller padding for smaller screens */
+          height: 40px;
         }
+      }
+
+      #s2_tasks {
+        overflow-y: scroll;
+      }
+
+      #survey {
+        height: 95%;
       }
     </style>
   </head>
@@ -732,7 +754,7 @@
       <!-- section#1 User -->
       <div class="container-fluid collapse show" id="s1_user">
         <div class="section-label-container">
-          <label class="section-label" for="userData">Who Are You...?</label>
+          <label class="section-label" for="userData">About You.</label>
         </div>
         <div class="user-fields">
           <div class="user-floating-label">
@@ -796,7 +818,7 @@
       <div class="container-fluid collapse" id="s3_commentSubmit">
         <div class="section-label-container">
           <label class="section-label" for="userComments"
-            >Any Comments...?</label
+            >Before You Go...</label
           >
         </div>
         <div class="comment-zone">
