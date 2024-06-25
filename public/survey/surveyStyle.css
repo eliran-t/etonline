@@ -1,0 +1,729 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px 10px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+  min-height: 100vh; /* Ensure body fills at least the viewport height */
+  display: flex; /* Enable Flexbox for better layout control */
+  flex-direction: column; /* Arrange content in a vertical column */
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1; /* Allow the container to take up available space */
+  padding: 0;
+  margin: 0;
+}
+
+/*******************************************
+        **  DropZones ***********************
+        *******************************************/
+
+.section-label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative; /* Ensure the positioning context is set for absolutely positioned children */
+}
+
+.section-label {
+  padding: 0 10px; /* Spacing around the text to obscure the line */
+  font-size: 1.9rem; /* Large font size for clarity */
+  color: #666; /* Color of the text */
+  background-color: #f0f0f0;
+
+  position: relative; /* Needed to ensure the label appears above the line */
+  z-index: 1; /* Make sure the label is above the pseudo-elements */
+}
+
+.section-label-container::before,
+.section-label-container::after {
+  content: "";
+  position: absolute;
+  top: 50%; /* Align to the middle of the container vertically */
+  width: 50%; /* Each line takes half the container's width */
+  height: 2px; /* Height of the line */
+  background-color: #1bc0de; /* Color of the line */
+}
+
+.section-label-container::before {
+  left: 0;
+}
+
+.section-label-container::after {
+  right: 0;
+}
+
+.survey-label {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 10px;
+  color: #666;
+  font-weight: 500;
+  font-size: 1.3rem;
+  transition: all 0.5s ease;
+}
+
+.focused .survey-label {
+  transform: translateX(-15%) translateY(-15%) scale(0.7);
+  color: #666666c8;
+}
+
+.dropzone {
+  background-color: white;
+  position: relative;
+  height: 30vh;
+  min-height: 250px;
+  width: 70%;
+  padding-top: 70px 30px;
+  margin: 20px auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-direction: row; /* Aligns children in a row */
+  flex-wrap: wrap; /* This allows items to wrap onto the next line */
+  overflow-y: auto; /* Changed from visible to auto */
+  z-index: 3;
+  transition: border-color 0.2s ease;
+}
+
+.dropzone::-webkit-scrollbar {
+  width: 12px;
+}
+
+.dropzone::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dropzone::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+.dropzone::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dropzone {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.dropzone .info-modal-icon {
+  position: absolute;
+  color: #1bc0de;
+  top: 0;
+  right: 0;
+}
+
+.focused {
+  border: 3px solid #1bc0de;
+}
+
+.unfocused {
+  border: 2px solid #ccc;
+}
+
+.tasks-pool-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 55%;
+  border: 2px dotted #ccc; /* Dotted border style */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Prevents the placeholder from being clickable */
+  opacity: 0.8; /* Start with a faded look */
+}
+
+.placeholder-content {
+  text-align: center;
+  color: #ccc; /* Light gray color for a faded look */
+  transition: opacity 0.3s ease;
+  pointer-events: auto; /* Allows the text to be clickable */
+}
+
+.dropzone.focused .tasks-pool-placeholder {
+  border: 2px dotted #666; /* Darker border when focused */
+}
+
+.dropzone.focused .placeholder-content {
+  opacity: 0; /* Fade out text when the dropzone is active */
+  visibility: hidden; /* Ensure text is not just transparent but also not taking space */
+}
+
+/*******************************************
+        **  Pill Pool ***********************
+        *******************************************/
+
+/* Collapsed state */
+.pill-pool.kids-pool {
+  position: absolute;
+  opacity: 0;
+  height: 40px; /* Smaller height when collapsed */
+  width: 40%;
+  max-width: 400px;
+  padding-top: 10px; /* Smaller padding */
+  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease; /* Added opacity to transition */
+}
+
+/* pool open */
+.pill-pool {
+  position: absolute;
+  box-sizing: border-box;
+  background-color: #1bc0de;
+  border: 3px solid #085465;
+  border-radius: 10px;
+  overflow-y: auto;
+  width: 40%;
+  max-width: 400px;
+  z-index: 4;
+  padding: 50px 8px;
+  transform: translateX(-100%);
+  transition: height 0.5s ease, padding-top 0.5s ease; /* Consistent transition for expanding */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 2px white; /* Outer shadow and inner frame */
+}
+
+.close-pool-btn {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: black; /* White text color */
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer; /* Cursor changes to pointer on hover */
+  font-weight: bold;
+}
+
+.close-pool-btn:hover {
+  background-color: #d32f2f; /* Darker shade of red on hover */
+}
+
+.pool-label {
+  position: absolute;
+  width: 97%;
+  top: 0px;
+  left: 5px;
+  padding: 10px;
+  color: black;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+@media (max-width: 768px) {
+  .pill-pool.kids-pool {
+    opacity: 0;
+    width: 280px; /* Optional: Adjust width as needed for smaller screens */
+    max-width: none; /* Remove the max-width restriction */
+    padding-top: 40px;
+  }
+
+  .pill-pool {
+    width: 280px; /* Optional: Adjust width as needed for smaller screens */
+    max-width: none; /* Remove max-width constraint */
+    padding-top: 40px;
+    position: absolute;
+    opacity: 1;
+  }
+}
+
+/*******************************************
+        **  Pills ***********************
+        *******************************************/
+
+.pill {
+  padding: 5px 10px;
+  margin: 5px 10px;
+  font-weight: 600;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+}
+.pill-example {
+  display: inline-flex;
+  align-items: center;
+  margin: 2px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.pill-input {
+  padding: 5px 10px; /* Maintain consistent padding with other pills */
+  background-color: #e8f0fe; /* Lighter background to stand out as editable */
+  border: 2px dashed #007bff; /* Dashed border to indicate editability */
+  font-size: 1rem; /* Consistent font size with other pills */
+  color: #000; /* Text color */
+  cursor: text; /* Change cursor to indicate it's editable */
+  outline: none; /* Remove default focus outline */
+  width: auto; /* Auto width to adjust based on content */
+  min-width: 150px; /* Minimum width to maintain usability */
+  display: block; /* Block display to fill the container */
+  margin: 2px 0; /* Vertical margin for spacing, no horizontal */
+  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for background and border color changes */
+}
+
+/* Focus state to highlight active editing */
+.pill-input:focus {
+  background-color: #d0e0ff; /* Even lighter background on focus */
+  border-color: #0056b3; /* Darker border color to highlight focus */
+  box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2); /* Subtle shadow for depth */
+}
+
+.info-modal-icon {
+  display: inline-block;
+  background-color: rgb(5, 5, 5); /* Background color of the button */
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2); /* More subtle 3D effect */
+  border-radius: 50%; /* Rounded corners for the button */
+}
+
+.submit-button {
+  display: block;
+  width: auto;
+  padding: 8px 16px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: black;
+  background-color: #1bc0de;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#survey {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 70px 0;
+}
+
+/* Additional styles for collapsible category groups */
+.category-group {
+  margin-bottom: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #74787db7;
+  width: 98%;
+  padding: 8px 3px;
+}
+
+.category-header {
+  background-color: #74787db7;
+  color: white;
+  padding: 8px;
+  font-size: 15px;
+  border: none;
+  width: 98%;
+  text-align: left;
+  cursor: pointer;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 -2px 4px -1px rgba(0, 0, 0, 0.06); /* Add top shadow */
+}
+
+.category-header:hover {
+  filter: brightness(
+    1.1
+  ); /* Increases the brightness of the element's color by 10% on hover */
+}
+
+.dropzone .pill {
+  position: relative; /* Ensure the pseudo-element positions relative to the pill */
+  overflow: visible; /* Prevents the indicator from appearing outside the pill */
+  margin: 5px;
+}
+
+.dropzone .pill::after {
+  content: "×"; /* The 'X' symbol */
+  position: absolute;
+  top: -5px;
+  left: -15px;
+  padding: 2px 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  border-radius: 0 5px 0 0; /* Rounded corner on the top right */
+  display: block; /* Hidden by default */
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+}
+
+.user-fields {
+  width: 100%; /* Full width of the parent container */
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  justify-content: center; /* Center elements vertically if height is constrained */
+  margin-top: 50px;
+}
+
+.user-floating-label {
+  position: relative;
+  width: 60%; /* Take 60% of the screen width */
+  max-width: 400px; /* Max width of 400px */
+  margin-bottom: 20px; /* Space between fields */
+}
+
+.user-floating-label input {
+  width: 100%; /* Full width of the parent container */
+  padding: 10px;
+  padding-left: 10px; /* Adjust if the icon or padding needs to be inside the input */
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.user-floating-label input:focus {
+  border-color: #1bc0de; /* Updated focus color to #1bc0de */
+  box-shadow: 0 0 8px rgba(27, 192, 222, 0.5); /* Adds a light blue glow effect on focus */
+}
+
+.user-floating-label label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 10px;
+  margin-top: 5px; /* Center label in the input field */
+  color: #666; /* Initial label color */
+  transition: all 0.3s ease;
+  font-size: 1.5rem; /* Initial font size */
+  pointer-events: none; /* Allows click events to pass through to the input */
+}
+
+.user-floating-label input:focus + label,
+.user-floating-label input:not(:placeholder-shown) + label {
+  transform: translateX(-20%) translateY(-20%) scale(0.6);
+}
+
+.comment-zone {
+  width: 70%; /* Match the drop zone width */
+  margin: 20px auto; /* Vertically space it out and center */
+  background-color: white;
+  position: relative;
+  height: 30vh;
+  min-height: 250px;
+  margin: 20px auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+  flex-direction: row; /* Aligns children in a row */
+  flex-wrap: wrap; /* This allows items to wrap onto the next line */
+  overflow-y: visible;
+  z-index: 3;
+  transition: border-color 0.2s ease;
+}
+
+.comment-textarea {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  padding-top: 40px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.comment-label {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 10px;
+  margin-top: 11px; /* Center label in the textarea */
+  color: #666;
+  font-size: 1.5rem;
+  pointer-events: none; /* Allows click events to pass through to the textarea */
+  transition: all 0.3s ease;
+}
+
+.comment-textarea:focus + .comment-label,
+.comment-textarea:not(:placeholder-shown) + .comment-label {
+  transform: translateX(-20%) translateY(-20%) scale(0.6);
+}
+
+.submit-button {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  display: none; /* Hidden by default */
+  align-items: center; /* Vertical alignment */
+  justify-content: center; /* Horizontal alignment */
+  background-color: rgba(
+    17,
+    16,
+    16,
+    0.654
+  ); /* Adjusted alpha value for more transparency */
+}
+
+.info-modal-content {
+  background-color: #fefefe;
+  padding: 30px 20px;
+  border: 1px solid #888;
+  width: auto; /* Width is set to auto */
+  max-width: 600px; /* Adjusted maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* Adding depth with shadow */
+  position: relative; /* Positioning relative for positioning close button */
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  min-height: 400px;
+}
+
+.info-modal-close {
+  color: black;
+  position: absolute; /* Positioning close button absolutely */
+  top: 5px; /* Adjusted position from the top */
+  right: 5px; /* Position from the right */
+  font-size: 20px; /* Increased font size for larger close button */
+  cursor: pointer; /* Changes cursor to pointer on hover for better UX */
+}
+
+.info-modal p {
+  padding-top: 20px;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) {
+  .info-modal-content {
+    max-width: 600px; /* Maintain max width for larger screens */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-modal-content {
+    width: 90%; /* Adjust width for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .info-modal-close {
+    top: 5px; /* Adjust close button position for smaller screens */
+    right: 5px; /* Adjust close button position for smaller screens */
+  }
+
+  .section-label {
+    font-size: 1.5rem;
+    color: #666;
+  }
+
+  .dropzone,
+  .user-fields,
+  .comment-zone {
+    width: 100%; /* Ensures these elements take full width on smaller screens */
+  }
+
+  .dropzone {
+    margin-bottom: 7rem;
+    padding: 40px 5px;
+  }
+
+  /* .user-floating-label {
+            width: 100%; /* Make each field take the full width *
+            margin: 1rem 0;
+          } */
+
+  /* Additional styles for collapsible category groups */
+  .category-group,
+  .category-header {
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;
+    opacity: 1;
+  }
+  .category-header {
+    padding: 5px;
+  }
+
+  .user-fields {
+    flex-direction: column; /* Stack the input fields vertically */
+  }
+
+  .user-floating-label {
+    width: 100%; /* Each input field takes full width */
+    margin-bottom: 20px; /* Add some space between the fields */
+  }
+
+  .user-floating-label input {
+    padding-left: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .user-short-fields {
+    padding-left: 60px !important;
+  }
+}
+
+.kids-pool .category-header:first-of-type {
+  margin-top: 100px;
+}
+
+.dropzone {
+  padding-top: 50px;
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0; /* Start fully transparent */
+    transform: translate(-50%, -50%) scale(0.9); /* Start slightly smaller */
+  }
+  to {
+    opacity: 1; /* End fully opaque */
+    transform: translate(-50%, -50%) scale(1); /* Scale to actual size */
+  }
+}
+
+#feedbackContainer {
+  position: fixed;
+  z-index: 10000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: auto; /* Adjust height to auto to accommodate wrapped text */
+  min-height: 100px; /* Keep a minimum height */
+  background-color: #f2f2f2;
+  color: #333;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInScaleUp 0.5s ease-out forwards; /* Apply the animation */
+  white-space: normal; /* Ensure text wraps */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  line-height: normal; /* Adjust line height for text wrapping */
+}
+
+.feedback-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.841);
+  z-index: 9990; /* Ensure it's below the feedbackContainer but above other content */
+  display: none; /* Hidden by default */
+}
+
+.feedback-modal-close {
+  color: black;
+  position: absolute; /* Positioning close button absolutely */
+  top: 5px; /* Adjusted position from the top */
+  right: 5px; /* Position from the right */
+  font-size: 20px; /* Increased font size for larger close button */
+  cursor: pointer; /* Changes cursor to pointer on hover for better UX */
+}
+
+.nav-buttons {
+  position: fixed; /* Changed from absolute to fixed */
+  bottom: 0;
+  width: 100%;
+  height: 40x;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px; /* Adjust padding as necessary */
+  background-color: #fff; /* Optional: to ensure visibility against page content */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for better separation */
+  z-index: 9999;
+}
+
+.nav-button {
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0px; /* Adjusted to ensure content is centered, might need fine-tuning */
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #000;
+  background-color: transparent;
+  border: 2px solid #1bc0de;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 18px; /* Ensure a minimum 8px gap between the icon and the text */
+  width: 118px; /* Maintain specified width */
+  height: 30px;
+  margin-bottom: 5px !important;
+}
+
+.nav-button i {
+  margin-left: 8px;
+  margin-right: 8px; /* Adjust spacing between icon and text as needed */
+}
+
+.nav-button:hover {
+  background-color: #1bc0de;
+  color: #fff;
+}
+
+.invisible-button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .nav-buttons {
+    flex-direction: row; /* Changed to row to keep buttons side by side */
+    justify-content: space-between; /* Ensures buttons are aligned to each side */
+    padding: 0 5px; /* Adjusted padding for smaller screens */
+    height: 40px;
+  }
+
+  .nav-button {
+    margin: 10px 0; /* Removed to prevent unnecessary spacing on mobile */
+    padding: 0px 10px; /* Smaller padding for smaller screens */
+    height: 30px;
+    font-size: 0.9rem;
+  }
+}
+
+#s2_tasks {
+  overflow-y: scroll;
+}
+
+#survey {
+  height: 95%;
+}
