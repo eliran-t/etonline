@@ -1,5 +1,5 @@
 const FEEDBACK_EMAIL = "contact@eleaptech.com";
-const sections = ["s1_user", "s2_tasks", "s3_commentSubmit"];
+const sections = ["s1_context", "s2_tasks", "s3_commentSubmit"];
 
 let inputPillText = {
   text: "Click to add a task of your own. Press Enter to confirm.",
@@ -394,7 +394,7 @@ const MSGS = {
     "An error occurred, but your responses have been saved. Please try again later or contact support.",
   ERROR_PREP:
     "An error occurred while preparing your data. Please try again or contact support.",
-  SECTION0_INFO: `
+  SECTION2_INFO: `
   <div class="S2-main-info-title">
     🎯 Survey Goal
   </div>
@@ -428,7 +428,7 @@ End Goal:
 Free up your team to focus on what they truly enjoy and excel at while maximizing your organization's productivity, efficiency, growth, and profit.
   </div>
 `,
-  SECTION1_INFO: ` 
+  SECTION2_INFO: ` 
   <div class="S2-main-info-title">⚙️ <b>Instructions:</b></div>
   <div class="S2-main-info-text">
     <ul class="s2-ul-li-info-modal">

@@ -66,36 +66,51 @@
       </div>
 
       <!-- section#1 User -->
-      <div class="container-fluid collapse" id="s1_user">
+      <div class="container-fluid collapse" id="s1_context">
         <div class="section-label-container">
-          <label class="section-label" for="userData">About You.</label>
+          <label class="section-label" for="userData">Context</label>
         </div>
 
-        <div class="user-fields">
-          <div class="user-floating-label">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="user-short-fields"
-              placeholder=" "
-              required
-            />
-            <label for="name">Name</label>
+        <div id="surveyContect">
+          <div class="S2-main-info-title">🎯 Survey Goal</div>
+          <div class="S2-main-info-text">
+            Map your team's daily tasks to groups -> <br />
+            identify the best candidates for a
+            <a href="https://www.eleaptech.com"> "tech leap"</a>
           </div>
-          <div class="user-floating-label">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="user-short-fields"
-              placeholder=" "
-              required
-            />
-            <label for="email">Email</label>
+          <div class="S2-main-info-title">A side product of the above:</div>
+          <div class="S2-main-info-text">
+            - Uncover hidden inefficiencies and workflow blind spots. <br />
+            - Identify untapped opportunities for growth and profit.
+          </div>
+          <div class="S2-main-info-title">
+            Next, tailor Software Solutions based on the COP strategy:
+          </div>
+          <div class="S2-main-info-text">
+            <ul class="s2-ul-li-info-modal">
+              <li>
+                <b>Control:</b> Empower your team with real-time insights,
+                intuitive dashboards, and useful notifications about critical
+                events and processes.
+              </li>
+              <li>
+                <b>Optimize:</b> Improve workflows with tools like automation
+                (e.g., scheduling weekly reports or triggering follow-up emails
+                after customer inquiries)...
+              </li>
+              <li>
+                <b>Prevent:</b> Safeguard org operations by reducing manual
+                error-prone tasks, leverage historical data to predict and
+                prevent potential issues...
+              </li>
+            </ul>
+          </div>
+          <div class="S2-main-info-title">End Goal:</div>
+          <div class="S2-main-info-text">
+            Your team can focus on what they truly enjoy and excel at -><br />
+            Improve productivity, morale, and overall business performance.
           </div>
         </div>
-        <!-- User section content -->
         <div class="nav-buttons">
           <button class="nav-button invisible-button"></button>
           <!-- Invisible Spacer Button -->
@@ -143,10 +158,11 @@
       <!-- section#3 Comments -->
       <div class="container-fluid collapse" id="s3_commentSubmit">
         <div class="section-label-container">
-          <label class="section-label" for="userComments"
-            >Before You Go...</label
-          >
+          <label class="section-label" for="userComments">Any Comments?</label>
         </div>
+
+        <!-- User section content -->
+
         <div class="comment-zone">
           <textarea
             class="comment-textarea"
@@ -155,6 +171,36 @@
           ></textarea>
           <label class="comment-label" for="userComments">Comments</label>
         </div>
+
+        <div class="section-label-container">
+          <label class="section-label" for="userData">About You.</label>
+        </div>
+
+        <div class="user-fields">
+          <div class="user-floating-label">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="user-short-fields"
+              placeholder=" "
+              required
+            />
+            <label for="name">Name</label>
+          </div>
+          <div class="user-floating-label">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="user-short-fields"
+              placeholder=" "
+              required
+            />
+            <label for="email">Email</label>
+          </div>
+        </div>
+
         <div class="nav-buttons">
           <button id="prevBtn3" class="nav-button">
             <i class="fas fa-person-walking-arrow-loop-left inav"></i> Prev

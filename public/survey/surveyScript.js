@@ -669,7 +669,7 @@ function showSection(index) {
 
 function startSurvey() {
   const section0_element = document.getElementById("s0_welcome");
-  const section1_element = document.getElementById("s1_user");
+  const section1_element = document.getElementById("s1_context");
   section1_element.classList.remove("collapse");
   section1_element.classList.add("show");
 
