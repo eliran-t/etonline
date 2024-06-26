@@ -724,6 +724,36 @@ body {
   overflow-y: scroll;
 }
 
+.S2-main-info-title {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+.S2-main-info-text {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.s2-ul-li-info-modal {
+  padding-left: 1rem;
+}
+
 #survey {
   height: 95%;
+}
+
+.section-alert {
+  margin: 20px 5px;
+}
+
+#alertSection1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px; /* Adjust based on your preference */
+  margin: auto; /* Center the card horizontally */
+  position: relative; /* Needed for absolute positioning of children, if any */
+  margin-top: 20px;
 }
