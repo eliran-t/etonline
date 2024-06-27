@@ -627,26 +627,29 @@ function addInfoModalIcon(id, container, message, color) {
   })(message, color);
   return faIcon;
 }
-
 function infoModal(message, color) {
   const infoModal = document.getElementById("infoModal");
   const infoModalText = document.getElementById("infoModalText");
   const infoModalContent = document.querySelector(".info-modal-content");
   const infoModalClose = document.querySelector(".info-modal-close");
+  const body = document.body;
 
   infoModalText.innerHTML = message;
   if (color) {
     infoModalContent.style.backgroundColor = color;
   }
   infoModal.style.display = "flex"; // Use flex to center the modal
+  body.classList.add("body-no-scroll"); // Disable scrolling on the body
 
   infoModalClose.onclick = function () {
     infoModal.style.display = "none";
+    body.classList.remove("body-no-scroll"); // Re-enable scrolling on the body
   };
 
   window.onclick = function (event) {
     if (event.target == infoModal) {
       infoModal.style.display = "none";
+      body.classList.remove("body-no-scroll"); // Re-enable scrolling on the body
     }
   };
 }
