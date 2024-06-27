@@ -27,16 +27,12 @@
           <label class="section-label" for="userData">Welcome!</label>
         </div>
 
-        <div
-          id="alertSection1"
-          class="alert alert-light section-alert"
-          role="alert"
-        >
-          <strong>First...</strong> <br />Thank you for taking the time to fill
-          out this survey.
+        <div class="survey-card">
+          <strong>First...</strong> Thank you for taking the time to fill out
+          this survey.
           <br />
           <br />
-          <strong>Tip:</strong> Click these
+          <strong>Tip:</strong> Click the
           <i
             id="infoIconSection1"
             class="fas fa-question-circle info-modal-icon"
@@ -47,13 +43,20 @@
               margin: 0 3px;
             "
           ></i>
-          icons throughout the survey for more information.
+          throughout the survey for more information.
           <br />
           <br />
-          Estimated time to complete: <strong>5-10 minutes</strong>
+          <strong>Estimated completion time:</strong> 7 min.
           <br />
           <br />
-          Click 'Next' to get started!
+          <div id="S1-warning" class="alert alert-warning">
+            ⚠️ The next page contains short context for this survey. In addition
+            to enhance the survey's outcomes, this context could also expedite
+            its completion.
+          </div>
+          <br />
+
+          Click <b>Next</b> to get started!
         </div>
         <!-- User section content -->
         <div class="nav-buttons">
@@ -68,50 +71,92 @@
       <!-- section#1 User -->
       <div class="container-fluid collapse" id="s1_context">
         <div class="section-label-container">
-          <label class="section-label" for="userData">Some Context</label>
+          <label class="section-label" for="userData">Context</label>
         </div>
 
-        <div id="surveyContent">
-          <div class="S2-main-info-title">⚠️ Attention:</div>
-          <div class="S2-main-info-text">
-            Please review the information provided below. In addition to enhance the survey's outcomes, this context could also expedite its completion.
+        <div id="surveyContext" class="section-content">
+          <div class="survey-card">
+            <div class="S2-main-info-title">The Survey.</div>
+            <div class="S2-main-info-text">
+              <b> Data collection: </b> This survey is designed to help
+              pinpointing workflows most suitable for optimization. We look for:
+              <ul class="s2-ul-li-info-modal">
+                <li>
+                  Tasks that are time-consuming, repetitive, error-prone or even
+                  just plain annoying.
+                </li>
+                <li>
+                  Areas where improved data access enables quicker, more
+                  informed decisions (e.g. dashboards / notifications/ reports).
+                </li>
+              </ul>
+
+              <b> Solution Proposal: </b> based on the survey outcome we'll
+              build a plan to streamline your operations and reveal growth
+              opportunities, but most importantly,
+
+              <span class="marker"
+                >empower your team to focus on tasks they are passionate about
+                and play to their strengths.</span
+              >
+            </div>
           </div>
-<hr>
-        <div class="S2-main-info-title">🎯 Survey Goal</div>
-        <div class="S2-main-info-text">
-          Pinpointing most error-prune, time-consuming, soul-crushing tasks essential for refining your operations and revealing opportunities for growth. 
-        </div>
-        <hr>
-        <div class="S2-main-info-title">🔧 ToolBox</div>
-        <div class="S2-main-info-text">
-          <ul class="s2-ul-li-info-modal">
-            <li>
-              <b>AI:</b> Besides customer service bot, AI can also be used for:
-              <br />
-              - Predicting trends and outcomes <br />
-              - Personalizing customer experiences <br />
-              - Analyze campaigns and customer feedback <br />
-            </li>
-            <li>
-              <b>Automation:</b> is mostly about streamlining repetitive tasks
-              and workflows, such as:
-              <br />
-              - Followup emails <br />
-              - Invoicing <br />
-              - Key metrics dashboards. <br />
-              - Alert for critical events <br />
-            </li>
-            <li>
-              <b>Smart Office:</b> Setting up Software and hardware , such as:
-              <br />
-              - Smart lighting / thermostats / security cameras...<br />
-              - inventory management tools <br />
-              - Project management tools <br />
-              <br />
-            </li>
-          </ul>
-          You can read more in
-          <a href="https://www.eleaptech.com"> "eTechLeap.com"</a>
+
+          <div class="survey-card">
+            <div class="S2-main-info-title">The Toolbox.</div>
+            <div class="S2-main-info-text">
+              Automation: Streamline repetitive tasks without manual effort,
+              such as:
+              <ul class="s2-ul-li-info-modal">
+                <li>
+                  Event-based actions: Send follow-up emails to customers after
+                  a purchase or abandoned cart.
+                </li>
+                <li>
+                  Time-driven tasks: Generate weekly sales reports, or schedule
+                  social media posts in advance.
+                </li>
+                <li>
+                  Workflow management: Streamline the approval process for
+                  invoices or expense reports.
+                </li>
+                <li>
+                  Threshold-based alerts:low inventory alert, delayed shipment
+                  notification.
+                </li>
+                <li>
+                  Data processing: Generate sales dashboards, customer retention
+                  reports.
+                </li>
+              </ul>
+
+              AI: Perform tasks that typically require human-like intelligence,
+              such as:
+              <ul class="s2-ul-li-info-modal">
+                <li>
+                  Analyzing data: Analyze customer feedback to identify trends
+                  and areas for improvement.
+                </li>
+                <li>
+                  Identifying patterns: Forecast sales trends to optimize
+                  inventory levels and avoid stock-outs.
+                </li>
+                <li>
+                  Customer interaction: Provide customer support and
+                  personalized product recommendations through AI-powered
+                  chatbots.
+                </li>
+              </ul>
+
+              Read more in
+              <a href="https://www.eleaptech.com"> "eTechLeap.com"</a>
+            </div>
+          </div>
+
+          <div class="survey-card">
+            <div class="S2-main-info-title"></div>
+            <div class="S2-main-info-text"></div>
+          </div>
         </div>
 
         <div class="nav-buttons">

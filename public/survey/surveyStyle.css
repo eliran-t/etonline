@@ -1,9 +1,24 @@
+/* Define variables at the root level for global scope */
+:root {
+  --bg-color: #f0f0f0;
+  --primary-color: #1bc0de;
+  --secondary-color: #1d309e;
+  --font-size: 16px;
+  --padding: 10px;
+  --section-label-container-height: 50px; /* Example height */
+  --nav-buttons-height: 40px; /* Example height */
+}
+
+.marker {
+  background-color: yellow;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 20px 10px;
   font-size: 16px;
-  background-color: #f0f0f0;
+  background-color: var(--bg-color);
   min-height: 100vh; /* Ensure body fills at least the viewport height */
   display: flex; /* Enable Flexbox for better layout control */
   flex-direction: column; /* Arrange content in a vertical column */
@@ -23,18 +38,21 @@ body {
         *******************************************/
 
 .section-label-container {
+  height: var(--section-label-container-height); /* Use the variable */
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  position: relative; /* Ensure the positioning context is set for absolutely positioned children */
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color); /* Adjust the color as needed */
+  z-index: 1000; /* Ensure it stays on top of other content */
 }
-
 .section-label {
   padding: 0 10px; /* Spacing around the text to obscure the line */
   font-size: 1.9rem; /* Large font size for clarity */
   color: #666; /* Color of the text */
-  background-color: #f0f0f0;
+  background-color: var(--bg-color);
 
   position: relative; /* Needed to ensure the label appears above the line */
   z-index: 1; /* Make sure the label is above the pseudo-elements */
@@ -80,7 +98,7 @@ body {
   height: 30vh;
   min-height: 250px;
   width: 70%;
-  padding-top: 70px 30px;
+  padding: 70px 30px;
   margin: 20px auto;
   border-radius: 0.25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -659,7 +677,7 @@ body {
   position: fixed; /* Changed from absolute to fixed */
   bottom: 0;
   width: 100%;
-  height: 40x;
+  height: var(--nav-buttons-height); /* Use the variable */
   display: flex;
   justify-content: space-between;
   padding: 0 50px; /* Adjust padding as necessary */
@@ -704,20 +722,6 @@ body {
   pointer-events: none;
 }
 
-.S2-main-info-title {
-  font-size: 1rem;
-  margin-bottom: 3px;
-}
-
-.S2-main-info-text {
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-}
-
-.s2-ul-li-info-modal {
-  padding-left: 1rem;
-}
-
 @media (max-width: 768px) {
   .nav-buttons {
     flex-direction: row; /* Changed to row to keep buttons side by side */
@@ -732,14 +736,33 @@ body {
     height: 30px;
     font-size: 0.9rem;
   }
+}
 
-  .S2-main-info-title {
-    font-size: 0.9rem;
-  }
+#S1-warning {
+  color: #333; /* Dark text for contrast */
+  padding: 5px; /* Spacing inside the card */
+  margin: 5px 0; /* Space around the card */
+  border-left: 5px solid #ffc107; /* Accent border to signify warning */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Elevated shadow effect */
+  border-radius: 5px; /* Rounded corners */
 }
 
 #s2_tasks {
   overflow-y: scroll;
+}
+
+.S2-main-info-title {
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+}
+
+.S2-main-info-text {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.s2-ul-li-info-modal {
+  padding-left: 1rem;
 }
 
 #survey {
@@ -750,18 +773,26 @@ body {
   margin: 20px 5px;
 }
 
-#alertSection1 {
+.survey-card {
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.289);
+  width: 95%;
   max-width: 600px; /* Adjust based on your preference */
   margin: auto; /* Center the card horizontally */
   position: relative; /* Needed for absolute positioning of children, if any */
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
-#surveyContent {
+#surveyContext {
   max-width: 500px;
+}
+
+/* Additional styles for .section-content */
+.section-content {
+  height: calc(
+    99vh - var(--section-label-container-height) - var(--nav-buttons-height)
+  );
+  overflow-y: auto; /* Enables vertical scrolling */
 }
