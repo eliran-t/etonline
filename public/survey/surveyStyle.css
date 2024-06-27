@@ -704,6 +704,20 @@ body {
   pointer-events: none;
 }
 
+.S2-main-info-title {
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+
+.S2-main-info-text {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.s2-ul-li-info-modal {
+  padding-left: 1rem;
+}
+
 @media (max-width: 768px) {
   .nav-buttons {
     flex-direction: row; /* Changed to row to keep buttons side by side */
@@ -718,24 +732,14 @@ body {
     height: 30px;
     font-size: 0.9rem;
   }
+
+  .S2-main-info-title {
+    font-size: 0.9rem;
+  }
 }
 
 #s2_tasks {
   overflow-y: scroll;
-}
-
-.S2-main-info-title {
-  font-size: 1rem;
-  margin-bottom: 3px;
-}
-
-.S2-main-info-text {
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-}
-
-.s2-ul-li-info-modal {
-  padding-left: 1rem;
 }
 
 #survey {
