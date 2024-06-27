@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Carousel</title>
+    <style>
+      #carouselContext {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #carouselContext .carousel {
+        display: flex;
+        width: 300%;
+        height: 90%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      #carouselContext .card {
+        flex: 0 0 33.333%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        overflow-y: auto;
+      }
+
+      #carouselContext .indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+
+      #carouselContext .indicator {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ccc;
+        cursor: pointer;
+      }
+
+      #carouselContext .indicator.active {
+        background-color: #333;
+      }
+
+      #carouselContext .S2-main-info-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      #carouselContext .S2-main-info-text {
+        margin-bottom: 20px;
+      }
+
+      #carouselContext .s2-ul-li-info-modal {
+        padding-left: 20px;
+      }
+
+      #carouselContext .nav-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 5px;
+      }
+
+      #carouselContext .nav-button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      #carouselContext .prev-button {
+        left: 10px;
+      }
+
+      #carouselContext .next-button {
+        right: 10px;
+      }
+
+      @media (min-width: 320px) {
+        #carouselContext {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="S2-main-info-title">A side product of the above:</div>
+    <div class="S2-main-info-text">
+      - Uncover hidden inefficiencies and workflow blind spots. <br />
+      - Identify untapped opportunities for growth and profit.
+    </div>
+    <div id="carouselContext">
+      <div class="carousel">
+        <div class="card">
+          <div class="S2-main-info-title">🎯 Survey Goal</div>
+          <div class="S2-main-info-text">
+            Map your team's daily tasks to groups -> <br />
+            identify the best candidates for a
+            <a href="https://www.eleaptech.com">"tech leap"</a>
+          </div>
+          <div class="S2-main-info-title">A side product of the above:</div>
+          <div class="S2-main-info-text">
+            - Uncover hidden inefficiencies and workflow blind spots. <br />
+            - Identify untapped opportunities for growth and profit.
+          </div>
+        </div>
+        <div class="card">
+          <div class="S2-main-info-title">
+            Next, tailor Software Solutions based on the COP strategy:
+          </div>
+          <div class="S2-main-info-text">
+            <ul class="s2-ul-li-info-modal">
+              <li>
+                <b>Control:</b> Empower your team with real-time insights,
+                intuitive dashboards, and useful notifications about critical
+                events and processes.
+              </li>
+              <li>
+                <b>Optimize:</b> Improve workflows with tools like automation
+                (e.g., scheduling weekly reports or triggering follow-up emails
+                after customer inquiries)...
+              </li>
+              <li>
+                <b>Prevent:</b> Safeguard org operations by reducing manual
+                error-prone tasks, leverage historical data to predict and
+                prevent potential issues...
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="S2-main-info-title">End Goal:</div>
+          <div class="S2-main-info-text">
+            Your team can focus on what they truly enjoy and excel at -><br />
+            Improve productivity, morale, and overall business performance.
+          </div>
+        </div>
+      </div>
+      <button class="nav-button prev-button">&lt;</button>
+      <button class="nav-button next-button">&gt;</button>
+      <div class="indicators">
+        <span class="indicator active"></span>
+        <span class="indicator"></span>
+        <span class="indicator"></span>
+      </div>
+    </div>
+
+    <script>
+      const carousel = document.querySelector("#carouselContext .carousel");
+      const indicators = document.querySelectorAll(
+        "#carouselContext .indicator"
+      );
+      const prevButton = document.querySelector(
+        "#carouselContext .prev-button"
+      );
+      const nextButton = document.querySelector(
+        "#carouselContext .next-button"
+      );
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 33.333}%)`;
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("active", index === currentIndex);
+        });
+        prevButton.style.display = currentIndex === 0 ? "none" : "block";
+        nextButton.style.display = currentIndex === 2 ? "none" : "block";
+      }
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+          currentIndex = index;
+          updateCarousel();
+        });
+      });
+
+      prevButton.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateCarousel();
+        }
+      });
+
+      nextButton.addEventListener("click", () => {
+        if (currentIndex < 2) {
+          currentIndex++;
+          updateCarousel();
+        }
+      });
+
+      // Swipe functionality
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      carousel.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      carousel.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
+
+      function handleSwipe() {
+        if (touchEndX < touchStartX) {
+          // Swipe left
+          if (currentIndex < 2) {
+            currentIndex++;
+            updateCarousel();
+          }
+        } else if (touchEndX > touchStartX) {
+          // Swipe right
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        }
+      }
+
+      updateCarousel();
+    </script>
+  </body>
+</html>
