@@ -689,6 +689,7 @@ body {
   height: var(--nav-buttons-bar-height); /* Use the variable */
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Add this line to center buttons vertically */
   padding: 0 4rem; /* Adjust padding as necessary */
   background-color: #fff; /* Optional: to ensure visibility against page content */
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for better separation */
@@ -696,7 +697,6 @@ body {
 }
 
 .nav-button {
-  margin-bottom: 0.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
