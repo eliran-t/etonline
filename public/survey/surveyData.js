@@ -375,14 +375,26 @@ const dropZoneNames = [
   {
     id: "qLeastLikable",
     label: "Least Favorite",
-    info: "<p>Which tasks do you or your team dislike the most?</p><ul><li><b>Entering information by hand:</b> Often seen as boring and repetitive</li><li><b>Checking for mistakes in documents:</b> Requires a lot of focus and can be tiring</li><li><b>Cold calling:</b> Making unsolicited calls can be stressful</li><li><b>Manually updating spreadsheets:</b> Takes a long time and is easy to make mistakes</li></ul>",
+    info: "<p>Which tasks drain your team's time, energy and moral?</p><ul><li><b>Entering information by hand:</b> Often seen as boring and repetitive</li><li><b>Checking for mistakes in documents:</b> Requires a lot of focus and can be tiring</li><li><b>Cold calling:</b> Making unsolicited calls can be stressful</li><li><b>Manually updating spreadsheets:</b> Takes a long time and is easy to make mistakes</li></ul>",
   },
   {
     id: "qUserCandidates",
     label: "Best Candidates",
-    info: "<p>Which tasks do you think could be done better or faster with the help of software?</p><ul><li><b>Entering information by hand:</b> Tools exist that can pull in information automatically</li><li><b>Responding to customer questions:</b> Chatbots can answer simple questions, letting your team focus on more complex issues</li><li><b>Managing social media:</b> Some programs can schedule posts, analyze what's working, and even help create content</li><li><b>Looking for patterns in data:</b> Special software can quickly analyze large amounts of information to find trends you might miss</li></ul>",
+    info: "<p>Which tasks would you like to optimize?</p><ul><li><b>Entering information by hand:</b> Tools exist that can pull in information automatically</li><li><b>Responding to customer questions:</b> Chatbots can answer simple questions, letting your team focus on more complex issues</li><li><b>Managing social media:</b> Some programs can schedule posts, analyze what's working, and even help create content</li><li><b>Looking for patterns in data:</b> Special software can quickly analyze large amounts of information to find trends you might miss</li></ul>",
   },
 ];
+
+function addLabelToInfo(dropZoneNames) {
+  dropZoneNames.forEach((dropZone) => {
+    // Prepend the label to the info property, wrapped in a heading tag for emphasis
+    dropZone.info = `<h3>${dropZone.label}</h3>${dropZone.info}`;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Assuming dropZoneNames is available and populated
+  addLabelToInfo(dropZoneNames);
+});
 
 const MSGS = {
   SUBMIT: "Submitting your survey...",
@@ -432,14 +444,22 @@ Free up your team to focus on what they truly enjoy and excel at while maximizin
   <div class="S2-main-info-title">⚙️ <b>Instructions:</b></div>
   <div class="S2-main-info-text">
     <ul class="s2-ul-li-info-modal">
-      <li>Each box is a task group.</li>
-      <li>Click a box to open Tasks Pool.</li>
+      <li>Each box represents a group of tasks.<ul>
+          <li>a task can be in multiple groups.</li>
+        </ul></li>
+      <li>Click (select) a box to open Tasks Pool<ul>
+  <li>list of common tasks categories.</li>
+</ul></li>
       <li>Click a category to see its tasks.</li>
-      <li>Click or drag&drop pills into the box.</li>
-      <li>Add your own tasks in last category (Custom input) .</li>
+      <li>Click or drag&drop pills into selected box.</li>
+      <li>Click last category (Custom input) to add new tasks.</li>
       <li>Click white pill to edit , press Enter to commit.</li>
+
+      <ul>
+          <li>new pill is added to both box and pool.</li>
+        </ul>
       <li>
-        Click category
+        Click the category's
         <i
           id="infoIconSection2"
           class="fas fa-question-circle info-modal-icon"

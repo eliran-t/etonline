@@ -6,7 +6,7 @@
   --font-size: 16px;
   --padding: 10px;
   --section-label-container-height: 50px; /* Example height */
-  --nav-buttons-height: 40px; /* Example height */
+  --nav-buttons-bar-height: 2.8rem; /* Example height */
 }
 
 .marker {
@@ -22,6 +22,10 @@ body {
   min-height: 100vh; /* Ensure body fills at least the viewport height */
   display: flex; /* Enable Flexbox for better layout control */
   flex-direction: column; /* Arrange content in a vertical column */
+}
+
+.body-no-scroll {
+  overflow: hidden;
 }
 
 .container-fluid {
@@ -404,7 +408,9 @@ body {
 .user-floating-label input {
   width: 100%; /* Full width of the parent container */
   padding: 10px;
-  padding-left: 10px; /* Adjust if the icon or padding needs to be inside the input */
+  padding-left: 13px; /* Adjust if the icon or padding needs to be inside the input */
+  padding-top: 20px; /* Adjust if the icon or padding needs to be inside the input */
+
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -425,7 +431,7 @@ body {
   margin-top: 5px; /* Center label in the input field */
   color: #666; /* Initial label color */
   transition: all 0.3s ease;
-  font-size: 1.5rem; /* Initial font size */
+  font-size: 1.1rem; /* Initial font size */
   pointer-events: none; /* Allows click events to pass through to the input */
 }
 
@@ -440,7 +446,6 @@ body {
   background-color: white;
   position: relative;
   height: 30vh;
-  min-height: 250px;
   margin: 20px auto;
   border-radius: 0.25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -459,7 +464,7 @@ body {
   width: 100%;
   height: 100%;
   padding: 10px;
-  padding-top: 40px;
+  padding-top: 25px;
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
@@ -473,7 +478,7 @@ body {
   right: 10px;
   margin-top: 11px; /* Center label in the textarea */
   color: #666;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   pointer-events: none; /* Allows click events to pass through to the textarea */
   transition: all 0.3s ease;
 }
@@ -516,6 +521,10 @@ body {
   animation-name: animatetop;
   animation-duration: 0.4s;
   min-height: 400px;
+  user-select: text; /* Override to allow text selection */
+
+  max-height: 80vh; /* Maximum height to ensure content is within viewport */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
 }
 
 .info-modal-close {
@@ -528,7 +537,7 @@ body {
 }
 
 .info-modal p {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 /* Add Animation */
@@ -608,7 +617,7 @@ body {
   }
 
   .user-short-fields {
-    padding-left: 60px !important;
+    padding-left: 20px !important;
   }
 }
 
@@ -623,7 +632,7 @@ body {
 @keyframes fadeInScaleUp {
   from {
     opacity: 0; /* Start fully transparent */
-    transform: translate(-50%, -50%) scale(0.9); /* Start slightly smaller */
+    transform: translate(-50%, -50%) scale(0.8); /* Start slightly smaller */
   }
   to {
     opacity: 1; /* End fully opaque */
@@ -677,17 +686,17 @@ body {
   position: fixed; /* Changed from absolute to fixed */
   bottom: 0;
   width: 100%;
-  height: var(--nav-buttons-height); /* Use the variable */
+  height: var(--nav-buttons-bar-height); /* Use the variable */
   display: flex;
   justify-content: space-between;
-  padding: 0 50px; /* Adjust padding as necessary */
+  padding: 0 4rem; /* Adjust padding as necessary */
   background-color: #fff; /* Optional: to ensure visibility against page content */
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for better separation */
   z-index: 9999;
 }
 
 .nav-button {
-  margin: 5px;
+  margin-bottom: 0.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -701,15 +710,16 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-right: 18px; /* Ensure a minimum 8px gap between the icon and the text */
-  width: 118px; /* Maintain specified width */
-  height: 30px;
-  margin-bottom: 5px !important;
+  margin-right: 1rem; /* Ensure a minimum 8px gap between the icon and the text */
+  width: 7rem; /* Maintain specified width */
+  height: calc(
+    var(--nav-buttons-bar-height) * 0.8
+  ); /* Calculate height as half of --nav-buttons-bar-height */
 }
 
 .nav-button i {
-  margin-left: 8px;
-  margin-right: 8px; /* Adjust spacing between icon and text as needed */
+  margin-left: 0.5rem;
+  margin-right: 0.5rem; /* Adjust spacing between icon and text as needed */
 }
 
 .nav-button:hover {
@@ -751,11 +761,13 @@ body {
   overflow-y: scroll;
 }
 
-.S2-main-info-title {
-  font-size: 1.2rem;
-  margin-bottom: 3px;
+.survey-card h1 {
+  font-size: 1.4rem; /* Adjust the size as needed */
 }
 
+.survey-card h3 {
+  font-size: 1.2rem; /* Adjust the size as needed */
+}
 .S2-main-info-text {
   font-size: 0.8rem;
   margin-bottom: 10px;
@@ -792,7 +804,7 @@ body {
 /* Additional styles for .section-content */
 .section-content {
   height: calc(
-    99vh - var(--section-label-container-height) - var(--nav-buttons-height)
+    99vh - var(--section-label-container-height) - var(--nav-buttons-bar-height)
   );
   overflow-y: auto; /* Enables vertical scrolling */
 }
