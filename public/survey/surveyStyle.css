@@ -69,7 +69,7 @@ body {
   top: 50%; /* Align to the middle of the container vertically */
   width: 50%; /* Each line takes half the container's width */
   height: 2px; /* Height of the line */
-  background-color: #1bc0de; /* Color of the line */
+  background-color: var(--primary-color); /* Color of the line */
 }
 
 .section-label-container::before {
@@ -95,26 +95,26 @@ body {
   transform: translateX(-15%) translateY(-15%) scale(0.7);
   color: #666666c8;
 }
-
 .dropzone {
   background-color: white;
   position: relative;
-  height: 30vh;
-  min-height: 250px;
+  height: 40px;
   width: 70%;
   padding: 70px 30px;
   margin: 20px auto;
   border-radius: 0.25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
+  display: flex !important;
   align-items: flex-start;
   align-content: flex-start;
   justify-content: flex-start;
-  flex-direction: row; /* Aligns children in a row */
-  flex-wrap: wrap; /* This allows items to wrap onto the next line */
-  overflow-y: auto; /* Changed from visible to auto */
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: auto;
   z-index: 3;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, opacity 0.5s ease;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 }
 
 .dropzone::-webkit-scrollbar {
@@ -134,24 +134,36 @@ body {
   background: #555;
 }
 
-.dropzone {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
+.focused {
+  border: 5px solid var(--primary-color);
 }
+
+.unfocused {
+  /* Assuming .un2focused was a typo */
+  border: 2px solid #ccc;
+}
+
+.dropzone.collapse {
+  height: 40px; /* Removed !important to encourage cleaner CSS practices */
+  opacity: 0.5;
+  overflow: hidden;
+  transition: height 0.35s ease, opacity 0.35s ease;
+}
+
+.dropzone.collapse.show {
+  height: 40vh; /* Adjusted to match the visible state */
+  opacity: 1;
+  overflow: hidden;
+  transition: height 0.35s ease, opacity 0.35s ease;
+}
+
+/* You might still keep the .dropzone:not(.collapse) for broader compatibility or fallback */
 
 .dropzone .info-modal-icon {
   position: absolute;
   color: #1bc0de;
   top: 0;
   right: 0;
-}
-
-.focused {
-  border: 3px solid #1bc0de;
-}
-
-.unfocused {
-  border: 2px solid #ccc;
 }
 
 .tasks-pool-placeholder {
@@ -169,22 +181,9 @@ body {
   opacity: 0.8; /* Start with a faded look */
 }
 
-.placeholder-content {
-  text-align: center;
-  color: #ccc; /* Light gray color for a faded look */
-  transition: opacity 0.3s ease;
-  pointer-events: auto; /* Allows the text to be clickable */
-}
-
 .dropzone.focused .tasks-pool-placeholder {
   border: 2px dotted #666; /* Darker border when focused */
 }
-
-.dropzone.focused .placeholder-content {
-  opacity: 0; /* Fade out text when the dropzone is active */
-  visibility: hidden; /* Ensure text is not just transparent but also not taking space */
-}
-
 /*******************************************
         **  Pill Pool ***********************
         *******************************************/
@@ -197,14 +196,14 @@ body {
   width: 40%;
   max-width: 400px;
   padding-top: 10px; /* Smaller padding */
-  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease; /* Added opacity to transition */
+  transition: height 1s ease, padding-top 1s ease, opacity 1s ease; /* Added opacity to transition */
 }
 
 /* pool open */
 .pill-pool {
   position: absolute;
   box-sizing: border-box;
-  background-color: #1bc0de;
+  background-color: var(--primary-color);
   border: 3px solid #085465;
   border-radius: 10px;
   overflow-y: auto;
@@ -213,7 +212,7 @@ body {
   z-index: 4;
   padding: 50px 8px;
   transform: translateX(-100%);
-  transition: height 0.5s ease, padding-top 0.5s ease; /* Consistent transition for expanding */
+  transition: height 1s ease, padding-top 1s ease, opacity 1s ease;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 2px white; /* Outer shadow and inner frame */
 }
 
