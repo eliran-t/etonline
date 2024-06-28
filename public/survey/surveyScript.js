@@ -262,9 +262,7 @@ class FloatingPillPool {
   }
 
   closePool() {
-    this.togglePoolState(false, null);
     if (activeDropZone) {
-      activeDropZone.unFocusDropZone();
       activeDropZone.deactivate();
     }
   }
@@ -423,12 +421,30 @@ class DropZone {
     this.addLabel(label);
     this.openPoolCounter = 0;
     this.bsCollapse = null;
-
+    this.initializeTransitionHandling();
     dropzoneContainer.appendChild(this.element);
+  }
 
-    if (!pillPool.dropZoneRef) {
-      pillPool.setDropZone(this);
-      this.collapsePillPool();
+  initializeTransitionHandling() {
+    // Listen for the transition end event on the dropzone element
+    this.element.addEventListener("transitionend", (event) => {
+      if (event.propertyName === "height") {
+        // Ensure we're looking at the right CSS property
+        this.onTransitionEnd();
+      }
+    });
+  }
+
+  onTransitionEnd() {
+    // Check the current state and act accordingly
+    if (this.element.classList.contains("show")) {
+      // The element has just been shown
+      console.log("Dropzone transition to 'open' finished.");
+      this.pillPoolRef.togglePoolState(true, this); // Open the pill pool
+    } else {
+      // The element has just been hidden
+      console.log("Dropzone transition to 'close' finished.");
+      this.pillPoolRef.togglePoolState(false, this);
     }
   }
 
@@ -444,22 +460,6 @@ class DropZone {
     labelDiv.className = "survey-label";
     labelDiv.textContent = this.label;
     this.element.appendChild(labelDiv);
-
-    // Create and append the placeholder container
-    let placeholderContainer;
-    this.placeholderContainer = placeholderContainer =
-      document.createElement("div");
-    placeholderContainer.className = "tasks-pool-placeholder";
-    this.element.appendChild(placeholderContainer);
-
-    // Create and append the content inside the placeholder
-    const placeholderContent = document.createElement("div");
-    placeholderContent.className = "placeholder-content";
-    placeholderContent.textContent = "Click to open tasks pool...";
-    placeholderContainer.appendChild(placeholderContent);
-
-    // Store the reference to the placeholder content for later use
-    this.placeholderContent = placeholderContent;
 
     // Linking the HTML element with this DropZone instance
     this.element.controller = this;
@@ -503,8 +503,6 @@ class DropZone {
           activeDropZone
         ) {
           // Unfocus the active drop zone
-          activeDropZone.unFocusDropZone();
-          activeDropZone.collapsePillPool();
           activeDropZone.deactivate(); // Set activeDropZone to null
         }
       },
@@ -514,11 +512,11 @@ class DropZone {
 
   onFocus(event) {
     if (!this.pillPoolRef.dropZoneRef == this) {
-      this.openPillPool();
-      this.focusDropZone();
       this.activate();
     }
   }
+
+  // Modify the activate method to handle pill pool only after transition ends
   activate() {
     console.log("Activating ");
     // Check if bsCollapse already exists, if not, create it
@@ -530,24 +528,22 @@ class DropZone {
     console.log("Activating drop zone:", this.id);
     this.bsCollapse.show();
     this.element.classList.remove("unfocused");
+    this.focusDropZone();
     activeDropZone = this;
   }
 
+  // Modify the deactivate method to handle pill pool only after transition ends
   deactivate() {
-    // Log the call stack for debugging purposes
-    const stack = new Error().stack;
-    console.log("Deactivating", stack);
-
     // Assuming bsCollapse has been created in activate(), just hide it
     if (this.bsCollapse) {
       console.log("Deactivating drop zone:", this.id);
       this.bsCollapse.hide();
     }
+    console.log("Deactivating drop zone:", this.id);
+    this.bsCollapse.hide(); // Hide the dropzone
     this.element.classList.add("unfocused");
+    activeDropZone.unFocusDropZone();
     activeDropZone = null;
-  }
-  collapsePillPool() {
-    this.pillPoolRef.togglePoolState(false);
   }
 
   openPillPool() {
@@ -618,8 +614,6 @@ class DropZone {
     // Case 1: Clicking on the same zone
     if (activeDropZone === this) {
       console.log("Clicking on the same zone");
-      this.unFocusDropZone();
-      this.collapsePillPool();
       activeDropZone.deactivate(); // Set activeDropZone to null
       console.log("activeDropZone after deactivation:", activeDropZone);
       return;
@@ -628,8 +622,8 @@ class DropZone {
     // Case 2: Clicking on a different zone
     if (activeDropZone) {
       console.log("Clicking on a different zone");
-      activeDropZone.unFocusDropZone();
-      activeDropZone.collapsePillPool();
+      activeDropZone.deactivate();
+      this.activate;
       console.log(
         "activeDropZone after unfocusing and collapsing:",
         activeDropZone
@@ -638,8 +632,6 @@ class DropZone {
 
     // Case 3: First click on a zone
     console.log("First click on a zone or clicking on a new zone");
-    this.focusDropZone();
-    this.openPillPool();
     this.activate(); // Set this drop zone as the active one
     console.log("activeDropZone after activation:", activeDropZone);
   }
@@ -742,6 +734,7 @@ document.addEventListener("DOMContentLoaded", function () {
       this.feedbackCloseBtn.addEventListener("click", () => {
         this.closeFeedbackModal();
       });
+      this.pillPool.togglePoolState(false);
     }
 
     // Function to open the feedback modal
