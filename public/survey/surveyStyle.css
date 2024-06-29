@@ -95,10 +95,11 @@ body {
   transform: translateX(-15%) translateY(-15%) scale(0.7);
   color: #666666c8;
 }
+
 .dropzone {
   background-color: white;
   position: relative;
-  height: 40px;
+  height: 30px;
   width: 70%;
   padding: 70px 30px;
   margin: 20px auto;
@@ -112,7 +113,8 @@ body {
   flex-wrap: wrap;
   overflow-y: auto;
   z-index: 3;
-  transition: border-color 0.2s ease, opacity 0.5s ease;
+  transition: border-color 0.2s ease, opacity 0.5s ease, height 0.35s ease,
+    opacity 0.36s ease; /* Apply transitions here */
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
 }
@@ -144,17 +146,15 @@ body {
 }
 
 .dropzone.collapse {
-  height: 40px; /* Removed !important to encourage cleaner CSS practices */
+  height: 30px; /* Removed !important to encourage cleaner CSS practices */
   opacity: 0.5;
   overflow: hidden;
-  transition: height 0.35s ease, opacity 0.35s ease;
 }
 
 .dropzone.collapse.show {
-  height: 40vh; /* Adjusted to match the visible state */
+  height: 250px; /* Adjusted to match the visible state */
   opacity: 1;
   overflow: hidden;
-  transition: height 0.35s ease, opacity 0.35s ease;
 }
 
 /* You might still keep the .dropzone:not(.collapse) for broader compatibility or fallback */
@@ -166,24 +166,6 @@ body {
   right: 0;
 }
 
-.tasks-pool-placeholder {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  height: 55%;
-  border: 2px dotted #ccc; /* Dotted border style */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none; /* Prevents the placeholder from being clickable */
-  opacity: 0.8; /* Start with a faded look */
-}
-
-.dropzone.focused .tasks-pool-placeholder {
-  border: 2px dotted #666; /* Darker border when focused */
-}
 /*******************************************
         **  Pill Pool ***********************
         *******************************************/
@@ -194,9 +176,9 @@ body {
   opacity: 0;
   height: 40px; /* Smaller height when collapsed */
   width: 40%;
-  max-width: 400px;
+  max-width: 300px;
   padding-top: 10px; /* Smaller padding */
-  transition: height 1s ease, padding-top 1s ease, opacity 1s ease; /* Added opacity to transition */
+  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease; /* Added opacity to transition */
 }
 
 /* pool open */
@@ -208,11 +190,11 @@ body {
   border-radius: 10px;
   overflow-y: auto;
   width: 40%;
-  max-width: 400px;
+  max-width: 300px;
   z-index: 4;
   padding: 50px 8px;
   transform: translateX(-100%);
-  transition: height 1s ease, padding-top 1s ease, opacity 1s ease;
+  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 2px white; /* Outer shadow and inner frame */
 }
 
@@ -581,7 +563,6 @@ body {
   }
 
   .dropzone {
-    margin-bottom: 7rem;
     padding: 40px 5px;
   }
 

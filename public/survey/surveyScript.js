@@ -235,12 +235,13 @@ class FloatingPillPool {
     if (!this.dropZoneRef) return;
 
     const rect = this.dropZoneRef.element.getBoundingClientRect();
-    let newTop = rect.top + window.scrollY + rect.height;
+    let newTop = rect.top + 180;
     let newLeft = rect.right + window.scrollX - 20; // Default position
 
     this.element.style.top = `${newTop}px`;
     this.element.style.left = `${newLeft}px`;
   }
+
   togglePoolState(isOpen, newDropZoneRef) {
     this.setDropZone(isOpen ? newDropZoneRef : null);
     // Ensure class is toggled in a way that allows for CSS transitions to apply
@@ -428,7 +429,8 @@ class DropZone {
   initializeTransitionHandling() {
     // Listen for the transition end event on the dropzone element
     this.element.addEventListener("transitionend", (event) => {
-      if (event.propertyName === "height") {
+      console.log("Transition end event triggered on ", event.propertyName);
+      if (event.propertyName === "opacity") {
         // Ensure we're looking at the right CSS property
         this.onTransitionEnd();
       }
