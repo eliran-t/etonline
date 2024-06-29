@@ -255,11 +255,12 @@ class FloatingPillPool {
     this.setTabIndexBasedOnPoolState(isOpen);
     this.isPoolOpen = isOpen;
 
-    // Apply styles that change during opening/closing with a slight delay, if necessary
-    setTimeout(() => {
-      this.element.style.opacity = isOpen ? "1" : "0";
-      // Adjust height and padding-top as needed here
-    }, 10); // Small delay to ensure transitions are triggered
+    this.element.style.opacity = isOpen ? "1" : "0";
+
+    // // Apply styles that change during opening/closing with a slight delay, if necessary
+    // setTimeout(() => {
+    //   // Adjust height and padding-top as needed here
+    // }, 10); // Small delay to ensure transitions are triggered
   }
 
   closePool() {
@@ -535,7 +536,7 @@ class DropZone {
   }
 
   // Modify the deactivate method to handle pill pool only after transition ends
-  deactivate() {
+  deactivate(isMovePool) {
     // Assuming bsCollapse has been created in activate(), just hide it
     if (this.bsCollapse) {
       console.log("Deactivating drop zone:", this.id);
@@ -630,6 +631,7 @@ class DropZone {
         "activeDropZone after unfocusing and collapsing:",
         activeDropZone
       );
+      return;
     }
 
     // Case 3: First click on a zone
@@ -658,6 +660,7 @@ function addInfoModalIcon(id, container, message, color) {
   })(message, color);
   return faIcon;
 }
+
 function infoModal(message, color) {
   const infoModal = document.getElementById("infoModal");
   const infoModalText = document.getElementById("infoModalText");

@@ -737,16 +737,20 @@ body {
   border-radius: 5px; /* Rounded corners */
 }
 
+#surveyContext {
+  padding-bottom: 2rem;
+}
+
 #s2_tasks {
   overflow-y: scroll;
 }
 
 .survey-card h1 {
-  font-size: 1.4rem; /* Adjust the size as needed */
+  font-size: 1.1rem; /* Adjust the size as needed */
 }
 
 .survey-card h3 {
-  font-size: 1.2rem; /* Adjust the size as needed */
+  font-size: 1rem; /* Adjust the size as needed */
 }
 .S2-main-info-text {
   font-size: 0.8rem;
