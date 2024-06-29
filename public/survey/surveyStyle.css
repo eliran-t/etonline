@@ -178,7 +178,6 @@ body {
   width: 40%;
   max-width: 300px;
   padding-top: 10px; /* Smaller padding */
-  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease; /* Added opacity to transition */
 }
 
 /* pool open */
@@ -194,7 +193,6 @@ body {
   z-index: 4;
   padding: 50px 8px;
   transform: translateX(-100%);
-  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), inset 0 0 0 2px white; /* Outer shadow and inner frame */
 }
 
@@ -241,6 +239,16 @@ body {
     position: absolute;
     opacity: 1;
   }
+}
+
+/* Adjusted transition speed to 0.3s for faster opening/closing */
+.pill-pool.kids-pool,
+.pill-pool {
+  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease;
+}
+
+.pool-label {
+  transition: all 0.5s ease;
 }
 
 /*******************************************

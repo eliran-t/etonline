@@ -205,6 +205,10 @@ class FloatingPillPool {
     this.openedCategoryId = null;
     this.closeButton = document.getElementById("poolCloseBtn"); // Property to store the close button element
     this.poolLabel = document.getElementById("poolPillLabel"); // Property to store the pool label element
+    // In constructor
+    this.poolCollapse = new bootstrap.Collapse(this.element, {
+      toggle: false, // Prevent automatic toggling to control it manually
+    });
 
     PILLS.forEach((pillData) => {
       const pill = new Pill(
@@ -241,26 +245,24 @@ class FloatingPillPool {
     this.element.style.top = `${newTop}px`;
     this.element.style.left = `${newLeft}px`;
   }
-
   togglePoolState(isOpen, newDropZoneRef) {
     this.setDropZone(isOpen ? newDropZoneRef : null);
-    // Ensure class is toggled in a way that allows for CSS transitions to apply
-    this.element.classList.toggle("kids-pool", !isOpen);
+
+    // Use Bootstrap's collapse methods to show or hide the element
+    const poolCollapse = new bootstrap.Collapse(this.element, {
+      toggle: false, // Prevent automatic toggling to control it manually
+    });
 
     if (isOpen) {
+      this.poolCollapse.show();
       // Force a reflow to ensure transitions play
       void this.element.offsetHeight;
+    } else {
+      this.poolCollapse.hide();
     }
 
     this.setTabIndexBasedOnPoolState(isOpen);
     this.isPoolOpen = isOpen;
-
-    this.element.style.opacity = isOpen ? "1" : "0";
-
-    // // Apply styles that change during opening/closing with a slight delay, if necessary
-    // setTimeout(() => {
-    //   // Adjust height and padding-top as needed here
-    // }, 10); // Small delay to ensure transitions are triggered
   }
 
   closePool() {
@@ -536,7 +538,7 @@ class DropZone {
   }
 
   // Modify the deactivate method to handle pill pool only after transition ends
-  deactivate(isMovePool) {
+  deactivate() {
     // Assuming bsCollapse has been created in activate(), just hide it
     if (this.bsCollapse) {
       console.log("Deactivating drop zone:", this.id);
