@@ -542,8 +542,6 @@ class DropZone {
       console.log("Deactivating drop zone:", this.id);
       this.bsCollapse.hide();
     }
-    console.log("Deactivating drop zone:", this.id);
-    this.bsCollapse.hide(); // Hide the dropzone
     this.element.classList.add("unfocused");
     activeDropZone.unFocusDropZone();
     activeDropZone = null;
@@ -712,6 +710,41 @@ function startSurvey() {
 
   section0_element.classList.remove("show");
   section0_element.classList.add("collapse");
+}
+
+function observeNextButton(btnElement) {
+  console.log("observeNextButton called for:", btnElement);
+
+  // Disable the button initially
+  btnElement.disabled = true;
+
+  // Function to handle intersection changes
+  const intersectionCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Enable the button when sentinel is intersecting with viewport
+        btnElement.disabled = false;
+        console.log("Button enabled because sentinel is visible.");
+        // Disconnect observer once enabled (optional)
+        observer.disconnect();
+      }
+    });
+  };
+
+  // Create IntersectionObserver instance
+  const observer = new IntersectionObserver(intersectionCallback, {
+    root: null, // viewport as root
+    threshold: 0.5, // trigger when 50% of sentinel is visible
+  });
+
+  // Observe the sentinel element
+  const sentinel = document.getElementById("scrollSentinel");
+  if (sentinel) {
+    observer.observe(sentinel);
+    console.log("Observer started for sentinel.");
+  } else {
+    console.error("Sentinel element not found.");
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -959,9 +992,10 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("nextBtn0")
     .addEventListener("click", () => startSurvey());
 
-  document
-    .getElementById("nextBtn1")
-    .addEventListener("click", () => showSection(1));
+  let contentBtn = document.getElementById("nextBtn1");
+  observeNextButton(contentBtn);
+  contentBtn.addEventListener("click", () => showSection(1));
+
   document
     .getElementById("prevBtn2")
     .addEventListener("click", () => showSection(0));

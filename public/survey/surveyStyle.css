@@ -697,6 +697,15 @@ body {
   ); /* Calculate height as half of --nav-buttons-bar-height */
 }
 
+.nav-button:disabled {
+  background-color: #cccccc; /* Light grey background to indicate it's disabled */
+  color: #666666; /* Darker grey text to contrast with the background */
+  border-color: #cccccc; /* Matching border color with the background */
+  cursor: not-allowed; /* Change cursor to indicate the button is not clickable */
+  opacity: 0.5; /* Optionally, reduce opacity to further indicate it's disabled */
+  pointer-events: none; /* Prevents all mouse events on the element */
+}
+
 .nav-button i {
   margin-left: 0.5rem;
   margin-right: 0.5rem; /* Adjust spacing between icon and text as needed */
