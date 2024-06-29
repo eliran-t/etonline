@@ -239,7 +239,8 @@ class FloatingPillPool {
     if (!this.dropZoneRef) return;
 
     const rect = this.dropZoneRef.element.getBoundingClientRect();
-    let newTop = rect.top + window.scrollX + 220;
+    let topOffset = window.scrollY || document.documentElement.scrollTop;
+    let newTop = rect.top + topOffset + 220;
     let newLeft = rect.right + window.scrollX - 20; // Default position
 
     this.element.style.top = `${newTop}px`;
@@ -249,17 +250,17 @@ class FloatingPillPool {
   togglePoolState(isOpen, newDropZoneRef) {
     this.setDropZone(isOpen ? newDropZoneRef : null);
 
-    // Use Bootstrap's collapse methods to show or hide the element
-    const poolCollapse = new bootstrap.Collapse(this.element, {
-      toggle: false, // Prevent automatic toggling to control it manually
-    });
-
     if (isOpen) {
-      this.poolCollapse.show();
+      this.element.opacity = 1;
+      this.element.classList.remove("kids-pool");
+      this.element.style.display = ""; // Reset to default or specific display style
+
       // Force a reflow to ensure transitions play
       void this.element.offsetHeight;
     } else {
-      this.poolCollapse.hide();
+      this.element.opacity = 0;
+      this.element.classList.add("kids-pool");
+      this.element.style.display = "none"; // Hide element from the document flow
     }
 
     this.setTabIndexBasedOnPoolState(isOpen);
@@ -536,6 +537,10 @@ class DropZone {
     this.element.classList.remove("unfocused");
     this.focusDropZone();
     activeDropZone = this;
+    this.element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 
   // Modify the deactivate method to handle pill pool only after transition ends

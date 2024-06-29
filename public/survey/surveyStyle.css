@@ -174,10 +174,8 @@ body {
 .pill-pool.kids-pool {
   position: absolute;
   opacity: 0;
-  height: 40px; /* Smaller height when collapsed */
   width: 40%;
   max-width: 300px;
-  padding-top: 10px; /* Smaller padding */
 }
 
 /* pool open */
@@ -244,7 +242,7 @@ body {
 /* Adjusted transition speed to 0.3s for faster opening/closing */
 .pill-pool.kids-pool,
 .pill-pool {
-  transition: height 0.5s ease, padding-top 0.5s ease, opacity 0.5s ease;
+  transition: opacity 0.2s ease;
 }
 
 .pool-label {
