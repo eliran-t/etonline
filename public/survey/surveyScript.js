@@ -239,12 +239,13 @@ class FloatingPillPool {
     if (!this.dropZoneRef) return;
 
     const rect = this.dropZoneRef.element.getBoundingClientRect();
-    let newTop = rect.top + 180;
+    let newTop = rect.top + window.scrollX + 220;
     let newLeft = rect.right + window.scrollX - 20; // Default position
 
     this.element.style.top = `${newTop}px`;
     this.element.style.left = `${newLeft}px`;
   }
+
   togglePoolState(isOpen, newDropZoneRef) {
     this.setDropZone(isOpen ? newDropZoneRef : null);
 
@@ -605,39 +606,26 @@ class DropZone {
   }
 
   onClick(event) {
-    console.log("onClick triggered");
-
     // Check if the click event originated from the info icon or its children
     if (event.target.closest(".info-modal-icon") !== null) {
-      console.log("Click on info icon, returning early");
       // If the click is on the info icon or its children, do nothing
       return;
     }
 
     // Case 1: Clicking on the same zone
     if (activeDropZone === this) {
-      console.log("Clicking on the same zone");
       activeDropZone.deactivate(); // Set activeDropZone to null
-      console.log("activeDropZone after deactivation:", activeDropZone);
       return;
     }
 
     // Case 2: Clicking on a different zone
     if (activeDropZone) {
-      console.log("Clicking on a different zone");
       activeDropZone.deactivate();
-      this.activate;
-      console.log(
-        "activeDropZone after unfocusing and collapsing:",
-        activeDropZone
-      );
       return;
     }
 
     // Case 3: First click on a zone
-    console.log("First click on a zone or clicking on a new zone");
     this.activate(); // Set this drop zone as the active one
-    console.log("activeDropZone after activation:", activeDropZone);
   }
 }
 
