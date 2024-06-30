@@ -174,8 +174,8 @@ body {
 .pill-pool.kids-pool {
   position: absolute;
   opacity: 0;
-  width: 40%;
-  max-width: 300px;
+  width: 30%;
+  max-width: 250px;
 }
 
 /* pool open */
@@ -186,8 +186,8 @@ body {
   border: 3px solid #085465;
   border-radius: 10px;
   overflow-y: auto;
-  width: 40%;
-  max-width: 300px;
+  width: 30%;
+  max-width: 250px;
   z-index: 4;
   padding: 50px 8px;
   transform: translateX(-100%);
@@ -635,19 +635,33 @@ body {
   width: 300px;
   height: auto; /* Adjust height to auto to accommodate wrapped text */
   min-height: 100px; /* Keep a minimum height */
+  max-height: 70vh; /* Limiting height to 70% of the viewport height */
   background-color: #f2f2f2;
   color: #333;
-  text-align: center;
+  text-align: left; /* Align all text to left */
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fadeInScaleUp 0.5s ease-out forwards; /* Apply the animation */
   white-space: normal; /* Ensure text wraps */
-  overflow: hidden; /* Hide overflow */
+  overflow-y: auto; /* Enable vertical scrolling */
   text-overflow: ellipsis; /* Add ellipsis if text overflows */
   line-height: normal; /* Adjust line height for text wrapping */
+  font-size: 7px;
 }
 
+.feedback-survey-res {
+  font-size: 6px;
+  line-height: 1.5;
+  margin-left: -10px; /* Adjust as needed to move the list to the left */
+}
+
+.feedback-title {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center; /* Center the title */
+}
 .feedback-modal-backdrop {
   position: fixed;
   top: 0;
@@ -754,6 +768,7 @@ body {
 
 #surveyContext {
   padding-bottom: 2rem;
+  max-height: 80vh; /* Adjust the height as needed */
 }
 
 #s2_tasks {

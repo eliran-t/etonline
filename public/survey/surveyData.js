@@ -402,8 +402,7 @@ const MSGS = {
     "There was an issue submitting your survey. Please email me at " +
     FEEDBACK_EMAIL,
   SUCCESS: "Survey submitted successfully. Thank you for your participation!",
-  ERROR_SAVED:
-    "An error occurred, but your responses have been saved. Please try again later or contact support.",
+  ERROR_SAVED: "An error occurred. Please try again later or contact support.",
   ERROR_PREP:
     "An error occurred while preparing your data. Please try again or contact support.",
   SECTION2_INFO: `

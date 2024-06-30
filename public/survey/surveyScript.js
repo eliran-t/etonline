@@ -238,10 +238,13 @@ class FloatingPillPool {
   positionByDropZone() {
     if (!this.dropZoneRef) return;
 
+    let relativeTopOffset = screen.width < 768 ? 180 : 30;
+    let relativeLeftOffset = screen.width < 768 ? -25 : 50;
+
     const rect = this.dropZoneRef.element.getBoundingClientRect();
     let topOffset = window.scrollY || document.documentElement.scrollTop;
-    let newTop = rect.top + topOffset + 220;
-    let newLeft = rect.right + window.scrollX - 20; // Default position
+    let newTop = rect.top + topOffset + relativeTopOffset;
+    let newLeft = rect.right + window.scrollX + relativeLeftOffset; // Default position
 
     this.element.style.top = `${newTop}px`;
     this.element.style.left = `${newLeft}px`;
@@ -710,8 +713,10 @@ function startSurvey() {
 function observeNextButton(btnElement) {
   console.log("observeNextButton called for:", btnElement);
 
-  // Disable the button initially
-  btnElement.disabled = true;
+  if (!isDev()) {
+    // Disable the button initially
+    btnElement.disabled = true;
+  }
 
   // Function to handle intersection changes
   const intersectionCallback = (entries, observer) => {
@@ -745,6 +750,7 @@ function observeNextButton(btnElement) {
 document.addEventListener("DOMContentLoaded", function () {
   class SurveyManager {
     constructor(scriptUrl) {
+      this.hasShownUserFeedback = false;
       let surveyElement;
       this.surveyElement = surveyElement = document.getElementById("survey");
       this.dropzoneElements = document.getElementById(sections[1]);
@@ -798,37 +804,25 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    prepareSurveyData() {
-      let surveyData = {};
-
-      this.dropZones.forEach((zone) => {
-        const pills = Array.from(zone.pills.values());
-        surveyData[zone.id] = pills.map((pill) => pill.text).join(", ");
-      });
-      surveyData.userComments = this.commentTextarea.value;
-
-      return surveyData;
-    }
-
     buildFeedbackMessage(success, surveyData, error = "") {
       // Initial message based on success or failure
       let feedbackMessage = success
-        ? `<strong>Success!</strong> <br> Your survey has been submitted successfully!`
-        : `<strong>Error!</strong><br/> Unfortunately, your survey couldn't be submitted.<br/> Please try again or contact us at ${FEEDBACK_EMAIL} for support.<br/><br/>Error: ${error}<br>`;
+        ? `<div class=feedback-title>✅ Success!</div> <br> Your survey has been submitted successfully!`
+        : `<div class=feedback-title>❌ Error!</div><br/>Survey submission failed.<br/> Please try again or email <b> ${FEEDBACK_EMAIL}</b> for support. Please also save your responses from the text below.<br/><br/>Error: ${error}<br>`;
 
       // Adding the answers section
       feedbackMessage +=
         "<br><br><strong>Thank you for your time!</strong><br> Here are your answers:<br>";
 
       // Initialize feedbackMessage with an opening <ul> tag for an unordered list
-      feedbackMessage += "<br><ul style='text-align: left;'>";
+      feedbackMessage += `<br><ul class="feedback-survey-res" style='text-align: left;'>`;
 
       // Loop through surveyData to append each answer as a list item
       Object.keys(surveyData).forEach((key) => {
         const matchingZone = dropZoneNames.find((zone) => zone.id === key);
         const label = matchingZone ? matchingZone.label : key;
         // Wrap each feedback item in <li> tags instead of using a dash
-        feedbackMessage += `<li>${label}: ${surveyData[key]}</li>`;
+        feedbackMessage += `<li><b>${label}</b>:  ${surveyData[key]}</li>`;
       });
 
       // Close the unordered list with a closing </ul> tag
@@ -841,47 +835,42 @@ document.addEventListener("DOMContentLoaded", function () {
       return feedbackMessage;
     }
 
-    sendDummyDevResponse(data) {
-      // Log the data to simulate sending to a server
-      console.log("Sending data to dev server:", data);
-
-      // Construct a dummy success response
-      const dummyResponse = {
-        status: "success",
-        message: "Data received successfully in dev mode.",
-        receivedData: data, // Optionally include the received data in the response
-      };
-
-      // Simulate a delay to mimic async server communication
-      return new Promise((resolve) =>
-        setTimeout(() => resolve(dummyResponse), 1000)
-      );
-    }
-
     showUserFeedback(success, surveyData, error = "") {
-      const feedbackMessage = this.buildFeedbackMessage(
-        success,
-        surveyData,
-        error
-      );
+      // Check if the feedback modal has already been shown
 
-      // Update modal content
-      this.feedbackModalText.innerHTML = feedbackMessage;
+      if (this.hasShownUserFeedback) {
+        return; // Exit the function early if the modal has already been shown
+      }
 
-      // Use existing method to show modal
-      this.openFeedbackModal();
+      try {
+        const feedbackMessage = this.buildFeedbackMessage(
+          success,
+          surveyData,
+          error
+        );
+
+        // Update modal content
+        this.feedbackModalText.innerHTML = feedbackMessage;
+
+        // Use existing method to show modal
+        this.openFeedbackModal();
+      } catch (error) {
+        console.error("Error in showing feedback:", error);
+        return;
+      }
+      this.hasShownUserFeedback = true;
     }
 
-    async sendDataToSheet(scriptUrl, surveyData) {
-      try {
-        const response = await this.sendRequest(scriptUrl, surveyData);
-        console.log("Data sent:", surveyData);
-        if (!this.feedbackShown) this.showUserFeedback(true, surveyData); // Check before showing feedback
-      } catch (error) {
-        console.error("Error in sending data:", error);
-        if (!this.feedbackShown)
-          this.showUserFeedback(false, surveyData, error); // Check before showing feedback
-      }
+    prepareSurveyData() {
+      let surveyData = {};
+
+      this.dropZones.forEach((zone) => {
+        const pills = Array.from(zone.pills.values());
+        surveyData[zone.id] = pills.map((pill) => pill.text).join(", ");
+      });
+      surveyData.userComments = this.commentTextarea.value;
+
+      return surveyData;
     }
 
     handleSubmit() {
@@ -898,10 +887,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let surveyData = this.prepareSurveyData();
 
-        this.sendDataToSheet(this.scriptUrl, surveyData)
+        this.sendDataToSheet(this.scriptUrl, userInfo, surveyData)
           .then(() => {
             clearTimeout(fallbackTimeout); // Clear the fallback timeout
-            this.showUserFeedback(true, surveyData, MSGS.SUCCESS);
           })
           .catch((error) => {
             clearTimeout(fallbackTimeout); // Clear the fallback timeout
@@ -918,31 +906,42 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    async sendRequest(url, data) {
+    async fetchWrapper(url, jsonData) {
       if (isDev()) {
-        const dummyResponse = this.sendDummyDevResponse(data);
-        console.log("Dummy response:", dummyResponse);
-        return dummyResponse;
+        // Simulate a JSON response in development mode
+        const dummyResponse = {
+          status: 200,
+          statusText: "OK",
+          json: () =>
+            Promise.resolve({
+              result: "success",
+              message: "Data received successfully in dev mode.",
+            }),
+        };
+        return new Promise((resolve) =>
+          setTimeout(() => resolve(dummyResponse), 1000)
+        );
       }
+
+      // Simulate a delay to mimic async server communication
+
+      return await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8", // Avoid preflight by using text/plain
+        },
+        body: jsonData,
+        redirect: "follow", // Important if the request is being redirected
+      });
+    }
+
+    async sendDataToSheet(url, userInfo, surveyData) {
+      let data = { ...userInfo, ...surveyData };
 
       let jsonData = JSON.stringify(data);
 
       try {
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "text/plain;charset=utf-8", // Avoid preflight by using text/plain
-          },
-          body: jsonData,
-          redirect: "follow", // Important if the request is being redirected
-        });
-
-        if (!response.ok) {
-          // If the HTTP status code is not in the 200-299 range
-          throw new Error(
-            `Network response was not ok: ${response.statusText}`
-          );
-        }
+        const response = await this.fetchWrapper(url, jsonData);
 
         // Parse the JSON response
         const jsonResponse = await response.json();
@@ -950,9 +949,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // Check if the server indicates success
         if (jsonResponse.result === "success") {
           console.log("Data sent successfully:", jsonResponse);
-          return jsonResponse; // Return the successful response
+          this.showUserFeedback(true, surveyData, MSGS.SUCCESS);
+          return true;
         } else {
-          // Handle any server-side errors
+          // Handle server-side errors properly
           throw new Error(
             `Server did not indicate success: ${JSON.stringify(jsonResponse)}`
           );
@@ -960,7 +960,8 @@ document.addEventListener("DOMContentLoaded", function () {
       } catch (error) {
         // Handle any network errors or server-side errors
         console.error("Error in sending data:", error);
-        throw error; // Re-throw the error for further handling
+        this.showUserFeedback(false, surveyData, error); // Check before showing feedback
+        return false;
       }
     }
 
